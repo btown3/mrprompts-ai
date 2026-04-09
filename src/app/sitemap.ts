@@ -30,6 +30,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/guides/wiki-automation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/two-model-validation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
+    // SEO content pages
+    { url: `${baseUrl}/learn/ai-for-non-technical`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/learn/ai-prompts-for-sales`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/ai-prompts-for-marketing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/ai-prompts-for-hr`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/what-is-claude-md`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/ai-knowledge-base-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/learn/ai-change-management`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/best-ai-tools-for-business`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/ai-workflow-examples`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/ai-team-assessment`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+
+    // Legal
+    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+
     // Tools
     { url: `${baseUrl}/tools`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/tools/wiki-builder`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
