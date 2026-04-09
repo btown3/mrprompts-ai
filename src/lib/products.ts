@@ -1,10 +1,4 @@
 export const PRODUCTS = {
-  "claude-md-masterclass": {
-    name: "The CLAUDE.md Masterclass",
-    price: 1900, // cents
-    description: "How to write the schema file that controls your entire wiki system.",
-    slug: "claude-md-masterclass",
-  },
   "wiki-automation": {
     name: "Wiki Automation with Claude Code",
     price: 1900,
