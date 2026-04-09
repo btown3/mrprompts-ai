@@ -82,6 +82,19 @@ export const CATALOG: Product[] = [
     items: "Guide + template",
   },
 
+  {
+    slug: "knowledge-base-starter-kit",
+    name: "Knowledge Base Starter Kit",
+    description:
+      "Complete folder structure, CLAUDE.md schema, and 7 numbered prompts to build an AI knowledge base from scratch. Customized to your topic. Works with any AI tool.",
+    category: "templates",
+    price: 0,
+    format: "Markdown",
+    tag: "Free",
+    href: "/build/knowledge-bases",
+    items: "15 files + 7 prompts",
+  },
+
   // ── Workflows ────────────────────────────────────────────
   {
     slug: "workflow-blueprints",
