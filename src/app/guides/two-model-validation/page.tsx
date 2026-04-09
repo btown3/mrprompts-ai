@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { BuyButton } from "@/app/components/BuyButton";
 
@@ -25,12 +28,25 @@ const CONCEPTS = [
 ];
 
 export default function TwoModelValidationPage() {
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "true") {
+      setUnlocked(true);
+      localStorage.setItem("two-model-validation-unlocked", "true");
+    }
+    if (localStorage.getItem("two-model-validation-unlocked") === "true") {
+      setUnlocked(true);
+    }
+  }, []);
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-20">
       <div className="mb-12">
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-            Paid Guide
+            {unlocked ? "Purchased" : "$19 One-Time"}
           </span>
           <span className="text-xs text-zinc-400">30 min read</span>
         </div>
@@ -43,7 +59,15 @@ export default function TwoModelValidationPage() {
         </p>
       </div>
 
-      {/* Preview sections */}
+      {unlocked && (
+        <div className="mb-8 rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-800 dark:bg-emerald-900/20">
+          <p className="font-semibold text-emerald-800 dark:text-emerald-400">
+            You have full access to this guide. Thank you for your purchase!
+          </p>
+        </div>
+      )}
+
+      {/* Sections */}
       <section className="mb-12">
         <h2 className="text-xl font-bold">What you will learn</h2>
         <div className="mt-6 space-y-6">
@@ -51,10 +75,10 @@ export default function TwoModelValidationPage() {
             <div
               key={concept.title}
               className={`rounded-lg border border-zinc-200 p-6 dark:border-zinc-800 ${
-                i >= 2 ? "relative overflow-hidden" : ""
+                !unlocked && i >= 2 ? "relative overflow-hidden" : ""
               }`}
             >
-              {i >= 2 && (
+              {!unlocked && i >= 2 && (
                 <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-6 dark:from-zinc-950 dark:via-zinc-950/80">
                   <span className="text-sm font-medium text-zinc-400">
                     Preview ends here
@@ -70,21 +94,51 @@ export default function TwoModelValidationPage() {
         </div>
       </section>
 
-      {/* Purchase CTA */}
-      <section className="rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
-        <h2 className="text-xl font-bold text-white">Get the full guide</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-          Complete implementation guide with code examples for Claude + GPT-4
-          validation, automated flagging scripts, and a decision framework for
-          when to use single vs. dual model pipelines.
-        </p>
-        <div className="mt-6 flex flex-col items-center gap-3">
-          <BuyButton slug="two-model-validation" price="$19" />
-          <p className="mt-1 text-xs text-zinc-500">
-            One-time purchase. Instant access. No subscription.
+      {/* Purchase CTA or next steps */}
+      {!unlocked ? (
+        <section className="rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
+          <h2 className="text-xl font-bold text-white">Get the full guide</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+            Complete implementation guide with code examples for Claude + GPT-4
+            validation, automated flagging scripts, and a decision framework for
+            when to use single vs. dual model pipelines.
           </p>
-        </div>
-      </section>
+          <div className="mt-6 flex flex-col items-center gap-3">
+            <BuyButton slug="two-model-validation" price="$19" />
+            <p className="mt-1 text-xs text-zinc-500">
+              One-time purchase. Instant access. No subscription.
+            </p>
+          </div>
+        </section>
+      ) : (
+        <section className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+          <h2 className="text-xl font-bold">Keep building</h2>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            You now have the full knowledge base system: structure, schema,
+            automation, and validation. Put it all together.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <Link
+              href="/build/knowledge-bases"
+              className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+            >
+              <p className="text-sm font-semibold">Knowledge Base Track</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                The complete build track with all four modules.
+              </p>
+            </Link>
+            <Link
+              href="/tools/wiki-builder"
+              className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+            >
+              <p className="text-sm font-semibold">Wiki Builder Tool</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Generate a complete vault from your sources automatically.
+              </p>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Related */}
       <div className="mt-12 flex justify-between text-sm">
