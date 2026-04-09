@@ -29,7 +29,7 @@ export function Header() {
             Tools
           </Link>
           <Link
-            href="/vaults"
+            href="/products"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
             Vaults
@@ -118,11 +118,11 @@ export function Header() {
               Tools
             </Link>
             <Link
-              href="/vaults"
+              href="/products"
               onClick={() => setOpen(false)}
               className="text-zinc-600 dark:text-zinc-400"
             >
-              Vaults
+              Products
             </Link>
             <Link
               href="/blog"
