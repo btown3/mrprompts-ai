@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Pricing — Free Guides, Workshops, and Enterprise Training",
+  description:
+    "Start free with 6 guides, tools, and the weekly newsletter. Go deeper with live workshops ($199-$249), wiki vaults ($29-$79), or enterprise training.",
+  alternates: { canonical: "https://www.mrprompts.ai/pricing" },
+};
 
 export default function PricingPage() {
   return (

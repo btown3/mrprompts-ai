@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { PersonSchema } from "@/app/components/SchemaOrg";
+
+export const metadata: Metadata = {
+  title: "About Wayne Cederholm",
+  description:
+    "Meet the founder of MrPrompts. Wayne Cederholm builds AI systems and teaches smart professionals to do the same. 4,000+ builders trust his weekly newsletter.",
+  alternates: { canonical: "https://www.mrprompts.ai/about" },
+};
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-20">
+      <PersonSchema />
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
         Hey, I'm Wayne Cederholm.
       </h1>

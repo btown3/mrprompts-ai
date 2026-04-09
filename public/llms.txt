@@ -1,0 +1,52 @@
+# MrPrompts — Build with AI. No dev background required.
+
+> Frameworks, tools, and step-by-step guides for smart professionals who want to build with AI, not just read about it.
+
+## About
+MrPrompts is an AI training platform founded by Wayne Cederholm. We help non-technical professionals and enterprise leaders build with AI through guides, tools, workshops, and training programs. 4,000+ builders trust our weekly newsletter.
+
+## Key Pages
+
+### Build Tracks
+- /build — Four build tracks: Knowledge Bases, Prompts, Workflows, Leadership
+- /build/knowledge-bases — Build AI knowledge bases with Obsidian and CLAUDE.md
+- /build/prompts — Build prompt frameworks and libraries by role
+- /build/workflows — Build AI-powered automations and agent pipelines
+- /build/leadership — Build AI-ready teams and organizations
+
+### Free Guides
+- /guides/your-first-wiki — Build your first AI knowledge base in 20 minutes
+- /guides/claude-md-masterclass — Master the CLAUDE.md schema system
+- /guides/prompt-library-starter — 20+ prompt templates for marketing, sales, ops, finance, HR, consulting
+- /guides/workflow-blueprints — 5 pre-built AI workflow configurations
+- /guides/ai-adoption-roadmap — 90-day AI rollout plan for organizations
+- /guides/team-fluency-assessment — AI readiness scoring rubric and team survey
+
+### Tools
+- /tools/wiki-builder — AI-powered wiki vault generator (free)
+
+### Products
+- /products — Prompt packs, templates, workflow blueprints, leadership playbooks
+
+### Workshops
+- /workshops — Live, hands-on AI building sessions ($199-$249)
+
+### Enterprise
+- /enterprise — Custom AI training for organizations
+
+### Blog
+- /blog — Articles on prompt engineering, AI agents, workflows, and leadership
+
+## Topics Covered
+- Prompt engineering for non-technical professionals
+- AI knowledge base architecture
+- AI workflow automation
+- AI adoption and change management for leaders
+- AI agents and tools
+- CLAUDE.md schema design
+
+## Contact
+- Website: https://www.mrprompts.ai
+- Newsletter: https://mrprompts.substack.com
+- Twitter/X: https://x.com/MrPrompts
+- Founded by: Wayne Cederholm

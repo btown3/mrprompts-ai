@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog — AI Workflows from the Field",
+  description:
+    "Articles on prompt engineering, AI agents, workflows, and leadership. Battle-tested AI strategies from the field, not the feed.",
+  alternates: { canonical: "https://www.mrprompts.ai/blog" },
+};
+
 const POSTS = [
   {
     title: "Claude Skills Explained: How to Build and Use Them",

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Build with AI — Four Tracks for Non-Technical Professionals",
+  description:
+    "Build AI knowledge bases, prompt libraries, workflows, and leadership playbooks. Step-by-step guides for smart professionals who don't code.",
+  alternates: { canonical: "https://www.mrprompts.ai/build" },
+};
 
 const TRACKS = [
   {
