@@ -1,4 +1,33 @@
 import Link from "next/link";
+import { FAQ } from "./components/FAQ";
+
+const HOME_FAQ = [
+  {
+    question: "What is an AI knowledge base?",
+    answer:
+      "An AI knowledge base is a structured collection of interlinked articles that an AI model can read and query. Unlike a chat conversation that disappears, a knowledge base persists. Every new source you add and every answer you generate enriches it. The AI gets smarter about your topic over time because it has a growing, organized reference to draw from.",
+  },
+  {
+    question: "Do I need to know how to code to use MrPrompts?",
+    answer:
+      "No. Everything on MrPrompts is designed for smart professionals who do not come from a technical background. Our guides use plain language, our tools run in the browser, and our workshops are hands-on with no terminal or command line required. If you can use a word processor, you can build with AI.",
+  },
+  {
+    question: "What is a prompt framework?",
+    answer:
+      "A prompt framework is a reusable structure for writing effective AI prompts. Instead of guessing at how to ask an AI for help, a framework gives you a template that consistently produces better output. The MrPrompts 4-Layer Framework, for example, uses language awareness, empathy, point of view, and organizational power to transform any prompt from generic to precise.",
+  },
+  {
+    question: "What is CLAUDE.md?",
+    answer:
+      "CLAUDE.md is a schema file that controls how an AI interacts with your knowledge base. It defines your topic, folder structure, article format, taxonomy, and behavioral rules. When an AI reads your vault, CLAUDE.md is the first file it processes. A well-written CLAUDE.md means consistent, high-quality output every time. MrPrompts teaches you how to write one and provides production-ready templates.",
+  },
+  {
+    question: "How is MrPrompts different from other AI courses?",
+    answer:
+      "Most AI courses teach you about AI. MrPrompts teaches you to build with AI. Every guide ends with something you made: a knowledge base, a prompt library, a workflow, or a leadership playbook. We focus on non-technical professionals and use no jargon, no coding, and no assumptions about your background. You also get free tools like the Wiki Builder that let you build right on the site.",
+  },
+];
 
 const BUILD_TRACKS = [
   {
@@ -204,6 +233,16 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          Frequently asked questions
+        </h2>
+        <div className="mt-10">
+          <FAQ items={HOME_FAQ} />
         </div>
       </section>
 

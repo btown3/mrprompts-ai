@@ -74,6 +74,14 @@ export default function AboutPage() {
         <h2 className="text-lg font-semibold">Connect</h2>
         <div className="mt-4 flex flex-col gap-3 text-sm">
           <a
+            href="https://www.linkedin.com/in/waynecederholm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-600 hover:text-emerald-700"
+          >
+            LinkedIn — Wayne Cederholm
+          </a>
+          <a
             href="https://mrprompts.substack.com"
             target="_blank"
             rel="noopener noreferrer"

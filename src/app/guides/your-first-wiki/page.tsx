@@ -49,9 +49,12 @@ export default function YourFirstWikiPage() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-20">
       <div className="mb-12">
-        <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-          Free Guide
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+            Free Guide
+          </span>
+          <span className="text-xs text-zinc-400">Updated April 2026</span>
+        </div>
         <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
           Your First Wiki in 20 Minutes
         </h1>

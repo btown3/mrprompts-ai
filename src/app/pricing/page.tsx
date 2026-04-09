@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FAQ } from "@/app/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Pricing — Free Guides, Workshops, and Enterprise Training",
@@ -182,6 +183,42 @@ export default function PricingPage() {
           </Link>
         </div>
       </div>
+
+      {/* Pricing FAQ */}
+      <section className="mt-20">
+        <h2 className="text-2xl font-bold tracking-tight">Common questions</h2>
+        <div className="mt-8">
+          <FAQ
+            items={[
+              {
+                question: "Is MrPrompts really free?",
+                answer:
+                  "Yes. Six in-depth guides, the Wiki Builder tool, the weekly newsletter, and the entire blog are completely free. No credit card, no trial period. You can build a knowledge base, a prompt library, and a complete AI adoption plan without paying anything.",
+              },
+              {
+                question: "What do I get in the live workshops?",
+                answer:
+                  "You join a small group on Zoom with Wayne Cederholm and build something real together. The Knowledge Base workshop ($249) gives you a working Obsidian vault with 5+ articles in 2 hours. The Prompt Framework workshop ($199) gives you 10+ custom prompts for your role in 90 minutes. Not a lecture. Hands-on building.",
+              },
+              {
+                question: "How does enterprise training work?",
+                answer:
+                  "We start with a 30-minute discovery call to understand your team and goals. Within 48 hours you get a custom proposal. Training can be a single workshop, a department-specific session, or a full 90-day AI adoption engagement. Everything is built around your team's actual workflows and use cases.",
+              },
+              {
+                question: "Can I get a refund?",
+                answer:
+                  "Digital guide purchases have a 14-day refund policy. Workshop registrations are refundable up to 48 hours before the session. Enterprise training terms are agreed upon in individual contracts. Email wayne@mrprompts.ai for any refund requests.",
+              },
+              {
+                question: "What is the Builder membership?",
+                answer:
+                  "The Builder membership ($19/month) will include full access to all four build tracks, the complete prompt library, workflow templates, and new content every month. It is currently in development. Join the newsletter to get notified when it launches.",
+              },
+            ]}
+          />
+        </div>
+      </section>
 
       {/* Builder waitlist */}
       <div className="mt-20 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">

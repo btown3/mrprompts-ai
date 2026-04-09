@@ -76,8 +76,12 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-zinc-200 dark:border-zinc-800">
-        <div className="mx-auto max-w-6xl px-6 py-4 text-center text-xs text-zinc-400">
-          &copy; {new Date().getFullYear()} MrPrompts. All rights reserved.
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-6 py-4 text-xs text-zinc-400 sm:flex-row sm:justify-between">
+          <span>&copy; {new Date().getFullYear()} MrPrompts. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-zinc-600 dark:hover:text-zinc-300">Privacy</Link>
+            <Link href="/terms" className="hover:text-zinc-600 dark:hover:text-zinc-300">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>
