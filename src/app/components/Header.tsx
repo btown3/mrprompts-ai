@@ -41,10 +41,16 @@ export function Header() {
             Blog
           </Link>
           <Link
-            href="/affiliates"
+            href="/workshops"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
-            Tools We Use
+            Workshops
+          </Link>
+          <Link
+            href="/enterprise"
+            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+          >
+            Enterprise
           </Link>
           <Link
             href="/pricing"
@@ -126,11 +132,18 @@ export function Header() {
               Blog
             </Link>
             <Link
-              href="/affiliates"
+              href="/workshops"
               onClick={() => setOpen(false)}
               className="text-zinc-600 dark:text-zinc-400"
             >
-              Tools We Use
+              Workshops
+            </Link>
+            <Link
+              href="/enterprise"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Enterprise
             </Link>
             <Link
               href="/pricing"

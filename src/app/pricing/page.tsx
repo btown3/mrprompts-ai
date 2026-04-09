@@ -1,152 +1,198 @@
 import Link from "next/link";
 
-const TIERS = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "forever",
-    description: "Start building today. No credit card required.",
-    features: [
-      "First module of every build track",
-      "Wiki Builder tool",
-      "Weekly newsletter",
-      "Blog and community access",
-    ],
-    cta: "Start Building",
-    ctaHref: "/build",
-    highlight: false,
-  },
-  {
-    name: "Builder",
-    price: "$19",
-    period: "/month",
-    description: "Full access to everything. For individuals who want to build seriously with AI.",
-    features: [
-      "All 4 build tracks (16 modules)",
-      "All tools (wiki builder, prompt library, templates)",
-      "Vault download discounts",
-      "Full prompt library by role",
-      "New modules as they ship",
-    ],
-    cta: "Get Builder Access",
-    ctaHref: "#",
-    highlight: true,
-    annual: "$149/year (save 35%)",
-  },
-  {
-    name: "Team",
-    price: "$49",
-    period: "/seat/month",
-    description: "Build AI capability across your team. Admin controls and shared resources.",
-    features: [
-      "Everything in Builder",
-      "Team admin dashboard",
-      "Shared prompt libraries",
-      "Team progress tracking",
-      "Priority support",
-    ],
-    cta: "Get Team Access",
-    ctaHref: "#",
-    highlight: false,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "For organizations building AI readiness at scale.",
-    features: [
-      "Everything in Team",
-      "Leadership track with custom modules",
-      "Private workshops with Wayne",
-      "Custom AI adoption roadmaps",
-      "Dedicated account support",
-    ],
-    cta: "Contact Us",
-    ctaHref: "mailto:wayne@mrprompts.ai",
-    highlight: false,
-  },
-];
-
 export default function PricingPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="text-center">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Start free. Build seriously for $19/month.
+          Start free. Build as much as you want.
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-zinc-500">
-          First module of every track is free. Unlock everything when you are
-          ready. Cancel anytime.
+          The best AI training content on the internet, free. When you are ready
+          for more, we have workshops, vaults, and enterprise training.
         </p>
       </div>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {TIERS.map((tier) => (
-          <div
-            key={tier.name}
-            className={`flex flex-col rounded-xl border p-6 ${
-              tier.highlight
-                ? "border-emerald-500 shadow-lg shadow-emerald-500/10 dark:border-emerald-600"
-                : "border-zinc-200 dark:border-zinc-800"
-            }`}
-          >
-            {tier.highlight && (
-              <span className="mb-3 w-fit rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
-                Most Popular
-              </span>
-            )}
-            <h2 className="text-lg font-bold">{tier.name}</h2>
-            <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-bold">{tier.price}</span>
-              {tier.period && (
-                <span className="text-sm text-zinc-500">{tier.period}</span>
-              )}
-            </div>
-            {"annual" in tier && tier.annual && (
-              <p className="mt-1 text-xs text-emerald-600">{tier.annual}</p>
-            )}
-            <p className="mt-3 text-sm text-zinc-500">{tier.description}</p>
-
-            <ul className="mt-6 flex-1 space-y-2.5">
-              {tier.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
-                >
-                  <span className="mt-0.5 text-emerald-600">&#10003;</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href={tier.ctaHref}
-              className={`mt-6 inline-flex h-10 items-center justify-center rounded-lg text-sm font-semibold transition ${
-                tier.highlight
-                  ? "bg-emerald-600 text-white hover:bg-emerald-700"
-                  : "border border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
-              }`}
-            >
-              {tier.cta}
-            </Link>
+      {/* Free tier - the hero */}
+      <div className="mt-16 rounded-xl border-2 border-emerald-500 p-8 shadow-lg shadow-emerald-500/10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+              Start Here
+            </span>
+            <h2 className="mt-3 text-2xl font-bold">Free</h2>
+            <p className="mt-2 text-zinc-500">
+              Everything you need to start building with AI today.
+            </p>
           </div>
-        ))}
+          <div className="text-right">
+            <span className="text-4xl font-bold">$0</span>
+            <p className="text-sm text-zinc-400">forever</p>
+          </div>
+        </div>
+        <div className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          {[
+            "6 in-depth guides with downloadable templates",
+            "Prompt Library: 20+ templates by role",
+            "AI Adoption Roadmap: 90-day plan",
+            "Team AI Fluency Assessment",
+            "AI Workflow Blueprints",
+            "Wiki Builder tool (AI-powered)",
+            "Weekly newsletter for 4,000+ builders",
+            "Blog with all Substack articles",
+          ].map((feature) => (
+            <div
+              key={feature}
+              className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+            >
+              <span className="mt-0.5 text-emerald-600">&#10003;</span>
+              {feature}
+            </div>
+          ))}
+        </div>
+        <div className="mt-8">
+          <Link
+            href="/build"
+            className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
+          >
+            Start Building for Free
+          </Link>
+        </div>
       </div>
 
-      {/* Vaults callout */}
-      <div className="mt-20 rounded-xl border border-zinc-200 p-8 text-center dark:border-zinc-800">
-        <h3 className="text-lg font-semibold">
-          Just want a finished vault? No subscription needed.
-        </h3>
-        <p className="mt-2 text-sm text-zinc-500">
-          Pre-built Obsidian wiki vaults on popular topics. One-time purchase,
-          $29 to $79.
+      {/* Paid products grid */}
+      <h2 className="mt-20 text-center text-2xl font-bold tracking-tight">
+        When you are ready for more
+      </h2>
+      <p className="mx-auto mt-3 max-w-lg text-center text-zinc-500">
+        Go deeper with workshops, pre-built vaults, or bring MrPrompts to your
+        whole team.
+      </p>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {/* Workshops */}
+        <div className="flex flex-col rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+          <h3 className="text-lg font-bold">Live Workshops</h3>
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="text-2xl font-bold">$199-$249</span>
+            <span className="text-sm text-zinc-500">per seat</span>
+          </div>
+          <p className="mt-3 text-sm text-zinc-500">
+            Small-group, hands-on sessions where you build something real with
+            AI. Not a webinar. You leave with a finished product.
+          </p>
+          <ul className="mt-6 flex-1 space-y-2.5">
+            {[
+              "Build a Knowledge Base (2 hours)",
+              "4-Layer Prompt Framework (90 min)",
+              "Live on Zoom, monthly",
+              "Limited to 20 seats",
+            ].map((f) => (
+              <li
+                key={f}
+                className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+              >
+                <span className="mt-0.5 text-emerald-600">&#10003;</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/workshops"
+            className="mt-6 inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 text-sm font-semibold text-white transition hover:bg-emerald-700"
+          >
+            View Workshops
+          </Link>
+        </div>
+
+        {/* Vaults */}
+        <div className="flex flex-col rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+          <h3 className="text-lg font-bold">Wiki Vaults</h3>
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="text-2xl font-bold">$29-$79</span>
+            <span className="text-sm text-zinc-500">one-time</span>
+          </div>
+          <p className="mt-3 text-sm text-zinc-500">
+            Pre-built Obsidian knowledge bases you can download and start using
+            immediately. Don't want to build? Just download.
+          </p>
+          <ul className="mt-6 flex-1 space-y-2.5">
+            {[
+              "50+ interlinked articles per vault",
+              "30+ verified sources",
+              "Production-ready CLAUDE.md included",
+              "Instant Obsidian .zip download",
+            ].map((f) => (
+              <li
+                key={f}
+                className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+              >
+                <span className="mt-0.5 text-emerald-600">&#10003;</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/vaults"
+            className="mt-6 inline-flex h-10 items-center justify-center rounded-lg border border-zinc-300 text-sm font-semibold transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+          >
+            Browse Vaults
+          </Link>
+        </div>
+
+        {/* Enterprise */}
+        <div className="flex flex-col rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+          <h3 className="text-lg font-bold">Enterprise Training</h3>
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="text-2xl font-bold">Custom</span>
+          </div>
+          <p className="mt-3 text-sm text-zinc-500">
+            Custom AI training for your organization. Workshops, adoption
+            roadmaps, and guided rollouts for teams of 5 to 500.
+          </p>
+          <ul className="mt-6 flex-1 space-y-2.5">
+            {[
+              "Custom workshops for your team",
+              "90-day guided AI adoption",
+              "Executive AI briefings",
+              "Measurable outcomes",
+            ].map((f) => (
+              <li
+                key={f}
+                className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+              >
+                <span className="mt-0.5 text-emerald-600">&#10003;</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/enterprise"
+            className="mt-6 inline-flex h-10 items-center justify-center rounded-lg border border-zinc-300 text-sm font-semibold transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+          >
+            Let's Talk
+          </Link>
+        </div>
+      </div>
+
+      {/* Builder waitlist */}
+      <div className="mt-20 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
+        <span className="rounded-full bg-emerald-900/50 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+          Coming Soon
+        </span>
+        <h2 className="mt-4 text-xl font-bold text-white">
+          MrPrompts Builder Membership
+        </h2>
+        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+          All four build tracks with full module content, the complete prompt
+          library, workflow templates, and new content every month. $19/month.
+          Launching soon.
         </p>
         <Link
-          href="/vaults"
-          className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+          href="/build"
+          className="mt-6 inline-flex h-12 items-center justify-center rounded-lg border border-zinc-600 px-8 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:hover:bg-zinc-700"
         >
-          Browse vaults &rarr;
+          Preview the Build Tracks
         </Link>
       </div>
     </div>
