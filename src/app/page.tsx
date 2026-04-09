@@ -1,58 +1,58 @@
 import Link from "next/link";
 
-const FEATURED_WIKIS = [
+const BUILD_TRACKS = [
   {
-    title: "AI Prompt Engineering",
+    title: "Build a Knowledge Base",
     description:
-      "50+ interlinked articles covering prompting frameworks, chain-of-thought, system prompts, and real-world patterns. Updated weekly.",
-    articles: 54,
-    sources: 38,
-    tag: "Free",
-    href: "/wikis/ai-prompt-engineering",
+      "Go from zero to a structured AI knowledge base that compounds over time. Obsidian, CLAUDE.md, and the wiki system that started it all.",
+    href: "/build/knowledge-bases",
+    tag: "Most Popular",
     tagColor: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
   },
   {
-    title: "AI Agents and Tools",
+    title: "Build Prompt Frameworks",
     description:
-      "How MCP servers, function calling, and agent architectures actually work. From basics to production patterns.",
-    articles: 42,
-    sources: 29,
-    tag: "Coming Soon",
-    href: "/wikis/ai-agents-tools",
-    tagColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
+      "Build a personal prompt library organized by role and use case. Reusable systems that get better every time you use them.",
+    href: "/build/prompts",
+    tag: "Start Here",
+    tagColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
   },
   {
-    title: "Building with LLMs",
+    title: "Build AI Workflows",
     description:
-      "RAG, fine-tuning, evaluation, deployment. Everything you need to go from API call to production application.",
-    articles: 67,
-    sources: 45,
-    tag: "Coming Soon",
-    href: "/wikis/building-with-llms",
-    tagColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
+      "Build automations that run without you. AI agents, scheduled tasks, and multi-tool pipelines for real work.",
+    href: "/build/workflows",
+    tag: "Intermediate",
+    tagColor: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400",
+  },
+  {
+    title: "Build AI-Ready Teams",
+    description:
+      "Build an AI adoption roadmap, change management playbook, and governance framework your org actually follows.",
+    href: "/build/leadership",
+    tag: "For Leaders",
+    tagColor: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400",
   },
 ];
 
-const GUIDES = [
+const BLOG_POSTS = [
   {
-    title: "Your First Wiki in 20 Minutes",
-    description: "Zero to a working LLM knowledge base. No coding required.",
-    free: true,
-    href: "/guides/your-first-wiki",
+    title: "Claude Skills Explained: How to Build and Use Them",
+    description: "What Claude Skills are, how they work, and how to build your first one.",
+    date: "Apr 5, 2026",
+    href: "https://mrprompts.substack.com/p/claude-skills-explained-how-to-build",
   },
   {
-    title: "The CLAUDE.md Masterclass",
-    description:
-      "How to write the schema file that controls your entire wiki system.",
-    free: false,
-    href: "/guides/claude-md-masterclass",
+    title: "The 4-Layer Prompt Framework Nobody Talks About",
+    description: "Four rhetorical concepts from a 2,000-year-old discipline that transform every prompt you write.",
+    date: "Mar 12, 2026",
+    href: "https://mrprompts.substack.com/p/the-4-layer-prompt-framework-nobody",
   },
   {
-    title: "Wiki Automation with Claude Code",
-    description:
-      "Slash commands, scheduled tasks, and GitHub Actions for self-building wikis.",
-    free: false,
-    href: "/guides/wiki-automation",
+    title: "Diving into Karpathy's Autoresearch",
+    description: "How AI agents can run hundreds of optimization experiments overnight while you sleep.",
+    date: "Mar 16, 2026",
+    href: "https://mrprompts.substack.com/p/diving-into-karpathys-autoresearch",
   },
 ];
 
@@ -64,159 +64,144 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-24 md:pt-32">
           <div className="max-w-2xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-emerald-600">
-              LLM Knowledge Bases
+              For Builders Who Don't Code
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-              Stop starting from scratch{" "}
-              <span className="text-zinc-400">every time you open a chat window.</span>
+              Build with AI.{" "}
+              <span className="text-zinc-400">No dev background required.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Pre-built wiki vaults, free guides, and tools to build AI
-              knowledge bases that actually compound. Inspired by Karpathy.
-              Built for everyone.
+              Frameworks, tools, and step-by-step guides for smart professionals
+              who want to build with AI, not just read about it. 4,000+ builders
+              and counting.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/guides/your-first-wiki"
+                href="/build"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700"
               >
-                Build Your First Wiki (Free)
+                Start Building
               </Link>
               <Link
-                href="/wikis"
+                href="/tools/wiki-builder"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-300 px-6 text-sm font-semibold transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
               >
-                Browse Wiki Vaults
+                Try the Wiki Builder (Free)
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* What You Can Build */}
       <section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <h2 className="text-center text-2xl font-bold tracking-tight md:text-3xl">
-            How LLM knowledge bases work
+            What will you build?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-zinc-500">
-            The system Karpathy described, packaged so you can start using it
-            today.
+            Four tracks. Each one starts with what you are going to make, not
+            what you are going to read.
           </p>
-          <div className="mt-14 grid gap-8 md:grid-cols-4">
-            {[
-              {
-                step: "01",
-                label: "Collect",
-                desc: "Drop articles, papers, and notes into a raw folder. The AI never touches your originals.",
-              },
-              {
-                step: "02",
-                label: "Compile",
-                desc: "The AI reads everything and writes a structured, interlinked wiki with summaries and concept pages.",
-              },
-              {
-                step: "03",
-                label: "Query",
-                desc: "Ask questions against your wiki. Get cited, synthesized answers. File them back in.",
-              },
-              {
-                step: "04",
-                label: "Compound",
-                desc: "Every answer enriches the wiki. Every new source deepens it. Knowledge that actually accumulates.",
-              },
-            ].map((item) => (
-              <div key={item.step}>
-                <span className="text-3xl font-bold text-emerald-600">
-                  {item.step}
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {BUILD_TRACKS.map((track) => (
+              <Link
+                key={track.title}
+                href={track.href}
+                className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
+              >
+                <span
+                  className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-medium ${track.tagColor}`}
+                >
+                  {track.tag}
                 </span>
-                <h3 className="mt-3 text-lg font-semibold">{item.label}</h3>
+                <h3 className="mt-4 text-lg font-semibold group-hover:text-emerald-600">
+                  {track.title}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                  {item.desc}
+                  {track.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Wiki Vaults */}
+      {/* How It Works */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-              Wiki Vaults
-            </h2>
-            <p className="mt-2 text-zinc-500">
-              Download a complete Obsidian vault and start querying immediately.
-            </p>
-          </div>
-          <Link
-            href="/wikis"
-            className="hidden text-sm font-semibold text-emerald-600 hover:text-emerald-700 md:block"
-          >
-            View all &rarr;
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {FEATURED_WIKIS.map((wiki) => (
-            <Link
-              key={wiki.title}
-              href={wiki.href}
-              className="group flex flex-col rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-            >
-              <span
-                className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-medium ${wiki.tagColor}`}
-              >
-                {wiki.tag}
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          How MrPrompts works
+        </h2>
+        <p className="mt-2 text-zinc-500">
+          Everything is designed around building, not watching.
+        </p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {[
+            {
+              step: "01",
+              label: "Pick what to build",
+              desc: "Choose a track: knowledge bases, prompt systems, workflows, or leadership playbooks. Each one has a clear outcome.",
+            },
+            {
+              step: "02",
+              label: "Follow the build guide",
+              desc: "Step-by-step instructions written for smart people who don't code. You will have something working by the end of each module.",
+            },
+            {
+              step: "03",
+              label: "Use the tools",
+              desc: "Our free tools (wiki builder, prompt library, workflow templates) let you build right on the site. Download and use what you make.",
+            },
+          ].map((item) => (
+            <div key={item.step}>
+              <span className="text-3xl font-bold text-emerald-600">
+                {item.step}
               </span>
-              <h3 className="mt-4 text-lg font-semibold group-hover:text-emerald-600">
-                {wiki.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">
-                {wiki.description}
+              <h3 className="mt-3 text-lg font-semibold">{item.label}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+                {item.desc}
               </p>
-              <div className="mt-4 flex gap-4 text-xs text-zinc-400">
-                <span>{wiki.articles} articles</span>
-                <span>{wiki.sources} sources</span>
-              </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Guides */}
+      {/* Latest from the blog */}
       <section className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-            Guides
-          </h2>
-          <p className="mt-2 text-zinc-500">
-            Learn the system. Build your own. Or skip straight to the vaults.
-          </p>
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+                From the blog
+              </h2>
+              <p className="mt-2 text-zinc-500">
+                Battle-tested AI workflows from the field, not the feed.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="hidden text-sm font-semibold text-emerald-600 hover:text-emerald-700 md:block"
+            >
+              All posts &rarr;
+            </Link>
+          </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {GUIDES.map((guide) => (
-              <Link
-                key={guide.title}
-                href={guide.href}
+            {BLOG_POSTS.map((post) => (
+              <a
+                key={post.title}
+                href={post.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col rounded-xl border border-zinc-200 bg-white p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-800"
               >
-                <span
-                  className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                    guide.free
-                      ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400"
-                      : "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
-                  }`}
-                >
-                  {guide.free ? "Free" : "Paid"}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold group-hover:text-emerald-600">
-                  {guide.title}
+                <span className="text-xs text-zinc-400">{post.date}</span>
+                <h3 className="mt-3 text-lg font-semibold group-hover:text-emerald-600">
+                  {post.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                  {guide.description}
+                  {post.description}
                 </p>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -226,11 +211,11 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="rounded-2xl bg-zinc-900 px-8 py-14 text-center dark:bg-zinc-800">
           <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-            Get the best AI knowledge base content, weekly.
+            Join 4,000+ builders getting smarter about AI every week.
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm text-zinc-400">
-            Free newsletter. New wiki drops, prompt engineering breakdowns, and
-            tools you can actually use. No fluff.
+            Free newsletter. New build guides, prompt frameworks, and tools you
+            can actually use. No fluff.
           </p>
           <div className="mx-auto mt-8 max-w-md">
             <iframe

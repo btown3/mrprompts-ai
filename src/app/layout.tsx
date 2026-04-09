@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MrPrompts — AI Knowledge Bases That Actually Compound",
+  title: "MrPrompts — Build with AI. No Dev Background Required.",
   description:
-    "Pre-built LLM knowledge bases, wiki vaults, and guides. Stop starting from scratch every time you open a chat window.",
+    "Frameworks, tools, and step-by-step guides for smart professionals who want to build with AI, not just read about it.",
   openGraph: {
-    title: "MrPrompts — AI Knowledge Bases That Actually Compound",
+    title: "MrPrompts — Build with AI. No Dev Background Required.",
     description:
-      "Pre-built LLM knowledge bases, wiki vaults, and guides that get smarter every time you use them.",
+      "Frameworks, tools, and step-by-step guides for smart professionals who want to build with AI.",
     url: "https://mrprompts.ai",
     siteName: "MrPrompts",
     type: "website",

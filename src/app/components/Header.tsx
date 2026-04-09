@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
@@ -12,22 +17,34 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
           <Link
-            href="/wikis"
+            href="/build"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
-            Wiki Vaults
-          </Link>
-          <Link
-            href="/guides"
-            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-          >
-            Guides
+            Build
           </Link>
           <Link
             href="/tools"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
-            Free Tools
+            Tools
+          </Link>
+          <Link
+            href="/vaults"
+            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+          >
+            Vaults
+          </Link>
+          <Link
+            href="/blog"
+            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/affiliates"
+            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+          >
+            Tools We Use
           </Link>
           <Link
             href="/pricing"
@@ -39,13 +56,106 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/guides/your-first-wiki"
+            href="/build"
             className="hidden rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:block"
           >
-            Start Free
+            Start Building
           </Link>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              {open ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <nav className="border-t border-zinc-200 bg-white px-6 pb-6 pt-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
+          <div className="flex flex-col gap-4 text-sm font-medium">
+            <Link
+              href="/build"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Build
+            </Link>
+            <Link
+              href="/tools"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Tools
+            </Link>
+            <Link
+              href="/vaults"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Vaults
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/affiliates"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Tools We Use
+            </Link>
+            <Link
+              href="/pricing"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              Pricing
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setOpen(false)}
+              className="text-zinc-600 dark:text-zinc-400"
+            >
+              About
+            </Link>
+            <Link
+              href="/build"
+              onClick={() => setOpen(false)}
+              className="inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-4 text-sm font-semibold text-white"
+            >
+              Start Building
+            </Link>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

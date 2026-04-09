@@ -3,7 +3,7 @@
 # MrPrompts.ai — Project Context
 
 ## What This Is
-MrPrompts.ai is a Next.js 16 site (Tailwind 4, TypeScript) deployed on Vercel via GitHub. It's the commercial home for the @MrPrompts brand — selling pre-built LLM knowledge base wiki vaults, paid guides, and free tools. The monetization model is inspired by Karpathy's LLM wiki workflow, productized for people who want the output without building from scratch.
+MrPrompts.ai is the builder's on-ramp to AI. A Next.js 16 site for smart non-technical professionals who want to build with AI, not just read about it. Frameworks, tools, and step-by-step guides. Two audiences: individual builders leveling up their AI skills, and enterprise leaders driving AI transformation.
 
 ## Tech Stack
 - Next.js 16 with App Router
@@ -11,52 +11,48 @@ MrPrompts.ai is a Next.js 16 site (Tailwind 4, TypeScript) deployed on Vercel vi
 - TypeScript
 - Deployed on Vercel
 - Geist + Geist Mono fonts
+- Stripe for payments
+- Resend for transactional email
+- Anthropic SDK for AI features (wiki builder)
 
 ## Brand
 - Name: MrPrompts
+- Founded by: Wayne Cederholm
 - Accent color: emerald-600
 - Tone: Smart person over coffee, not thought leader on stage. Conversational, grammatically correct, curious, honest. Short declarative sentences. No em dashes.
 - Logo text treatment: "Mr" in default color, "Prompts" in emerald-600
+- Identity: Builder, not theorist. Teach by building, not lecturing.
+
+## Audience
+1. **Solo Builders** — Smart professionals (marketing, ops, sales, finance, consulting) who want to build AI tools, workflows, and systems. Not developers. Price-sensitive, time-constrained.
+2. **Team Builders** — Managers/directors building AI capabilities into their department. Need team prompt systems, workflows, and processes.
+3. **Org Builders** — VPs, C-suite leading AI transformation. Need strategy, change management, vendor evaluation. Have budget.
 
 ## Revenue Model
-1. **Free tier (lead gen):** Browsable wikis on popular topics, "Your First Wiki in 20 Minutes" guide, CLAUDE.md template generator
-2. **Pre-built wiki vaults ($29–$79):** Complete downloadable Obsidian vaults on high-demand topics
-3. **Subscription wiki service ($15–$30/month):** Continuously maintained and updated wiki vaults
-4. **Paid guides ($19):** Deep-dive tutorials on wiki automation, CLAUDE.md writing, etc.
-5. **Substack funnel:** Free newsletter drives traffic to site, site drives email signups
-
-## Current Status (as of 2026-04-07)
-
-### Built ✅
-- `src/app/layout.tsx` — Root layout with Header, Footer, OG/Twitter meta
-- `src/app/components/Header.tsx` — Sticky nav: Wiki Vaults, Guides, Free Tools, Pricing + "Start Free" CTA
-- `src/app/components/Footer.tsx` — Links to X (@MrPrompts) and Substack
-- `src/app/page.tsx` — Homepage with: hero section, 4-step "How It Works", featured wiki vaults grid (3 cards), guides grid (3 cards), newsletter CTA
-- `src/app/wikis/page.tsx` — Wiki vaults listing (placeholder)
-- `src/app/guides/page.tsx` — Guides listing with 4 guides (1 free, 3 paid)
-
-### Not Yet Built ❌
-- `src/app/tools/page.tsx` — Free tools landing page
-- `src/app/pricing/page.tsx` — Pricing page with tiers
-- `src/app/guides/your-first-wiki/page.tsx` — The free guide (main lead magnet). Content adapted from Karpathy wiki workflow for beginners.
-- `src/app/guides/claude-md-masterclass/page.tsx` — Paid guide
-- `src/app/guides/wiki-automation/page.tsx` — Paid guide
-- `src/app/guides/two-model-validation/page.tsx` — Paid guide
-- `src/app/wikis/ai-prompt-engineering/page.tsx` — Browsable free wiki with depth limits (free users see summaries, paid users get full vault download)
-- Payment integration (Stripe or Gumroad)
-- Email capture (Substack embed or custom)
-- Mobile hamburger menu for Header
-- Actual wiki vault content (the Obsidian .zip downloads)
+1. **Free tier (lead gen):** First module of each build track, wiki builder tool, blog, newsletter
+2. **Builder ($19/month or $149/year):** All four build tracks, all tools, vault discounts, prompt library
+3. **Team ($49/seat/month):** Everything in Builder + team admin + shared prompt libraries
+4. **Enterprise (custom):** Everything + leadership track + private workshops + consulting
+5. **Vaults ($29-$79 one-time):** Pre-built downloadable Obsidian wiki vaults
+6. **Affiliates:** Curated AI tool recommendations with affiliate links
+7. **Substack funnel:** Newsletter drives traffic, site drives subscribers
 
 ## Sitemap
 ```
-/ — Homepage
-/wikis — All wiki vaults
-/wikis/[slug] — Individual wiki vault page (preview + purchase)
-/guides — All guides
-/guides/[slug] — Individual guide page
-/tools — Free tools (CLAUDE.md generator, etc.)
-/pricing — Pricing tiers
+/                              — Homepage: "Build with AI. No dev background required."
+/about                         — Wayne Cederholm. Builder, not theorist.
+/blog                          — Cards linking to Substack posts (SEO backlinks)
+/build                         — Training hub: four build tracks
+/build/knowledge-bases         — Build AI knowledge bases
+/build/prompts                 — Build prompt frameworks & libraries
+/build/workflows               — Build AI-powered workflows & automations
+/build/leadership              — Build AI-ready teams & organizations
+/tools                         — Free tools
+/tools/wiki-builder            — AI-powered wiki vault generator
+/vaults                        — Pre-built wiki vaults (downloads)
+/vaults/[slug]                 — Individual vault page
+/pricing                       — Solo / Team / Enterprise
+/affiliates                    — "Tools We Build With" — curated, opinionated
 ```
 
 ## Design Conventions
@@ -69,5 +65,7 @@ MrPrompts.ai is a Next.js 16 site (Tailwind 4, TypeScript) deployed on Vercel vi
 
 ## Content Notes
 - Do NOT include any trucking, recruiting, or transportation industry content. That's a separate business.
-- All wiki topics should be broadly popular: AI/ML, prompt engineering, crypto, real estate investing, personal productivity, content creation, coding fundamentals, health/fitness
-- First wiki vault to ship: "AI Prompt Engineering"
+- Frame everything as building, not learning. "Build a prompt library" not "Learn prompt engineering."
+- Target non-technical professionals. No jargon without explanation. No terminal commands in training content.
+- Every page should answer: "What can I build with AI today, and how do I start?"
+- Wiki vault topics should be broadly popular: AI/ML, prompt engineering, personal productivity, content creation, business strategy

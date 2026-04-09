@@ -2,13 +2,13 @@ import Link from "next/link";
 
 const TOOLS = [
   {
-    title: "CLAUDE.md Generator",
+    title: "Wiki Builder",
     description:
-      "Answer a few questions about your wiki topic and get a ready-to-use CLAUDE.md schema file. Copy, paste, start building.",
+      "Enter a topic and paste your sources. AI generates a complete Obsidian wiki vault with CLAUDE.md, interlinked articles, and folder structure.",
     tag: "Available Now",
     tagColor:
       "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
-    href: "#claude-md-generator",
+    href: "/tools/wiki-builder",
   },
   {
     title: "Wiki Health Check",

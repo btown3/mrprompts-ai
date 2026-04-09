@@ -9,30 +9,53 @@ export function Footer() {
             Mr<span className="text-emerald-600">Prompts</span>
           </span>
           <p className="mt-2 text-sm text-zinc-500">
-            AI knowledge bases that compound. Built by someone who actually uses
-            this stuff every day.
+            Build with AI. No dev background required. Frameworks, tools, and
+            guides for builders who don't code.
           </p>
         </div>
 
         <div className="flex gap-16 text-sm">
           <div className="flex flex-col gap-3">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
-              Products
+              Build
             </span>
-            <Link href="/wikis" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Wiki Vaults
+            <Link href="/build/knowledge-bases" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Knowledge Bases
             </Link>
-            <Link href="/guides" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Guides
+            <Link href="/build/prompts" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Prompts
             </Link>
+            <Link href="/build/workflows" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Workflows
+            </Link>
+            <Link href="/build/leadership" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Leadership
+            </Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              Resources
+            </span>
             <Link href="/tools" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Free Tools
+              Tools
+            </Link>
+            <Link href="/vaults" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Vaults
+            </Link>
+            <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Blog
+            </Link>
+            <Link href="/affiliates" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              Tools We Use
             </Link>
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
               Connect
             </span>
+            <Link href="/about" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
+              About
+            </Link>
             <a
               href="https://x.com/MrPrompts"
               target="_blank"
