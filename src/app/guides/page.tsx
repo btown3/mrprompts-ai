@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Guides — Free AI Building Guides and Templates",
+  description:
+    "Free guides and downloadable templates for building with AI. Knowledge bases, prompt engineering, workflows, change management, and team assessment.",
+  alternates: { canonical: "https://www.mrprompts.ai/guides" },
+};
 
 const GUIDES = [
   {

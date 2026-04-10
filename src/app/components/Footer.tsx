@@ -19,59 +19,29 @@ export function Footer() {
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
               Build
             </span>
-            <Link href="/build/knowledge-bases" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Knowledge Bases
-            </Link>
-            <Link href="/build/prompts" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Prompts
-            </Link>
-            <Link href="/build/workflows" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Workflows
-            </Link>
-            <Link href="/build/leadership" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Leadership
-            </Link>
+            <Link href="/build/knowledge-bases" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Knowledge Bases</Link>
+            <Link href="/build/prompts" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Prompts</Link>
+            <Link href="/build/workflows" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Workflows</Link>
+            <Link href="/build/leadership" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Leadership</Link>
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
-              Resources
+              Learn
             </span>
-            <Link href="/tools" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Tools
-            </Link>
-            <Link href="/vaults" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Vaults
-            </Link>
-            <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Blog
-            </Link>
-            <Link href="/affiliates" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              Tools We Use
-            </Link>
+            <Link href="/guides" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Guides</Link>
+            <Link href="/products" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Products</Link>
+            <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Blog</Link>
+            <Link href="/affiliates" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Tools We Use</Link>
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100">
               Connect
             </span>
-            <Link href="/about" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">
-              About
-            </Link>
-            <a
-              href="https://x.com/MrPrompts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
-            >
-              X / Twitter
-            </a>
-            <a
-              href="https://mrprompts.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
-            >
-              Substack
-            </a>
+            <Link href="/about" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">About</Link>
+            <Link href="/workshops" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Workshops</Link>
+            <Link href="/enterprise" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Enterprise</Link>
+            <a href="https://x.com/MrPrompts" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">X / Twitter</a>
+            <a href="https://mrprompts.substack.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white">Substack</a>
           </div>
         </div>
       </div>

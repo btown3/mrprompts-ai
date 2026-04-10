@@ -23,22 +23,16 @@ export function Header() {
             Build
           </Link>
           <Link
-            href="/tools"
-            className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-          >
-            Tools
-          </Link>
-          <Link
             href="/products"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
             Products
           </Link>
           <Link
-            href="/blog"
+            href="/guides"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
-            Blog
+            Learn
           </Link>
           <Link
             href="/workshops"
@@ -68,7 +62,6 @@ export function Header() {
             Start Building
           </Link>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
             className="flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
@@ -82,90 +75,28 @@ export function Header() {
               strokeWidth={2}
             >
               {open ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <nav className="border-t border-zinc-200 bg-white px-6 pb-6 pt-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
           <div className="flex flex-col gap-4 text-sm font-medium">
-            <Link
-              href="/build"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Build
-            </Link>
-            <Link
-              href="/tools"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Tools
-            </Link>
-            <Link
-              href="/products"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Products
-            </Link>
-            <Link
-              href="/blog"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/workshops"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Workshops
-            </Link>
-            <Link
-              href="/enterprise"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Enterprise
-            </Link>
-            <Link
-              href="/pricing"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setOpen(false)}
-              className="text-zinc-600 dark:text-zinc-400"
-            >
-              About
-            </Link>
-            <Link
-              href="/build"
-              onClick={() => setOpen(false)}
-              className="inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-4 text-sm font-semibold text-white"
-            >
-              Start Building
-            </Link>
+            <Link href="/build" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Build</Link>
+            <Link href="/products" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Products</Link>
+            <Link href="/guides" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Guides</Link>
+            <Link href="/blog" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Blog</Link>
+            <Link href="/workshops" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Workshops</Link>
+            <Link href="/enterprise" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Enterprise</Link>
+            <Link href="/pricing" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Pricing</Link>
+            <Link href="/about" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">About</Link>
+            <Link href="/affiliates" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Tools We Use</Link>
+            <Link href="/build" onClick={() => setOpen(false)} className="inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-4 text-sm font-semibold text-white">Start Building</Link>
           </div>
         </nav>
       )}

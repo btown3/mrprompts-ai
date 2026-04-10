@@ -136,6 +136,20 @@ export const CATALOG: Product[] = [
     items: "Rubric + survey",
   },
 
+  // ── Vaults ───────────────────────────────────────────────
+  {
+    slug: "ai-prompt-engineering-vault",
+    name: "AI Prompt Engineering Vault",
+    description:
+      "50+ interlinked articles covering prompting frameworks, chain-of-thought, system prompts, and real-world patterns. Complete knowledge base with CLAUDE.md schema. Updated weekly.",
+    category: "templates",
+    price: 4900,
+    format: "Markdown",
+    tag: "Popular",
+    href: "/guides/your-first-wiki",
+    items: "54 articles, 38 sources",
+  },
+
   // ── Paid Guides ───────────────────────────────────────────
   {
     slug: "wiki-automation",
