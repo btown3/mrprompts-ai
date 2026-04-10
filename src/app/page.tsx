@@ -71,15 +71,6 @@ export default function Home() {
             and step-by-step guides to actually build with AI. No dev
             background required.
           </p>
-          <p className="mt-4 text-sm text-zinc-400">
-            Written by{" "}
-            <Link
-              href="/about"
-              className="font-medium text-emerald-600 hover:text-emerald-700"
-            >
-              Wayne Cederholm
-            </Link>
-          </p>
 
           {/* Subscribe — prominent, right in the hero */}
           <div className="mx-auto mt-10 max-w-md">
