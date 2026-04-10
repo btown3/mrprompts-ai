@@ -32,7 +32,7 @@ export function Header() {
             href="/products"
             className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
           >
-            Vaults
+            Products
           </Link>
           <Link
             href="/blog"

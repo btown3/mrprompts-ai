@@ -1,94 +1,85 @@
 import Link from "next/link";
 
-const TOOLS = [
-  {
-    title: "Wiki Builder",
-    description:
-      "Enter a topic and paste your sources. AI generates a complete Obsidian wiki vault with CLAUDE.md, interlinked articles, and folder structure.",
-    tag: "Available Now",
-    tagColor:
-      "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
-    href: "/tools/wiki-builder",
-  },
-  {
-    title: "Wiki Health Check",
-    description:
-      "Paste your CLAUDE.md and get a diagnostic. Missing fields, weak taxonomy, orphaned categories. Fix it before it compounds errors.",
-    tag: "Coming Soon",
-    tagColor:
-      "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
-    href: "#",
-  },
-  {
-    title: "Source Quality Scorer",
-    description:
-      "Drop in a URL or paste text. Get a score for how useful it will be as a wiki source. Saves you from polluting your vault with noise.",
-    tag: "Coming Soon",
-    tagColor:
-      "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
-    href: "#",
-  },
-];
-
 export default function ToolsPage() {
   return (
-    <>
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Free Tools
-        </h1>
-        <p className="mt-3 max-w-xl text-zinc-500">
-          Useful things you can use right now. No account required, no email
-          gate. Just tools that help you build better knowledge bases.
-        </p>
+    <div className="mx-auto max-w-6xl px-6 py-20">
+      <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+        Free Tools
+      </h1>
+      <p className="mt-3 max-w-xl text-zinc-500">
+        Build with AI right here. No account required, no email gate, no
+        coding. Just tools that work.
+      </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {TOOLS.map((tool) => (
-            <div
-              key={tool.title}
-              className="flex flex-col rounded-xl border border-zinc-200 p-6 dark:border-zinc-800"
-            >
-              <span
-                className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-medium ${tool.tagColor}`}
-              >
-                {tool.tag}
-              </span>
-              <h2 className="mt-4 text-lg font-semibold">{tool.title}</h2>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-500">
-                {tool.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="mt-12">
+        <Link
+          href="/tools/wiki-builder"
+          className="group flex flex-col rounded-xl border border-zinc-200 p-8 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+        >
+          <span className="w-fit rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+            Available Now
+          </span>
+          <h2 className="mt-4 text-xl font-bold group-hover:text-emerald-600">
+            Wiki Builder
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+            Enter a topic and paste your source materials. Our AI reads your
+            sources, generates a CLAUDE.md schema, and writes 3-5 interlinked
+            wiki articles. Download the complete knowledge base and start using
+            it with any AI tool.
+          </p>
+          <span className="mt-4 text-sm font-semibold text-emerald-600">
+            Try it now &rarr;
+          </span>
+        </Link>
       </div>
 
-      {/* CLAUDE.md Generator */}
-      <section
-        id="claude-md-generator"
-        className="border-y border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50"
-      >
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-            CLAUDE.md Generator
-          </h2>
-          <p className="mt-3 max-w-xl text-zinc-500">
-            Fill in the fields below. Get a complete CLAUDE.md schema file you
-            can drop into any Obsidian vault.
-          </p>
-          <div className="mt-10 rounded-xl border border-dashed border-zinc-300 p-12 text-center dark:border-zinc-700">
-            <p className="text-lg font-semibold">Interactive generator loading soon.</p>
-            <p className="mt-2 text-sm text-zinc-500">
-              In the meantime, check out our free guide for a manual approach.
+      {/* Build tracks CTA */}
+      <div className="mt-12 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-lg font-semibold">More ways to build</h2>
+        <p className="mt-2 text-sm text-zinc-500">
+          The Build Tracks give you downloadable starter kits, prompt libraries,
+          workflow blueprints, and leadership playbooks. All free.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/build/knowledge-bases"
+            className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+          >
+            <p className="text-sm font-semibold">Knowledge Base Starter Kit</p>
+            <p className="mt-1 text-xs text-zinc-500">
+              Folder structure + 7 prompts. Works with any AI.
             </p>
-            <Link
-              href="/guides/your-first-wiki"
-              className="mt-6 inline-flex rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
-            >
-              Read the free guide
-            </Link>
-          </div>
+          </Link>
+          <Link
+            href="/build/prompts"
+            className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+          >
+            <p className="text-sm font-semibold">Prompt Library Builder</p>
+            <p className="mt-1 text-xs text-zinc-500">
+              Pick your roles. Download customized prompts.
+            </p>
+          </Link>
+          <Link
+            href="/build/workflows"
+            className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+          >
+            <p className="text-sm font-semibold">Workflow Blueprints</p>
+            <p className="mt-1 text-xs text-zinc-500">
+              Pre-built AI automations with step-by-step setup.
+            </p>
+          </Link>
+          <Link
+            href="/build/leadership"
+            className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+          >
+            <p className="text-sm font-semibold">Leadership Kit</p>
+            <p className="mt-1 text-xs text-zinc-500">
+              AI adoption roadmaps + team assessments.
+            </p>
+          </Link>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
