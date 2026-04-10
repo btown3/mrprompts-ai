@@ -44,6 +44,31 @@ export const CATALOG: Product[] = [
     items: "20+ prompts",
   },
 
+  {
+    slug: "sales-prompt-pack",
+    name: "Sales Prompt Pack",
+    description:
+      "15 prompts for every stage of the sales cycle. Discovery, proposals, follow-ups, objections, outreach, pipeline, and strategy. Each prompt is detailed and role-specific.",
+    category: "prompts",
+    price: 0,
+    format: "Markdown",
+    tag: "Free",
+    href: "/products/sales-prompt-pack",
+    items: "15 prompts",
+  },
+  {
+    slug: "marketing-prompt-pack",
+    name: "Marketing Prompt Pack",
+    description:
+      "15 prompts for campaigns, content, email sequences, social media, landing pages, ads, PR, and analytics. Built for marketers who want AI output they'd actually use.",
+    category: "prompts",
+    price: 0,
+    format: "Markdown",
+    tag: "Free",
+    href: "/products/marketing-prompt-pack",
+    items: "15 prompts",
+  },
+
   // ── Templates ────────────────────────────────────────────
   {
     slug: "claude-md-masterclass-template",
