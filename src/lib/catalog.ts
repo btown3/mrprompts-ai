@@ -43,30 +43,6 @@ export const CATALOG: Product[] = [
     href: "/guides/prompt-library-starter",
     items: "20+ prompts",
   },
-  {
-    slug: "sales-prompt-pack",
-    name: "Sales Prompt Pack",
-    description:
-      "Discovery call prep, proposal writing, follow-up sequences, and objection handling. Built for sales professionals, not salespeople who happen to use AI.",
-    category: "prompts",
-    price: 0,
-    format: "PDF + Markdown",
-    tag: "Free",
-    href: "/guides/prompt-library-starter",
-    items: "6 prompts",
-  },
-  {
-    slug: "marketing-prompt-pack",
-    name: "Marketing Prompt Pack",
-    description:
-      "Campaign briefs, competitor analysis, email sequences, and content calendars. Prompts that understand marketing context, not just keywords.",
-    category: "prompts",
-    price: 0,
-    format: "PDF + Markdown",
-    tag: "Free",
-    href: "/guides/prompt-library-starter",
-    items: "6 prompts",
-  },
 
   // ── Templates ────────────────────────────────────────────
   {
@@ -135,18 +111,30 @@ export const CATALOG: Product[] = [
     items: "Rubric + survey",
   },
 
-  // ── Bundles ──────────────────────────────────────────────
+  // ── Paid Guides ───────────────────────────────────────────
   {
-    slug: "builder-starter-bundle",
-    name: "Builder Starter Bundle",
+    slug: "wiki-automation",
+    name: "Wiki Automation with Claude Code",
     description:
-      "Everything you need to start building with AI: the prompt library, CLAUDE.md template, workflow blueprints, and your first wiki guide. All in one download.",
-    category: "bundles",
-    price: 0,
-    format: "Multiple",
-    tag: "Free",
-    href: "/guides/your-first-wiki",
-    items: "30+ resources",
+      "Five levels of automation from manual prompting to fully autonomous wiki agents. Includes slash command configs, GitHub Action files, and a starter Agent Skill.",
+    category: "workflows",
+    price: 1900,
+    format: "Online Guide",
+    tag: "Paid",
+    href: "/guides/wiki-automation",
+    items: "5 levels",
+  },
+  {
+    slug: "two-model-validation",
+    name: "The Two-Model Validation Pattern",
+    description:
+      "How to use two different AI models to prevent compounding hallucinations in high-stakes knowledge bases. Implementation guide with code examples.",
+    category: "templates",
+    price: 1900,
+    format: "Online Guide",
+    tag: "Paid",
+    href: "/guides/two-model-validation",
+    items: "Full guide",
   },
 ];
 
@@ -158,7 +146,6 @@ export const CATEGORIES = [
   { key: "templates", label: "Templates" },
   { key: "workflows", label: "Workflows" },
   { key: "playbooks", label: "Playbooks" },
-  { key: "bundles", label: "Bundles" },
 ] as const;
 
 export function formatPrice(cents: number): string {
@@ -171,5 +158,4 @@ export const CATEGORY_COLORS: Record<string, string> = {
   templates: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400",
   workflows: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400",
   playbooks: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400",
-  bundles: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400",
 };
