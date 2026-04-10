@@ -1,108 +1,130 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
-const MODULES = [
-  {
-    number: "01",
-    title: "Your first AI workflow",
-    description:
-      "Connect an AI tool to a trigger and an output. By the end of this module you will have a working automation that does useful work without you touching it.",
-    free: true,
-  },
-  {
-    number: "02",
-    title: "Build with AI agents",
-    description:
-      "What agents actually are, how they differ from chatbots, and how to set one up to handle real tasks. From OpenClaw to Claude Skills to custom setups.",
-    free: false,
-  },
-  {
-    number: "03",
-    title: "Build automated systems with Claude Skills",
-    description:
-      "Claude Code skills that monitor, generate, and maintain systems on your behalf. The closest thing to a personal AI employee that exists today.",
-    free: false,
-  },
-  {
-    number: "04",
-    title: "Build multi-tool AI pipelines",
-    description:
-      "Chain multiple AI tools together. Research with Perplexity, write with Claude, validate with GPT, publish with Zapier. Build pipelines that handle complex multi-step work.",
-    free: false,
-  },
+const WORKFLOWS = [
+  { id: "morning-brief", name: "Morning News Brief", time: "Saves 30 min/day", tools: "RSS + Claude + Email", description: "Automatically summarize industry news every morning before your inbox.", selected: false },
+  { id: "meeting-notes", name: "Meeting Notes to Actions", time: "Saves 20 min/meeting", tools: "Transcription + Claude + Slack", description: "Every meeting auto-generates summary, decisions, and action items.", selected: false },
+  { id: "lead-research", name: "Inbound Lead Research", time: "Saves 20 min/lead", tools: "Form + Perplexity + Claude + CRM", description: "Auto-research companies when leads fill out a form.", selected: false },
+  { id: "client-report", name: "Weekly Client Report", time: "Saves 2-3 hours/week", tools: "Sheets + Claude + Docs", description: "Pull metrics and generate formatted client reports automatically.", selected: false },
+  { id: "content-repurpose", name: "Content Repurposing", time: "Saves 3-4 hours/piece", tools: "Blog + Claude + Social tools", description: "Turn one blog post into 5 social posts, an email, and a deck outline.", selected: false },
+  { id: "competitive-intel", name: "Competitive Intelligence", time: "Saves 1-2 hours/week", tools: "Alerts + Perplexity + Claude + Notion", description: "Auto-track competitor moves and maintain a living intel doc.", selected: false },
+  { id: "kb-update", name: "Weekly Knowledge Base Update", time: "Saves 2 hours/week", tools: "RSS + Claude + Obsidian/GitHub", description: "Auto-find new sources and update your wiki on a schedule.", selected: false },
 ];
 
+const WORKFLOW_DETAILS: Record<string, { steps: string[]; whenToUse: string }> = {
+  "morning-brief": { steps: ["Set up RSS feeds or Google Alerts for your industry", "Every morning at 6am, automation collects new articles", "Claude generates a 5-bullet summary: what happened, why it matters, what to watch", "Summary emailed to you before your first meeting"], whenToUse: "Any professional who needs to stay current without reading 10 articles every morning." },
+  "meeting-notes": { steps: ["Meeting recorded and transcribed (Otter.ai, Fireflies, etc.)", "Transcript sent to Claude: 'Generate summary, decisions, and action items with owners'", "Formatted summary posted to Slack channel", "Action items created as tasks in your project management tool"], whenToUse: "Any recurring meeting where action items get lost. Especially leadership and cross-functional meetings." },
+  "lead-research": { steps: ["New form submission triggers the workflow", "Perplexity researches the company: what they do, size, recent news", "Claude generates a one-page brief with talking points for your product", "Brief attached to lead record in CRM, sales rep notified"], whenToUse: "Inbound lead flow where sales needs context before the first call." },
+  "client-report": { steps: ["Weekly trigger pulls latest metrics from your spreadsheet", "Claude generates report: executive summary, metrics with MoM comparison, wins, concerns, next steps", "Report created in Google Docs with consistent formatting", "Draft email prepared with report link for your review"], whenToUse: "Any recurring client or stakeholder report. Especially valuable for agencies." },
+  "content-repurpose": { steps: ["Start with a published blog post or long-form piece", "Claude extracts 5 key insights and creates: LinkedIn post per insight, Twitter thread, email version, slide deck outline", "Each piece formatted for its platform", "Review and schedule through your social tool"], whenToUse: "Anyone publishing long-form content who wants to maximize distribution." },
+  "competitive-intel": { steps: ["Google Alerts monitors competitor names and industry terms", "Perplexity enriches alerts with context", "Claude categorizes: product launch, pricing change, hiring, partnership, funding", "Categorized updates added to Notion database", "Monthly: Claude generates competitive landscape summary"], whenToUse: "Any team that needs to track competitors but nobody has time to do it consistently." },
+  "kb-update": { steps: ["Weekly schedule triggers at 6am Monday", "Collect new articles from RSS feeds and Google Alerts", "Claude evaluates: does this update existing articles or warrant new ones?", "Claude generates or updates wiki articles following your CLAUDE.md schema", "Changes committed, you get a summary email"], whenToUse: "Any knowledge base you want to keep current without manual effort." },
+};
+
+function downloadWorkflows(selected: string[]) {
+  const lines: string[] = [
+    "# My AI Workflow Blueprints",
+    "## Generated by MrPrompts — https://mrprompts.ai\n",
+    "---\n",
+  ];
+
+  for (const id of selected) {
+    const wf = WORKFLOWS.find((w) => w.id === id)!;
+    const details = WORKFLOW_DETAILS[id];
+    lines.push(`## ${wf.name}`);
+    lines.push(`*${wf.description}*`);
+    lines.push(`**Time saved:** ${wf.time}`);
+    lines.push(`**Tools:** ${wf.tools}\n`);
+    lines.push("**Steps:**");
+    details.steps.forEach((s, i) => lines.push(`${i + 1}. ${s}`));
+    lines.push(`\n**When to use:** ${details.whenToUse}\n`);
+    lines.push("---\n");
+  }
+
+  const blob = new Blob([lines.join("\n")], { type: "text/markdown" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "ai-workflow-blueprints-mrprompts.md";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function WorkflowsTrackPage() {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [downloaded, setDownloaded] = useState(false);
+
+  function toggle(id: string) {
+    setSelected((prev) => prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]);
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-20">
-      <Link
-        href="/build"
-        className="text-sm text-emerald-600 hover:text-emerald-700"
-      >
-        &larr; All tracks
-      </Link>
+      <Link href="/build" className="text-sm text-emerald-600 hover:text-emerald-700">&larr; All tracks</Link>
 
       <div className="mt-6">
-        <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-          Intermediate
-        </span>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-          Build AI Workflows
-        </h1>
-        <p className="mt-3 text-lg text-zinc-500">
-          Build automations that run without you. By the end, you will have
-          working AI agents, scheduled tasks, and multi-tool pipelines that
-          handle real work while you focus on what matters.
-        </p>
+        <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">Intermediate</span>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">Build AI Workflows</h1>
+        <p className="mt-3 text-lg text-zinc-500">Pick the workflows you need. Get step-by-step blueprints with tools, setup instructions, and time estimates. Download and build them this week.</p>
       </div>
 
-      <div className="mt-10 rounded-xl border border-zinc-300 bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-900">
-        <h2 className="font-semibold">What you will have when you are done</h2>
-        <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-          <li>A working AI automation that runs on a schedule</li>
-          <li>An AI agent handling a real task in your workflow</li>
-          <li>Claude Skills configured for your specific needs</li>
-          <li>A multi-tool pipeline chaining 3+ AI services together</li>
-        </ul>
-      </div>
-
-      <div className="mt-12 space-y-6">
-        {MODULES.map((mod) => (
-          <div
-            key={mod.number}
-            className="flex gap-4 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800"
-          >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-sm font-bold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-              {mod.number}
-            </span>
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="font-semibold">{mod.title}</h3>
-                {mod.free && (
-                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    Free
+      {!downloaded ? (
+        <>
+          <div className="mt-10">
+            <h2 className="text-lg font-bold">Which workflows do you need?</h2>
+            <p className="mt-2 text-sm text-zinc-500">Select the ones relevant to your work. Your download will include detailed blueprints for each.</p>
+            <div className="mt-6 space-y-3">
+              {WORKFLOWS.map((wf) => (
+                <button
+                  key={wf.id}
+                  onClick={() => toggle(wf.id)}
+                  className={`flex w-full items-center justify-between rounded-xl border-2 p-4 text-left transition ${
+                    selected.includes(wf.id)
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/10"
+                      : "border-zinc-200 hover:border-emerald-300 dark:border-zinc-800"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="font-semibold">{wf.name}</span>
+                      <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">{wf.time}</span>
+                    </div>
+                    <p className="mt-1 text-xs text-zinc-500">{wf.description}</p>
+                    <p className="mt-1 text-xs text-zinc-400">Tools: {wf.tools}</p>
+                  </div>
+                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs ${selected.includes(wf.id) ? "bg-emerald-600 text-white" : "border border-zinc-300 dark:border-zinc-600"}`}>
+                    {selected.includes(wf.id) ? "✓" : ""}
                   </span>
-                )}
-              </div>
-              <p className="mt-1 text-sm leading-relaxed text-zinc-500">
-                {mod.description}
-              </p>
+                </button>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
 
-      <div className="mt-12 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
-        <h2 className="text-xl font-bold text-white">Start with Module 1 for free.</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-          Unlock all modules across every track for $19/month.
-        </p>
-        <Link
-          href="/pricing"
-          className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
-        >
-          See Pricing
-        </Link>
-      </div>
+          {selected.length > 0 && (
+            <div className="mt-8">
+              <button
+                onClick={() => { downloadWorkflows(selected); setDownloaded(true); }}
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              >
+                Download {selected.length} Blueprint{selected.length > 1 ? "s" : ""} (Free)
+              </button>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="mt-10">
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-8 dark:border-emerald-800 dark:bg-emerald-900/20">
+            <h2 className="text-xl font-bold text-emerald-800 dark:text-emerald-400">Your blueprints are downloaded!</h2>
+            <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-500">{selected.length} workflow blueprint{selected.length > 1 ? "s" : ""} with tools, steps, and setup instructions.</p>
+          </div>
+          <div className="mt-6 flex gap-3">
+            <button onClick={() => setDownloaded(false)} className="text-sm font-medium text-emerald-600 hover:text-emerald-700">Download more blueprints</button>
+            <Link href="/learn/ai-workflow-examples" className="text-sm font-medium text-emerald-600 hover:text-emerald-700">See all workflow examples &rarr;</Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
