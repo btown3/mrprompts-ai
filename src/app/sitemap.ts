@@ -41,6 +41,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/learn/best-ai-tools-for-business`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/learn/ai-workflow-examples`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/learn/ai-team-assessment`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/sales-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/research-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/onboarding-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/learn/executive-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
     // Legal
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },

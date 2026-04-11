@@ -7,13 +7,13 @@ const WORKSHOPS = [
   {
     title: "Build Your AI Knowledge Base in 2 Hours",
     description:
-      "Walk in with a topic. Walk out with a working Obsidian vault, a CLAUDE.md schema, and 5+ interlinked wiki articles. Live, hands-on, no coding.",
+      "Walk in with a topic. Walk out with a working knowledge base, a CLAUDE.md schema, and 5+ interlinked wiki articles. Live, hands-on, no coding.",
     price: "$249",
     duration: "2 hours",
     format: "Live on Zoom",
     frequency: "Monthly",
     whatYouBuild: [
-      "A complete Obsidian vault with folder structure",
+      "A complete knowledge base with folder structure",
       "A production-ready CLAUDE.md schema",
       "5+ interlinked wiki articles from your sources",
       "An automation plan to keep your wiki growing",

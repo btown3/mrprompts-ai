@@ -13,7 +13,7 @@ const WORKFLOWS = [
   { id: "client-report", name: "Weekly Client Report", time: "Saves 2-3 hours/week", tools: "Sheets + Claude + Docs", description: "Pull metrics and generate formatted client reports automatically.", selected: false },
   { id: "content-repurpose", name: "Content Repurposing", time: "Saves 3-4 hours/piece", tools: "Blog + Claude + Social tools", description: "Turn one blog post into 5 social posts, an email, and a deck outline.", selected: false },
   { id: "competitive-intel", name: "Competitive Intelligence", time: "Saves 1-2 hours/week", tools: "Alerts + Perplexity + Claude + Notion", description: "Auto-track competitor moves and maintain a living intel doc.", selected: false },
-  { id: "kb-update", name: "Weekly Knowledge Base Update", time: "Saves 2 hours/week", tools: "RSS + Claude + Obsidian/GitHub", description: "Auto-find new sources and update your wiki on a schedule.", selected: false },
+  { id: "kb-update", name: "Weekly Knowledge Base Update", time: "Saves 2 hours/week", tools: "RSS + Claude + your wiki (cloud sync or GitHub)", description: "Auto-find new sources and update your wiki on a schedule.", selected: false },
 ];
 
 const WORKFLOW_DETAILS: Record<string, { steps: string[]; whenToUse: string }> = {

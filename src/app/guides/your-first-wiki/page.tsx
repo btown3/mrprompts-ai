@@ -3,9 +3,9 @@ import Link from "next/link";
 const STEPS = [
   {
     number: "1",
-    title: "Install Obsidian",
+    title: "Choose your tool",
     content:
-      "Download Obsidian (free) from obsidian.md. Create a new vault. Name it whatever you want. This vault is where your wiki lives.",
+      "Pick any note-taking app you already use. Notion (recommended for most people), Google Docs (simplest option), or a folder of text files on your computer. Create a new workspace or folder. Name it whatever you want. This is where your wiki lives.",
   },
   {
     number: "2",
@@ -17,7 +17,7 @@ const STEPS = [
     number: "3",
     title: "Create your folder structure",
     content:
-      'Make three folders inside your vault: "Sources" for raw material, "Wiki" for compiled articles, and "Queries" for questions and answers. That is the entire architecture.',
+      'Make three folders inside your workspace: "Sources" for raw material, "Wiki" for compiled articles, and "Queries" for questions and answers. That is the entire architecture.',
   },
   {
     number: "4",
@@ -29,13 +29,13 @@ const STEPS = [
     number: "5",
     title: "Write your CLAUDE.md",
     content:
-      "Create a CLAUDE.md file in the vault root. This tells the AI what your wiki is about, how to structure articles, and what format to use. We have a template below.",
+      "Create a CLAUDE.md file in your workspace root. This tells the AI what your wiki is about, how to structure articles, and what format to use. We have a template below.",
   },
   {
     number: "6",
     title: "Generate your first wiki article",
     content:
-      'Open Claude (or any LLM with file access). Point it at your vault. Ask: "Read the sources and write a wiki article about [your topic] following the schema in CLAUDE.md." Review, edit, save to the Wiki folder.',
+      'Open Claude (or any LLM with file access). Point it at your workspace. Ask: "Read the sources and write a wiki article about [your topic] following the schema in CLAUDE.md." Review, edit, save to the Wiki folder.',
   },
   {
     number: "7",
@@ -59,8 +59,8 @@ export default function YourFirstWikiPage() {
           Your First Wiki in 20 Minutes
         </h1>
         <p className="mt-3 text-lg text-zinc-500">
-          Go from zero to a working LLM knowledge base with nothing but Obsidian
-          and a Claude subscription. No coding, no terminal, no nonsense.
+          Go from zero to a working LLM knowledge base with nothing but a
+          note-taking app and an AI assistant. No coding, no terminal, no nonsense.
         </p>
       </div>
 
@@ -100,7 +100,7 @@ export default function YourFirstWikiPage() {
       <section className="mb-16">
         <h2 className="text-xl font-bold">Starter CLAUDE.md template</h2>
         <p className="mt-3 text-sm text-zinc-500">
-          Copy this into a file called CLAUDE.md in your vault root. Replace the
+          Copy this into a file called CLAUDE.md in your workspace root. Replace the
           bracketed fields with your topic.
         </p>
         <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-6 text-sm leading-relaxed text-zinc-300">

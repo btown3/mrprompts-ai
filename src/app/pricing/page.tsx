@@ -122,7 +122,7 @@ export default function PricingPage() {
             <span className="text-sm text-zinc-500">one-time</span>
           </div>
           <p className="mt-3 text-sm text-zinc-500">
-            Pre-built Obsidian knowledge bases you can download and start using
+            Pre-built knowledge bases you can download and start using
             immediately. Don't want to build? Just download.
           </p>
           <ul className="mt-6 flex-1 space-y-2.5">
@@ -130,7 +130,7 @@ export default function PricingPage() {
               "50+ interlinked articles per vault",
               "30+ verified sources",
               "Production-ready CLAUDE.md included",
-              "Instant Obsidian .zip download",
+              "Instant download (.zip)",
             ].map((f) => (
               <li
                 key={f}
@@ -198,7 +198,7 @@ export default function PricingPage() {
               {
                 question: "What do I get in the live workshops?",
                 answer:
-                  "You join a small group on Zoom with Wayne Cederholm and build something real together. The Knowledge Base workshop ($249) gives you a working Obsidian vault with 5+ articles in 2 hours. The Prompt Framework workshop ($199) gives you 10+ custom prompts for your role in 90 minutes. Not a lecture. Hands-on building.",
+                  "You join a small group on Zoom with Wayne Cederholm and build something real together. The Knowledge Base workshop ($249) gives you a working knowledge base with 5+ articles in 2 hours. The Prompt Framework workshop ($199) gives you 10+ custom prompts for your role in 90 minutes. Not a lecture. Hands-on building.",
               },
               {
                 question: "How does enterprise training work?",

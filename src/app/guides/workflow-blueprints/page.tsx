@@ -44,13 +44,13 @@ const BLUEPRINTS = [
   {
     name: "Weekly Knowledge Base Update",
     description: "Automatically find new sources, compile articles, and update your wiki.",
-    tools: "RSS/Google Alerts + Claude + Obsidian (via GitHub)",
+    tools: "RSS/Google Alerts + Claude + your knowledge base (via cloud sync or GitHub)",
     steps: [
       "Trigger: Weekly schedule (every Monday at 6am)",
       "Step 1: Collect new articles from RSS feeds and Google Alerts on your wiki topic",
       "Step 2: Claude reads each source and decides: 'Does this contain information that would improve or update an existing wiki article, or warrant a new one?'",
       "Step 3: For each relevant source, Claude generates or updates wiki articles following your CLAUDE.md schema",
-      "Step 4: Changes are committed to your GitHub repo (which syncs to Obsidian)",
+      "Step 4: Changes are saved to your knowledge base (via cloud sync or GitHub)",
       "Step 5: You get a summary email: 'This week: 2 articles updated, 1 new article created'",
     ],
     whenToUse: "Any knowledge base you want to keep current without manual effort. The compound effect kicks in after 4-6 weeks.",

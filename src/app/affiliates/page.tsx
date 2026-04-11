@@ -28,16 +28,16 @@ const CATEGORIES = [
     description: "Where your AI-built knowledge lives and compounds.",
     tools: [
       {
-        name: "Obsidian",
-        by: "Obsidian",
-        why: "The best tool for wiki-style knowledge bases. Local-first, markdown-based, and the foundation of the MrPrompts vault system.",
-        href: "https://obsidian.md",
-      },
-      {
         name: "Notion",
         by: "Notion Labs",
-        why: "Best for teams who need collaboration features. Not as powerful for wiki-style linking, but great for shared dashboards and docs.",
+        why: "The most accessible tool for AI knowledge bases. Real-time collaboration, clean interface, and easy to start with. Our recommendation for most people.",
         href: "https://notion.so",
+      },
+      {
+        name: "Obsidian",
+        by: "Obsidian",
+        why: "For power users who want local-first, markdown-based control. Bidirectional linking and a plugin ecosystem make it ideal for advanced wiki-style knowledge bases.",
+        href: "https://obsidian.md",
       },
     ],
   },

@@ -95,7 +95,7 @@ export default function WikiBuilderPage() {
       </h1>
       <p className="mt-3 text-zinc-500">
         Enter a topic and paste your source materials. We will generate a
-        complete Obsidian wiki vault with a CLAUDE.md schema and interlinked
+        complete AI knowledge base with a CLAUDE.md schema and interlinked
         articles.
       </p>
 

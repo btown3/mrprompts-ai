@@ -44,7 +44,7 @@ export default function AIKnowledgeBaseGuidePage() {
             <FolderStructure />
           </div>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">What you need to get started</h2>
-          <p className="mt-3"><strong>A note-taking tool.</strong> Obsidian is the power-user choice (free, local, markdown-based). Notion works for teams. Google Docs works in a pinch. The tool matters less than the structure.</p>
+          <p className="mt-3"><strong>A note-taking tool.</strong> Any note-taking app works: Notion, Google Docs, Apple Notes, or a simple folder of markdown files. The tool matters less than the structure.</p>
           <p className="mt-3"><strong>An AI assistant.</strong> Claude, ChatGPT, or any model that can read files. Claude is our recommendation because it handles long documents well and produces more nuanced wiki articles.</p>
           <p className="mt-3"><strong>A CLAUDE.md schema.</strong> The instruction file that tells your AI how to build and maintain the knowledge base. Our <Link href="/learn/what-is-claude-md" className="text-emerald-600 hover:text-emerald-700">CLAUDE.md explainer</Link> covers this in detail. Our <Link href="/guides/claude-md-masterclass" className="text-emerald-600 hover:text-emerald-700">Masterclass</Link> gives you a production-ready template.</p>
           <p className="mt-3"><strong>3-5 source documents.</strong> Articles, notes, or research on your topic. Start small. You can always add more.</p>

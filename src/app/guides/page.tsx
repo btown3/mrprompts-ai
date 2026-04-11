@@ -12,7 +12,7 @@ const GUIDES = [
   {
     title: "Your First Wiki in 20 Minutes",
     description:
-      "Go from zero to a working LLM knowledge base with nothing but Obsidian and a Claude subscription. No coding, no terminal, no nonsense.",
+      "Go from zero to a working LLM knowledge base with nothing but a note-taking app and an AI assistant. No coding, no terminal, no nonsense.",
     free: true,
     href: "/guides/your-first-wiki",
     time: "20 min",

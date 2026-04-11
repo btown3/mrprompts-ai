@@ -24,8 +24,8 @@ const TOOLS = [
     { name: "Make", maker: "Make (formerly Integromat)", price: "Free tier / $9/mo Core", verdict: "Best for", best: "Complex multi-step workflows, visual builder, branching logic", detail: "More powerful than Zapier for complex workflows with conditional logic, loops, and multiple branches. The visual builder makes it easy to see the entire flow. Better value per automation at scale. Choose Make when your workflow has more than 3 steps or needs if/then logic." },
   ]},
   { category: "Knowledge Management", tools: [
-    { name: "Obsidian", maker: "Obsidian", price: "Free / $50/yr Sync", verdict: "Best for", best: "Wiki-style knowledge bases, local-first, power users", detail: "The best tool for building AI knowledge bases. Markdown files, local storage, bidirectional linking, and a plugin ecosystem. Works perfectly with CLAUDE.md schemas. The learning curve is real but worth it. Best for individuals and small teams who want full control over their data." },
-    { name: "Notion", maker: "Notion Labs", price: "Free / $10/seat Plus", verdict: "Best for", best: "Team collaboration, databases, shared wikis", detail: "Better than Obsidian for teams who need real-time collaboration. The database features are powerful for structured data. Notion AI is built in but not as capable as Claude or ChatGPT. Best for teams who prioritize collaboration over raw power. Not as good for wiki-style linking." },
+    { name: "Notion", maker: "Notion Labs", price: "Free / $10/seat Plus", verdict: "Best for", best: "Team collaboration, databases, shared wikis", detail: "The most accessible tool for building AI knowledge bases. Real-time collaboration, powerful databases, and a clean interface that non-technical teams can use immediately. Notion AI is built in but not as capable as Claude or ChatGPT. Best for teams and individuals who want to get started fast without a learning curve." },
+    { name: "Obsidian", maker: "Obsidian", price: "Free / $50/yr Sync", verdict: "Best for", best: "Local-first, markdown-based, power users", detail: "For power users who want local-first, markdown-based control. Bidirectional linking and a plugin ecosystem make it powerful for wiki-style knowledge bases. Works perfectly with CLAUDE.md schemas. The learning curve is real but worth it for individuals and small teams who want full ownership of their data." },
   ]},
   { category: "Content Creation", tools: [
     { name: "Midjourney", maker: "Midjourney", price: "$10/mo Basic", verdict: "Best for", best: "Professional image generation, consistent quality", detail: "The highest-quality image generation tool available. Produces visuals that look professional enough for client presentations, social media, and marketing materials. Operates through Discord, which is unusual but workable. Worth the subscription if you need images regularly." },
@@ -69,7 +69,7 @@ export default function BestAIToolsPage() {
           <li><strong>Day 1:</strong> Claude (free tier) for writing and analysis</li>
           <li><strong>Week 1:</strong> Add Perplexity (free) for research</li>
           <li><strong>Month 1:</strong> Add Zapier (free tier) for your first automation</li>
-          <li><strong>When ready:</strong> Claude Pro ($20/mo) + Obsidian or Notion for knowledge bases</li>
+          <li><strong>When ready:</strong> Claude Pro ($20/mo) + Notion or any note-taking app for knowledge bases</li>
         </ul>
         <p className="mt-3 text-xs text-zinc-400">Some links on this page may be affiliate links. We only recommend tools we use. <Link href="/terms" className="text-emerald-600 hover:text-emerald-700">Full disclosure</Link>.</p>
       </div>

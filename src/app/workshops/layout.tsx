@@ -17,11 +17,11 @@ export default function WorkshopsLayout({
     <>
       <CourseSchema
         name="Build Your AI Knowledge Base in 2 Hours"
-        description="Live workshop: arrive with a topic, leave with a working Obsidian vault, CLAUDE.md schema, and 5+ interlinked wiki articles."
+        description="Live workshop: arrive with a topic, leave with a working knowledge base, CLAUDE.md schema, and 5+ interlinked wiki articles."
         price="249.00"
         duration="PT2H"
         teaches={[
-          "Obsidian vault setup",
+          "Knowledge base setup",
           "CLAUDE.md schema creation",
           "Wiki article interlinking",
           "Knowledge base architecture",
