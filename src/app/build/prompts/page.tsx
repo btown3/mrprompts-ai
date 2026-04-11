@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { RequireEmail } from "@/app/components/RequireEmail";
 
 const ROLES = [
   {
@@ -144,6 +145,10 @@ export default function PromptsTrackPage() {
         </p>
       </div>
 
+      <div className="mt-10">
+      <RequireEmail slug="build-prompts">
+      {() => (
+      <>
       {!downloaded ? (
         <>
           {/* Role selector */}
@@ -268,6 +273,10 @@ export default function PromptsTrackPage() {
           </div>
         </div>
       )}
+      </>
+      )}
+      </RequireEmail>
+      </div>
     </div>
   );
 }

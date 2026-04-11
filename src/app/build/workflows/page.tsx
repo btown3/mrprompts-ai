@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { RequireEmail } from "@/app/components/RequireEmail";
 
 const WORKFLOWS = [
   { id: "morning-brief", name: "Morning News Brief", time: "Saves 30 min/day", tools: "RSS + Claude + Email", description: "Automatically summarize industry news every morning before your inbox.", selected: false },
@@ -70,9 +71,13 @@ export default function WorkflowsTrackPage() {
         <p className="mt-3 text-lg text-zinc-500">Pick the workflows you need. Get step-by-step blueprints with tools, setup instructions, and time estimates. Download and build them this week.</p>
       </div>
 
+      <div className="mt-10">
+      <RequireEmail slug="build-workflows">
+      {() => (
+      <>
       {!downloaded ? (
         <>
-          <div className="mt-10">
+          <div>
             <h2 className="text-lg font-bold">Which workflows do you need?</h2>
             <p className="mt-2 text-sm text-zinc-500">Select the ones relevant to your work. Your download will include detailed blueprints for each.</p>
             <div className="mt-6 space-y-3">
@@ -125,6 +130,10 @@ export default function WorkflowsTrackPage() {
           </div>
         </div>
       )}
+      </>
+      )}
+      </RequireEmail>
+      </div>
     </div>
   );
 }

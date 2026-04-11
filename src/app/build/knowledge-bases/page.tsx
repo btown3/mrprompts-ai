@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { RequireEmail } from "@/app/components/RequireEmail";
 
 type KitFile = { path: string; content: string };
 
@@ -131,6 +132,11 @@ export default function KnowledgeBasesTrackPage() {
           prompts and folder system, or let our AI build the first draft for you.
         </p>
       </div>
+
+      <div className="mt-10">
+      <RequireEmail slug="build-knowledge-bases">
+      {() => (
+      <>
 
       {/* Mode chooser */}
       {mode === "choose" && (
@@ -427,6 +433,11 @@ export default function KnowledgeBasesTrackPage() {
           </div>
         </div>
       )}
+
+      </>
+      )}
+      </RequireEmail>
+      </div>
     </div>
   );
 }

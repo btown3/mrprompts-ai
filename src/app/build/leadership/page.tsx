@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { RequireEmail } from "@/app/components/RequireEmail";
 
 type Tool = "roadmap" | "assessment" | "playbook" | "briefing";
 
@@ -151,10 +152,14 @@ export default function LeadershipTrackPage() {
         </p>
       </div>
 
+      <div className="mt-10">
+      <RequireEmail slug="build-leadership">
+      {() => (
+      <>
       {!downloaded ? (
         <>
           {/* Org details */}
-          <div className="mt-10 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+          <div className="mt-6 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
             <h2 className="text-lg font-bold">Your organization</h2>
             <p className="mt-2 text-sm text-zinc-500">This customizes the templates in your download.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -228,6 +233,10 @@ export default function LeadershipTrackPage() {
           </div>
         </div>
       )}
+      </>
+      )}
+      </RequireEmail>
+      </div>
     </div>
   );
 }
