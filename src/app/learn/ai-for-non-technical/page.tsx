@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { BuildProcess } from "@/app/components/diagrams/BuildProcess";
 
 export const metadata: Metadata = {
   title: "AI for Non-Technical Professionals — The Complete Guide",
@@ -75,6 +76,9 @@ export default function AIForNonTechnicalPage() {
         </section>
 
         <section>
+          <div className="mb-10">
+            <BuildProcess />
+          </div>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">What to build next</h2>
           <p className="mt-3">Once you are comfortable with basic AI conversations, you are ready to build systems that compound your AI capability over time:</p>
           <ul className="mt-3 space-y-2">

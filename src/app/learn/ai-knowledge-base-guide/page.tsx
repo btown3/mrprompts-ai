@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { BuildProcess } from "@/app/components/diagrams/BuildProcess";
+import { FolderStructure } from "@/app/components/diagrams/FolderStructure";
 
 export const metadata: Metadata = {
   title: "How to Build an AI Knowledge Base — Complete Guide",
@@ -27,6 +29,9 @@ export default function AIKnowledgeBaseGuidePage() {
         </section>
 
         <section>
+          <div className="mb-10">
+            <BuildProcess />
+          </div>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">The four-step system</h2>
           <p className="mt-3"><strong>1. Collect.</strong> Drop raw sources — articles, papers, notes, transcripts — into a Sources folder. These are read-only. The AI never modifies your originals. Quality matters more than quantity. Five excellent sources produce a better wiki than fifty mediocre ones.</p>
           <p className="mt-3"><strong>2. Compile.</strong> The AI reads your sources and writes structured, interlinked wiki articles following your CLAUDE.md schema. Each article covers one concept, cites its sources, and links to related articles. The AI is doing the synthesis work — turning raw information into organized knowledge.</p>
@@ -35,6 +40,9 @@ export default function AIKnowledgeBaseGuidePage() {
         </section>
 
         <section>
+          <div className="mb-10">
+            <FolderStructure />
+          </div>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">What you need to get started</h2>
           <p className="mt-3"><strong>A note-taking tool.</strong> Obsidian is the power-user choice (free, local, markdown-based). Notion works for teams. Google Docs works in a pinch. The tool matters less than the structure.</p>
           <p className="mt-3"><strong>An AI assistant.</strong> Claude, ChatGPT, or any model that can read files. Claude is our recommendation because it handles long documents well and produces more nuanced wiki articles.</p>

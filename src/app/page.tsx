@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { FAQ } from "./components/FAQ";
+import { BuildProcess } from "./components/diagrams/BuildProcess";
+import { FolderStructure } from "./components/diagrams/FolderStructure";
 
 const HOME_FAQ = [
   {
@@ -89,6 +91,11 @@ export default function Home() {
             leaders
           </p>
         </div>
+      </section>
+
+      {/* How it works diagram */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <BuildProcess />
       </section>
 
       {/* Divider */}
@@ -242,6 +249,11 @@ export default function Home() {
             </p>
           </Link>
         </div>
+      </section>
+
+      {/* Folder structure diagram */}
+      <section className="mx-auto max-w-3xl px-6 py-16">
+        <FolderStructure />
       </section>
 
       {/* Divider */}
