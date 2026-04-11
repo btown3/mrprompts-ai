@@ -35,20 +35,7 @@ export default function DashboardPage() {
   }
 
   if (!user) {
-    return (
-      <div className="mx-auto max-w-3xl px-6 py-20 text-center">
-        <h1 className="text-2xl font-bold">Sign in to view your dashboard</h1>
-        <p className="mt-3 text-zinc-500">
-          Your downloads, tools, and account are all in one place.
-        </p>
-        <Link
-          href="/build"
-          className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
-        >
-          Get Started
-        </Link>
-      </div>
-    );
+    return <SignInView />;
   }
 
   return (
@@ -152,6 +139,93 @@ export default function DashboardPage() {
           </Link>
         </div>
       </section>
+    </div>
+  );
+}
+
+function SignInView() {
+  const { signIn } = useAuth();
+  const [email, setEmail] = useState("");
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.includes("@")) { setError("Enter a valid email."); return; }
+    setLoading(true);
+    setError("");
+    const { error: err } = await signIn(email);
+    if (err) { setError(err); } else { setSent(true); }
+    setLoading(false);
+  }
+
+  if (sent) {
+    return (
+      <div className="mx-auto max-w-md px-6 py-20 text-center">
+        <div className="text-4xl">&#9993;</div>
+        <h1 className="mt-6 text-2xl font-bold">Check your email</h1>
+        <p className="mt-3 text-zinc-500">
+          We sent a magic link to <strong>{email}</strong>. Click it to sign in.
+        </p>
+        <p className="mt-6 text-xs text-zinc-400">
+          Didn't get it? Check spam, or{" "}
+          <button onClick={() => setSent(false)} className="text-emerald-600 hover:text-emerald-700">try again</button>.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto max-w-md px-6 py-20">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold tracking-tight">Sign in to MrPrompts</h1>
+        <p className="mt-3 text-zinc-500">
+          Enter your email. We will send you a magic link. No password needed.
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="mt-10 space-y-4">
+        <div>
+          <label className="block text-sm font-medium">Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            autoFocus
+            className="mt-2 w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 dark:border-zinc-700 dark:bg-zinc-900"
+          />
+        </div>
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-lg bg-emerald-600 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-50"
+        >
+          {loading ? "Sending..." : "Send Magic Link"}
+        </button>
+      </form>
+
+      <p className="mt-6 text-center text-xs text-zinc-400">
+        New here? Signing in creates your free account automatically.
+      </p>
+
+      <div className="mt-12 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+        <h3 className="text-sm font-semibold text-center">What you get with a free account</h3>
+        <div className="mt-4 space-y-2">
+          {[
+            "Download prompt packs, templates, and playbooks",
+            "Access the Knowledge Base builder and Wiki Builder tool",
+            "Track your downloads in one place",
+            "Weekly newsletter with AI building guides",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>{item}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
