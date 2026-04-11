@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { AuthGate } from "@/app/components/AuthGate";
+import { useAuth } from "@/app/components/AuthProvider";
+import { trackDownload } from "@/lib/track-download";
 
 const PROMPTS = [
   { name: "Pre-Call Research Brief", category: "Discovery", prompt: `I have a discovery call with [prospect name] at [company name]. They are the [title] at a [company size] company in [industry].
@@ -235,31 +237,11 @@ function downloadPack() {
 }
 
 export default function SalesPromptPackPage() {
-  const [email, setEmail] = useState("");
-  const [unlocked, setUnlocked] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
+  const { user } = useAuth();
 
-  useEffect(() => {
-    if (localStorage.getItem("sales-prompt-pack-unlocked") === "true") setUnlocked(true);
-  }, []);
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email.includes("@")) { setError("Enter a valid email."); return; }
-    setLoading(true);
-    try {
-      await fetch("/api/download-guide", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, guide: "sales-prompt-pack" }),
-      });
-      setUnlocked(true);
-      setSent(true);
-      localStorage.setItem("sales-prompt-pack-unlocked", "true");
-    } catch { setError("Something went wrong."); }
-    setLoading(false);
+  function handleDownload() {
+    downloadPack();
+    if (user) trackDownload(user.id, "sales-prompt-pack");
   }
 
   return (
@@ -275,36 +257,18 @@ export default function SalesPromptPackPage() {
         </p>
       </div>
 
-      {!unlocked ? (
-        <div className="mt-10 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-xl font-bold">Get the full Sales Prompt Pack</h2>
-          <p className="mt-2 text-sm text-zinc-500">Enter your email to unlock all 15 prompts and download the complete pack.</p>
-          <div className="mt-6 space-y-2">
-            {["Discovery & Research (2 prompts)", "Proposals (1)", "Follow-ups (3)", "Objection Handling (2)", "Cold & Warm Outreach (3)", "Pipeline & CRM (2)", "Strategy & Analysis (2)"].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <span className="text-emerald-600">&#10003;</span>{item}
-              </div>
-            ))}
+      <div className="mt-10 space-y-2">
+        {["Discovery & Research (2 prompts)", "Proposals (1)", "Follow-ups (3)", "Objection Handling (2)", "Cold & Warm Outreach (3)", "Pipeline & CRM (2)", "Strategy & Analysis (2)"].map((item) => (
+          <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <span className="text-emerald-600">&#10003;</span>{item}
           </div>
-          <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-500 dark:border-zinc-700 dark:bg-zinc-900" />
-            <button type="submit" disabled={loading} className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-50">
-              {loading ? "Sending..." : "Get the Pack (Free)"}
-            </button>
-          </form>
-          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-          <p className="mt-3 text-xs text-zinc-400">Free. No spam. Unsubscribe anytime.</p>
-        </div>
-      ) : (
-        <>
-          {sent && (
-            <div className="mt-10 rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-800 dark:bg-emerald-900/20">
-              <p className="font-semibold text-emerald-800 dark:text-emerald-400">You're in! Check your email for a link.</p>
-            </div>
-          )}
+        ))}
+      </div>
 
+      <div className="mt-10">
+        <AuthGate>
           <div className="mt-8">
-            <button onClick={downloadPack} className="inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700">
+            <button onClick={handleDownload} className="inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700">
               Download Sales Prompt Pack (.md)
             </button>
           </div>
@@ -328,8 +292,8 @@ export default function SalesPromptPackPage() {
               <Link href="/build/prompts" className="text-sm font-semibold text-emerald-600 hover:text-emerald-700">Build a custom library &rarr;</Link>
             </div>
           </div>
-        </>
-      )}
+        </AuthGate>
+      </div>
     </article>
   );
 }

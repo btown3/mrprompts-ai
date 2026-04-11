@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const SECTIONS = [
   {
@@ -67,47 +67,6 @@ Naming: Use Title-Case-With-Hyphens for filenames (e.g., Chain-Of-Thought.md)
 8. Categories are mutually exclusive. Tags can overlap.`;
 
 export default function ClaudeMdMasterclassPage() {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("access") === "granted") {
-      setUnlocked(true);
-    }
-    if (localStorage.getItem("claude-md-unlocked") === "true") {
-      setUnlocked(true);
-    }
-  }, []);
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
-    if (!email || !email.includes("@")) {
-      setError("Enter a valid email address.");
-      return;
-    }
-    setLoading(true);
-    try {
-      const res = await fetch("/api/download-guide", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, guide: "claude-md-masterclass" }),
-      });
-      if (!res.ok) throw new Error("Something went wrong.");
-      setSent(true);
-      setUnlocked(true);
-      localStorage.setItem("claude-md-unlocked", "true");
-    } catch {
-      setError("Something went wrong. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
   function downloadGuide() {
     const content = [
       "# The CLAUDE.md Masterclass",
@@ -152,151 +111,109 @@ export default function ClaudeMdMasterclassPage() {
         </p>
       </div>
 
-      {!unlocked ? (
-        /* Email gate */
-        <section className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
-          <h2 className="text-xl font-bold">
-            Get the full guide + downloadable template
-          </h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Enter your email to unlock the complete masterclass and a
-            ready-to-use CLAUDE.md template. You will also receive our weekly
-            newsletter for AI builders.
-          </p>
+      <div className="mb-8 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-xl font-bold">
+          Get the full guide + downloadable template
+        </h2>
+        <p className="mt-2 text-sm text-zinc-500">
+          Sign in to unlock the complete masterclass and a
+          ready-to-use CLAUDE.md template.
+        </p>
+        <div className="mt-6 space-y-2">
+          {SECTIONS.map((s) => (
+            <div key={s.title} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>
+              {s.title}
+            </div>
+          ))}
+          <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <span className="text-emerald-600">&#10003;</span>
+            Production-ready CLAUDE.md template
+          </div>
+        </div>
+      </div>
 
-          {/* Preview of what's inside */}
-          <div className="mt-6 space-y-2">
-            {SECTIONS.map((s) => (
-              <div key={s.title} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <span className="text-emerald-600">&#10003;</span>
-                {s.title}
+      <AuthGate>
+        {/* Full guide content */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold">What you will learn</h2>
+          <div className="mt-6 space-y-6">
+            {SECTIONS.map((section) => (
+              <div
+                key={section.title}
+                className="rounded-lg border border-zinc-200 p-6 dark:border-zinc-800"
+              >
+                <h3 className="font-semibold">{section.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {section.content}
+                </p>
               </div>
             ))}
-            <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-              <span className="text-emerald-600">&#10003;</span>
-              Production-ready CLAUDE.md template
-            </div>
           </div>
-
-          <form onSubmit={handleSubmit} className="mt-8">
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                className="flex-1 rounded-lg border border-zinc-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 dark:border-zinc-700 dark:bg-zinc-900"
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-50"
-              >
-                {loading ? "Sending..." : "Get the Guide"}
-              </button>
-            </div>
-            {error && (
-              <p className="mt-2 text-sm text-red-600">{error}</p>
-            )}
-            <p className="mt-3 text-xs text-zinc-400">
-              Free. No spam. Unsubscribe anytime.
-            </p>
-          </form>
         </section>
-      ) : (
-        <>
-          {sent && (
-            <div className="mb-8 rounded-xl border border-emerald-200 bg-emerald-50 p-6 dark:border-emerald-800 dark:bg-emerald-900/20">
-              <p className="font-semibold text-emerald-800 dark:text-emerald-400">
-                Check your email! We sent you a link to this guide.
-              </p>
-              <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-500">
-                You can also read it right here and download the template below.
-              </p>
-            </div>
-          )}
 
-          {/* Full guide content */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold">What you will learn</h2>
-            <div className="mt-6 space-y-6">
-              {SECTIONS.map((section) => (
-                <div
-                  key={section.title}
-                  className="rounded-lg border border-zinc-200 p-6 dark:border-zinc-800"
-                >
-                  <h3 className="font-semibold">{section.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                    {section.content}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+        {/* Downloadable template */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold">Production-ready CLAUDE.md template</h2>
+          <p className="mt-2 text-sm text-zinc-500">
+            Copy this into your vault root, or download the complete guide
+            with template included.
+          </p>
+          <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-6 text-sm leading-relaxed text-zinc-300">
+            {TEMPLATE}
+          </pre>
+          <button
+            onClick={downloadGuide}
+            className="mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700"
+          >
+            Download Full Guide (.md)
+          </button>
+        </section>
 
-          {/* Downloadable template */}
-          <section className="mb-12">
-            <h2 className="text-xl font-bold">Production-ready CLAUDE.md template</h2>
-            <p className="mt-2 text-sm text-zinc-500">
-              Copy this into your vault root, or download the complete guide
-              with template included.
-            </p>
-            <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-6 text-sm leading-relaxed text-zinc-300">
-              {TEMPLATE}
-            </pre>
-            <button
-              onClick={downloadGuide}
-              className="mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700"
-            >
-              Download Full Guide (.md)
-            </button>
-          </section>
-
-          {/* Next steps */}
-          <section className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
-            <h2 className="text-xl font-bold">Keep building</h2>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Now that you understand the schema, put it to work.
-            </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <Link
-                href="/guides/wiki-automation"
-                className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
-              >
-                <p className="text-sm font-semibold">Wiki Automation</p>
-                <p className="mt-1 text-xs text-zinc-500">
-                  Slash commands and scheduled tasks for hands-free wikis.
-                </p>
-              </Link>
-              <Link
-                href="/tools/wiki-builder"
-                className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
-              >
-                <p className="text-sm font-semibold">Wiki Builder Tool</p>
-                <p className="mt-1 text-xs text-zinc-500">
-                  Generate a complete vault from your sources automatically.
-                </p>
-              </Link>
-            </div>
-          </section>
-
-          {/* Related */}
-          <div className="mt-12 flex justify-between text-sm">
-            <Link
-              href="/guides/your-first-wiki"
-              className="text-emerald-600 hover:text-emerald-700"
-            >
-              &larr; Your First Wiki
-            </Link>
+        {/* Next steps */}
+        <section className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+          <h2 className="text-xl font-bold">Keep building</h2>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Now that you understand the schema, put it to work.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
               href="/guides/wiki-automation"
-              className="text-emerald-600 hover:text-emerald-700"
+              className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
             >
-              Wiki Automation &rarr;
+              <p className="text-sm font-semibold">Wiki Automation</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Slash commands and scheduled tasks for hands-free wikis.
+              </p>
+            </Link>
+            <Link
+              href="/tools/wiki-builder"
+              className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800"
+            >
+              <p className="text-sm font-semibold">Wiki Builder Tool</p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Generate a complete vault from your sources automatically.
+              </p>
             </Link>
           </div>
-        </>
-      )}
+        </section>
+
+        {/* Related */}
+        <div className="mt-12 flex justify-between text-sm">
+          <Link
+            href="/guides/your-first-wiki"
+            className="text-emerald-600 hover:text-emerald-700"
+          >
+            &larr; Your First Wiki
+          </Link>
+          <Link
+            href="/guides/wiki-automation"
+            className="text-emerald-600 hover:text-emerald-700"
+          >
+            Wiki Automation &rarr;
+          </Link>
+        </div>
+      </AuthGate>
     </article>
   );
 }

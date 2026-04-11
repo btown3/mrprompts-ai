@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { EmailGate } from "@/app/components/EmailGate";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const BLUEPRINTS = [
   {
@@ -120,12 +120,19 @@ export default function WorkflowBlueprintsPage() {
         </p>
       </div>
 
-      <EmailGate
-        slug="workflow-blueprints"
-        title="Get 5 ready-to-build workflow blueprints"
-        description="Enter your email to unlock the full blueprints with step-by-step setup instructions."
-        checklistItems={BLUEPRINTS.map((bp) => `${bp.name} (${bp.tools})`)}
-      >
+      <div className="mb-8 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-xl font-bold">Get 5 ready-to-build workflow blueprints</h2>
+        <p className="mt-2 text-sm text-zinc-500">Sign in to unlock the full blueprints with step-by-step setup instructions.</p>
+        <div className="mt-6 space-y-2">
+          {BLUEPRINTS.map((bp) => (
+            <div key={bp.name} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>{bp.name} ({bp.tools})
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AuthGate>
         <div className="space-y-10">
           {BLUEPRINTS.map((bp) => (
             <section
@@ -169,7 +176,7 @@ export default function WorkflowBlueprintsPage() {
             Build Track: Workflows &rarr;
           </Link>
         </div>
-      </EmailGate>
+      </AuthGate>
     </article>
   );
 }

@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { useAuth } from "@/app/components/AuthProvider";
+import { trackDownload } from "@/lib/track-download";
 
 type KitFile = { path: string; content: string };
 
 export default function KnowledgeBasesTrackPage() {
+  const { user } = useAuth();
   const [mode, setMode] = useState<"choose" | "kit" | "builder">("choose");
   const [topic, setTopic] = useState("");
   const [email, setEmail] = useState("");
@@ -55,6 +58,7 @@ export default function KnowledgeBasesTrackPage() {
       a.download = `${topic.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}-knowledge-base-starter-kit.md`;
       a.click();
       URL.revokeObjectURL(url);
+      if (user) trackDownload(user.id, "knowledge-base-starter-kit");
       setKitDone(true);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong.");
@@ -98,6 +102,7 @@ export default function KnowledgeBasesTrackPage() {
 
   function downloadBuilderResult() {
     if (!builderResult) return;
+    if (user) trackDownload(user.id, "knowledge-base-starter-kit");
     const lines: string[] = [];
     lines.push("=== CLAUDE.md ===\n");
     lines.push(builderResult.claude_md);

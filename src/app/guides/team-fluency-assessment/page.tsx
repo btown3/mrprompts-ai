@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { EmailGate } from "@/app/components/EmailGate";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const DIMENSIONS = [
   {
@@ -144,17 +144,24 @@ export default function TeamFluencyAssessmentPage() {
         </p>
       </div>
 
-      <EmailGate
-        slug="team-fluency-assessment"
-        title="Get the complete assessment framework"
-        description="Enter your email to unlock the full scoring rubric, team survey, and interpretation guide."
-        checklistItems={[
-          "5-dimension scoring rubric with weighted scores",
-          "Clear level definitions (1-5) for each dimension",
-          "10-question team survey ready to send",
-          "Scoring guide: how to interpret results and what to do next",
-        ]}
-      >
+      <div className="mb-8 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-xl font-bold">Get the complete assessment framework</h2>
+        <p className="mt-2 text-sm text-zinc-500">Sign in to unlock the full scoring rubric, team survey, and interpretation guide.</p>
+        <div className="mt-6 space-y-2">
+          {[
+            "5-dimension scoring rubric with weighted scores",
+            "Clear level definitions (1-5) for each dimension",
+            "10-question team survey ready to send",
+            "Scoring guide: how to interpret results and what to do next",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>{item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AuthGate>
         {/* Scoring Rubric */}
         <section className="mb-12">
           <h2 className="text-xl font-bold">Scoring Rubric</h2>
@@ -253,7 +260,7 @@ export default function TeamFluencyAssessmentPage() {
             Build Track: Leadership &rarr;
           </Link>
         </div>
-      </EmailGate>
+      </AuthGate>
     </article>
   );
 }

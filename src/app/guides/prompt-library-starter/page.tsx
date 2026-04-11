@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { EmailGate } from "@/app/components/EmailGate";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const PROMPTS = [
   {
@@ -275,19 +275,26 @@ export default function PromptLibraryStarterPage() {
         </p>
       </div>
 
-      <EmailGate
-        slug="prompt-library-starter"
-        title="Get 20+ prompt templates by role"
-        description="Enter your email to unlock the full library and download it as a file you can keep."
-        checklistItems={[
-          "Marketing: campaigns, competitor analysis, email sequences",
-          "Sales: discovery calls, proposals, follow-ups",
-          "Operations: SOPs, meeting summaries",
-          "Finance: variance analysis, vendor comparisons",
-          "HR: job descriptions, performance reviews",
-          "Consulting: deliverables, stakeholder interviews",
-        ]}
-      >
+      <div className="mb-8 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-xl font-bold">Get 20+ prompt templates by role</h2>
+        <p className="mt-2 text-sm text-zinc-500">Sign in to unlock the full library and download it as a file you can keep.</p>
+        <div className="mt-6 space-y-2">
+          {[
+            "Marketing: campaigns, competitor analysis, email sequences",
+            "Sales: discovery calls, proposals, follow-ups",
+            "Operations: SOPs, meeting summaries",
+            "Finance: variance analysis, vendor comparisons",
+            "HR: job descriptions, performance reviews",
+            "Consulting: deliverables, stakeholder interviews",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>{item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AuthGate>
         {/* Full content */}
         <div className="space-y-12">
           {PROMPTS.map((cat) => (
@@ -327,7 +334,7 @@ export default function PromptLibraryStarterPage() {
             Build Track: Prompts &rarr;
           </Link>
         </div>
-      </EmailGate>
+      </AuthGate>
     </article>
   );
 }

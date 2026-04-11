@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { useAuth } from "@/app/components/AuthProvider";
+import { trackDownload } from "@/lib/track-download";
 
 const WORKFLOWS = [
   { id: "morning-brief", name: "Morning News Brief", time: "Saves 30 min/day", tools: "RSS + Claude + Email", description: "Automatically summarize industry news every morning before your inbox.", selected: false },
@@ -54,6 +56,7 @@ function downloadWorkflows(selected: string[]) {
 }
 
 export default function WorkflowsTrackPage() {
+  const { user } = useAuth();
   const [selected, setSelected] = useState<string[]>([]);
   const [downloaded, setDownloaded] = useState(false);
 
@@ -108,7 +111,7 @@ export default function WorkflowsTrackPage() {
           {selected.length > 0 && (
             <div className="mt-8">
               <button
-                onClick={() => { downloadWorkflows(selected); setDownloaded(true); }}
+                onClick={() => { downloadWorkflows(selected); if (user) trackDownload(user.id, "workflow-blueprints-custom"); setDownloaded(true); }}
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
               >
                 Download {selected.length} Blueprint{selected.length > 1 ? "s" : ""} (Free)

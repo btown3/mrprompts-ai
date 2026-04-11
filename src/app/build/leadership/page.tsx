@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { useAuth } from "@/app/components/AuthProvider";
+import { trackDownload } from "@/lib/track-download";
 
 type Tool = "roadmap" | "assessment" | "playbook" | "briefing";
 
@@ -129,6 +131,7 @@ function downloadLeadershipKit(selected: Tool[], orgName: string, teamSize: stri
 }
 
 export default function LeadershipTrackPage() {
+  const { user } = useAuth();
   const [orgName, setOrgName] = useState("");
   const [teamSize, setTeamSize] = useState("");
   const [selected, setSelected] = useState<Tool[]>([]);
@@ -204,7 +207,7 @@ export default function LeadershipTrackPage() {
 
           {selected.length > 0 && (
             <button
-              onClick={() => { downloadLeadershipKit(selected, orgName, teamSize); setDownloaded(true); }}
+              onClick={() => { downloadLeadershipKit(selected, orgName, teamSize); if (user) trackDownload(user.id, "leadership-kit-custom"); setDownloaded(true); }}
               className="mt-8 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
               Download Leadership Kit (Free)

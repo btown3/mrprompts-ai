@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { useAuth } from "@/app/components/AuthProvider";
+import { trackDownload } from "@/lib/track-download";
 
 const ROLES = [
   {
@@ -112,6 +114,7 @@ function downloadLibrary(selectedRoles: string[]) {
 }
 
 export default function PromptsTrackPage() {
+  const { user } = useAuth();
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
   const [downloaded, setDownloaded] = useState(false);
 
@@ -197,6 +200,7 @@ export default function PromptsTrackPage() {
               <button
                 onClick={() => {
                   downloadLibrary(selectedRoles);
+                  if (user) trackDownload(user.id, "prompt-library-custom");
                   setDownloaded(true);
                 }}
                 className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700"

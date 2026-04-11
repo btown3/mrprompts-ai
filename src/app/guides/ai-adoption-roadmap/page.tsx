@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { EmailGate } from "@/app/components/EmailGate";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const PHASES = [
   {
@@ -209,17 +209,24 @@ export default function AIAdoptionRoadmapPage() {
         </p>
       </div>
 
-      <EmailGate
-        slug="ai-adoption-roadmap"
-        title="Get the complete 90-day AI adoption roadmap"
-        description="Enter your email to unlock the full plan with templates, survey questions, and a leadership presentation outline."
-        checklistItems={[
-          "Phase 1: Current state audit + team readiness survey",
-          "Phase 2: AI literacy training + tool selection criteria",
-          "Phase 3: Pilot team selection + success metrics framework",
-          "Phase 4: Rollout plan + leadership presentation template",
-        ]}
-      >
+      <div className="mb-8 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-xl font-bold">Get the complete 90-day AI adoption roadmap</h2>
+        <p className="mt-2 text-sm text-zinc-500">Sign in to unlock the full plan with templates, survey questions, and a leadership presentation outline.</p>
+        <div className="mt-6 space-y-2">
+          {[
+            "Phase 1: Current state audit + team readiness survey",
+            "Phase 2: AI literacy training + tool selection criteria",
+            "Phase 3: Pilot team selection + success metrics framework",
+            "Phase 4: Rollout plan + leadership presentation template",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="text-emerald-600">&#10003;</span>{item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AuthGate>
         <div className="space-y-12">
           {PHASES.map((phase) => (
             <section key={phase.phase}>
@@ -261,7 +268,7 @@ export default function AIAdoptionRoadmapPage() {
             Build Track: Leadership &rarr;
           </Link>
         </div>
-      </EmailGate>
+      </AuthGate>
     </article>
   );
 }
