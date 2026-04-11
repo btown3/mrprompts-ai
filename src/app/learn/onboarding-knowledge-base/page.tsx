@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "Onboarding Knowledge Base — New Hire Ramp-Up System",
@@ -105,6 +106,8 @@ Queryable, structured, and maintained by the team.
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Get the starter kit with folder structure, CLAUDE.md schema, and 7 numbered prompts.</p>
         <Link href="/build/knowledge-bases" className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700">Get the Starter Kit</Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

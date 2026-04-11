@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "AI Workflow Examples — 7 Automations You Can Build Today",
@@ -64,6 +65,8 @@ export default function AIWorkflowExamplesPage() {
         <p className="mt-2 text-sm text-zinc-500">5 fully documented workflow blueprints with prompts, tool configs, and setup instructions. Or jump straight to the <Link href="/build/workflows" className="text-emerald-600 hover:text-emerald-700">workflow build track</Link> and start building.</p>
         <Link href="/guides/workflow-blueprints" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Get the Workflow Blueprints (free) &rarr;</Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

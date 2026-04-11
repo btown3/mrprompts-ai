@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const DIMENSIONS = [
   {
@@ -261,6 +262,8 @@ export default function TeamFluencyAssessmentPage() {
           </Link>
         </div>
       </AuthGate>
+
+      <PageFooterCTA />
     </article>
   );
 }

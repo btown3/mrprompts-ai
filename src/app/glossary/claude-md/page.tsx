@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is CLAUDE.md? — MrPrompts Glossary",
@@ -93,6 +94,8 @@ export default function ClaudeMdPage() {
           <li><Link href="/guides/your-first-wiki" className="text-emerald-600 hover:text-emerald-700">Build Your First AI Wiki &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

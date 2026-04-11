@@ -72,7 +72,7 @@ export default function OGImage() {
             maxWidth: "700px",
           }}
         >
-          Frameworks, tools, and guides for smart professionals. 4,000+ builders.
+          Frameworks, tools, and guides for smart professionals. 5,000+ builders.
         </p>
         <div
           style={{

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What are Tokens in AI? — MrPrompts Glossary",
@@ -98,6 +99,8 @@ export default function TokenPage() {
           <li><Link href="/guides/prompt-library-starter" className="text-emerald-600 hover:text-emerald-700">Prompt Library Starter Guide &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

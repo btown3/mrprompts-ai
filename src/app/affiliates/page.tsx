@@ -1,3 +1,5 @@
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
+
 const CATEGORIES = [
   {
     title: "AI Assistants",
@@ -157,6 +159,8 @@ export default function AffiliatesPage() {
           Coming soon. Subscribe to the newsletter to get notified.
         </p>
       </div>
+
+      <PageFooterCTA />
     </div>
   );
 }

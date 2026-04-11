@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What Is CLAUDE.md? — The Schema File That Controls Your AI Wiki",
@@ -108,6 +109,8 @@ Tags: beginner, advanced, chain-of-thought, system-prompt, multi-turn
         <p className="mt-2 text-sm text-zinc-500">Deep dive into writing production-ready schemas, with templates you can copy. Or jump straight to the <Link href="/build/knowledge-bases" className="text-emerald-600 hover:text-emerald-700">knowledge base build track</Link> and start building.</p>
         <Link href="/guides/claude-md-masterclass" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Read the Masterclass (free) &rarr;</Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 import { useAuth } from "@/app/components/AuthProvider";
 import { trackDownload } from "@/lib/track-download";
 
@@ -350,6 +351,8 @@ export default function MarketingPromptPackPage() {
           </div>
         </AuthGate>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

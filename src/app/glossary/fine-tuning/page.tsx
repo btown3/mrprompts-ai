@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is Fine-Tuning? — MrPrompts Glossary",
@@ -97,6 +98,8 @@ export default function FineTuningPage() {
           <li><Link href="/learn/ai-for-non-technical" className="text-emerald-600 hover:text-emerald-700">AI for Non-Technical Leaders &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

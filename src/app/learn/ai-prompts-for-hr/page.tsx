@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "AI Prompts for HR — 12 Ready-to-Use Templates",
@@ -190,6 +191,8 @@ export default function AIHRPromptsPage() {
         <p className="mt-2 text-sm text-zinc-500">The full Prompt Library has 20+ templates across sales, marketing, operations, finance, and consulting. Browse the complete collection in the <Link href="/build/prompts" className="text-emerald-600 hover:text-emerald-700">prompt build track</Link>.</p>
         <Link href="/guides/prompt-library-starter" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Get the full Prompt Library &rarr;</Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

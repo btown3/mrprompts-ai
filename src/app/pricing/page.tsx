@@ -47,7 +47,7 @@ export default function PricingPage() {
             "Team AI Fluency Assessment",
             "AI Workflow Blueprints",
             "Wiki Builder tool (AI-powered)",
-            "Weekly newsletter for 4,000+ builders",
+            "Weekly newsletter for 5,000+ builders",
             "Blog with all Substack articles",
           ].map((feature) => (
             <div

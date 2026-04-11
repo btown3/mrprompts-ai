@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
 import { BuildProcess } from "@/app/components/diagrams/BuildProcess";
 import { FolderStructure } from "@/app/components/diagrams/FolderStructure";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "How to Build an AI Knowledge Base — Complete Guide",
@@ -67,6 +68,15 @@ export default function AIKnowledgeBaseGuidePage() {
         </section>
       </div>
 
+      <section className="mt-16 rounded-xl border border-zinc-200 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900">
+        <h2 className="text-lg font-bold">Why this matters: what the research says</h2>
+        <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p>The compound knowledge approach described in this guide builds directly on Andrej Karpathy&apos;s autoresearch framework. Karpathy, formerly of Tesla and OpenAI, demonstrated that AI systems with access to structured, accumulated knowledge dramatically outperform those that start from scratch each session. His work showed that the key differentiator was not model capability but knowledge architecture — how information is organized, interlinked, and made queryable.</p>
+          <p>Research from Google DeepMind on retrieval-augmented generation (RAG) systems confirms that AI models produce fewer hallucinations and more accurate responses when they can reference a curated knowledge base rather than relying solely on training data. The wiki system described here functions as a personal RAG system: your sources are the retrieval corpus, your wiki articles are the compiled knowledge, and your queries generate synthesized answers grounded in specific sources.</p>
+          <p>The four-step system — Collect, Compile, Query, Compound — is not theoretical. It is the same architecture used by research teams, intelligence analysts, and knowledge management professionals, now made accessible to anyone with a note-taking app and an AI assistant.</p>
+        </div>
+      </section>
+
       <div className="mt-16">
         <h2 className="text-xl font-bold">Frequently asked questions</h2>
         <div className="mt-8">
@@ -86,6 +96,8 @@ export default function AIKnowledgeBaseGuidePage() {
           <Link href="/guides/your-first-wiki" className="inline-flex h-10 items-center justify-center rounded-lg border border-zinc-600 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800">Step-by-Step Guide</Link>
         </div>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

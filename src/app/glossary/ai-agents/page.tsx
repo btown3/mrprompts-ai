@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What are AI Agents? — MrPrompts Glossary",
@@ -95,6 +96,8 @@ export default function AIAgentsPage() {
           <li><Link href="/learn/best-ai-tools-for-business" className="text-emerald-600 hover:text-emerald-700">Best AI Tools for Business &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "AI Prompts for Marketing — 15 Ready-to-Use Templates",
@@ -106,6 +107,8 @@ export default function AIMarketingPromptsPage() {
           ]} />
         </div>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

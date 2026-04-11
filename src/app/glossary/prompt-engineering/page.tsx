@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is Prompt Engineering? — MrPrompts Glossary",
@@ -97,6 +98,8 @@ export default function PromptEngineeringPage() {
           <li><Link href="/learn/ai-prompts-for-marketing" className="text-emerald-600 hover:text-emerald-700">AI Prompts for Marketing &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

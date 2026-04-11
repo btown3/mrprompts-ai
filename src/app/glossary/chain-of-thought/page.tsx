@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is Chain-of-Thought Prompting? — MrPrompts Glossary",
@@ -95,6 +96,8 @@ export default function ChainOfThoughtPage() {
           <li><Link href="/guides/two-model-validation" className="text-emerald-600 hover:text-emerald-700">Two-Model Validation &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

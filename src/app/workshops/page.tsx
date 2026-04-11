@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const WORKSHOPS = [
   {
@@ -191,6 +192,8 @@ export default function WorkshopsPage() {
           Learn about enterprise training &rarr;
         </Link>
       </div>
+
+      <PageFooterCTA />
     </div>
   );
 }

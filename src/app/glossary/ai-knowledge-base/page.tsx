@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is an AI Knowledge Base? — MrPrompts Glossary",
@@ -99,6 +100,8 @@ export default function AIKnowledgeBasePage() {
           <li><Link href="/learn/research-knowledge-base" className="text-emerald-600 hover:text-emerald-700">Research Knowledge Base &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

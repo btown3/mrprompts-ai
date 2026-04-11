@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const PHASES = [
   {
@@ -269,6 +270,8 @@ export default function AIAdoptionRoadmapPage() {
           </Link>
         </div>
       </AuthGate>
+
+      <PageFooterCTA />
     </article>
   );
 }

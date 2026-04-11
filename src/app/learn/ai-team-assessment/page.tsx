@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "AI Team Assessment — How to Measure Your Team's AI Readiness",
@@ -67,6 +68,8 @@ export default function AITeamAssessmentPage() {
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Full rubric, 10-question survey, and scoring guide. Free download. For organizations that need hands-on support, see our <Link href="/enterprise" className="text-emerald-400 hover:text-emerald-300">enterprise training programs</Link>.</p>
         <Link href="/guides/team-fluency-assessment" className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700">Download the Assessment</Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

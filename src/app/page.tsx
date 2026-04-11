@@ -51,7 +51,11 @@ export default function Home() {
           </p>
 
           {/* Subscribe — prominent, right in the hero */}
-          <div className="mx-auto mt-10 max-w-md">
+          <p className="mx-auto mt-10 max-w-md text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Subscribe to the MrPrompts newsletter. One practical AI framework
+            every week, delivered free.
+          </p>
+          <div className="mx-auto mt-4 max-w-md">
             <iframe
               src="https://mrprompts.substack.com/embed"
               width="100%"
@@ -63,7 +67,7 @@ export default function Home() {
 
           <p className="mt-6 text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Trusted by{" "}
-            <span className="text-emerald-600">4,000+</span> builders and
+            <span className="text-emerald-600">5,000+</span> builders and
             leaders
           </p>
         </div>
@@ -301,7 +305,7 @@ export default function Home() {
       <section className="border-t border-zinc-200 dark:border-zinc-800">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Join 4,000+ builders.
+            Join 5,000+ builders.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-zinc-500">
             Free weekly newsletter. Build guides, prompt frameworks, and tools

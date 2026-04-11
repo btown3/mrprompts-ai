@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const OFFERINGS = [
   {
@@ -287,6 +288,8 @@ export default function EnterprisePage() {
           </Link>
         </div>
       </div>
+
+      <PageFooterCTA />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "Best AI Tools for Business in 2026 — An Opinionated Guide",
@@ -84,6 +85,8 @@ export default function BestAIToolsPage() {
           ]} />
         </div>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

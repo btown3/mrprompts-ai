@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is AI Hallucination? — MrPrompts Glossary",
@@ -99,6 +100,8 @@ export default function HallucinationPage() {
           <li><Link href="/learn/ai-knowledge-base-guide" className="text-emerald-600 hover:text-emerald-700">AI Knowledge Base Guide &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

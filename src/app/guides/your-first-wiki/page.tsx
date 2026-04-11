@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const STEPS = [
   {
@@ -158,6 +159,8 @@ compiled from curated sources.
           </Link>
         </div>
       </section>
+
+      <PageFooterCTA />
     </article>
   );
 }

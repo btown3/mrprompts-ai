@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const BLUEPRINTS = [
   {
@@ -177,6 +178,8 @@ export default function WorkflowBlueprintsPage() {
           </Link>
         </div>
       </AuthGate>
+
+      <PageFooterCTA />
     </article>
   );
 }

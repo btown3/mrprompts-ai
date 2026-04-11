@@ -36,7 +36,7 @@ export default function BlogPage() {
       ) : (
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {posts.map((post) => {
-            const hasContent = !!post.content;
+            const hasContent = !!post.content && post.content.trim().length > 0;
             const cardClasses =
               "group flex flex-col rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
 

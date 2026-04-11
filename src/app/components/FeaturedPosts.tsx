@@ -32,39 +32,34 @@ export function FeaturedPosts() {
         </Link>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {posts.map((post) => (
-          <a
-            key={post.id}
-            href={post.substack_url || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-medium text-zinc-400">
-                {post.category}
-              </span>
-              {post.published_at && (
-                <>
-                  <span className="text-xs text-zinc-300">·</span>
-                  <span className="text-xs text-zinc-400">
-                    {new Date(post.published_at).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </span>
-                </>
-              )}
-            </div>
-            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-              {post.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              {post.description}
-            </p>
-          </a>
-        ))}
+        {posts.map((post) => {
+          const hasContent = !!post.content && post.content.trim().length > 0;
+          const cardClasses = "group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
+
+          const inner = (
+            <>
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-medium text-zinc-400">{post.category}</span>
+                {post.published_at && (
+                  <>
+                    <span className="text-xs text-zinc-300">·</span>
+                    <span className="text-xs text-zinc-400">
+                      {new Date(post.published_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                    </span>
+                  </>
+                )}
+              </div>
+              <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">{post.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-500">{post.description}</p>
+            </>
+          );
+
+          return hasContent ? (
+            <Link key={post.id} href={`/blog/${post.slug}`} className={cardClasses}>{inner}</Link>
+          ) : (
+            <a key={post.id} href={post.substack_url || "#"} target="_blank" rel="noopener noreferrer" className={cardClasses}>{inner}</a>
+          );
+        })}
       </div>
     </section>
   );

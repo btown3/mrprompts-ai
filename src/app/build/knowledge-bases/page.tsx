@@ -411,6 +411,18 @@ export default function KnowledgeBasesTrackPage() {
         </div>
       )}
 
+      {/* Why this matters (when choosing) */}
+      {mode === "choose" && (
+        <section className="mt-16 rounded-xl border border-zinc-200 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-lg font-bold">Why this matters: what the research says</h2>
+          <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p>The knowledge base approach builds on work by Andrej Karpathy, who demonstrated that AI agents perform dramatically better when given structured, persistent context rather than starting from scratch each session. His autoresearch framework showed that agents with access to organized reference material could autonomously run hundreds of optimization experiments — because the system compound knowledge rather than discarded it after each interaction.</p>
+            <p>Anthropic&apos;s research on long-context performance confirms that AI models produce significantly more accurate and nuanced output when given structured reference documents versus ad-hoc instructions. The CLAUDE.md schema implements this directly: by giving your AI a persistent instruction set and organized knowledge, every interaction builds on previous ones instead of starting over.</p>
+            <p>The starter kit and AI builder on this page implement these principles at the individual level. You provide the structure. The AI provides the synthesis. The result compounds.</p>
+          </div>
+        </section>
+      )}
+
       {/* Learn more (when choosing) */}
       {mode === "choose" && (
         <div className="mt-16 border-t border-zinc-200 pt-12 dark:border-zinc-800">

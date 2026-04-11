@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is an AI Workflow? — MrPrompts Glossary",
@@ -98,6 +99,8 @@ export default function AIWorkflowPage() {
           <li><Link href="/build/workflows" className="text-emerald-600 hover:text-emerald-700">Build: Workflows &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

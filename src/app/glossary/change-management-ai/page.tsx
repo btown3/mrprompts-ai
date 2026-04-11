@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is AI Change Management? — MrPrompts Glossary",
@@ -98,6 +99,8 @@ export default function ChangeManagementAIPage() {
           <li><Link href="/build/leadership" className="text-emerald-600 hover:text-emerald-700">Build: Leadership &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

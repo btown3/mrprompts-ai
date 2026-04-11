@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AuthGate } from "@/app/components/AuthGate";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 const SECTIONS = [
   {
@@ -214,6 +215,8 @@ export default function ClaudeMdMasterclassPage() {
           </Link>
         </div>
       </AuthGate>
+
+      <PageFooterCTA />
     </article>
   );
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PersonSchema } from "@/app/components/SchemaOrg";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "About Wayne Cederholm",
   description:
-    "Meet the founder of MrPrompts. Wayne Cederholm builds AI systems and teaches smart professionals to do the same. 4,000+ builders trust his weekly newsletter.",
+    "Meet the founder of MrPrompts. Wayne Cederholm builds AI systems and teaches smart professionals to do the same. 5,000+ builders trust his weekly newsletter.",
   alternates: { canonical: "https://www.mrprompts.ai/about" },
 };
 
@@ -59,7 +60,7 @@ export default function AboutPage() {
 
         <h2 className="text-xl font-bold text-zinc-900 dark:text-white">The community</h2>
         <p>
-          Over 4,000 professionals subscribe to the weekly MrPrompts newsletter.
+          Over 5,000 professionals subscribe to the weekly MrPrompts newsletter.
           Every week, they get one practical AI framework they can use
           immediately: a prompt template, a workflow blueprint, a knowledge base
           schema, or a step-by-step guide. No hype. No "AI will change
@@ -132,6 +133,8 @@ export default function AboutPage() {
           </a>
         </div>
       </div>
+
+      <PageFooterCTA />
     </div>
   );
 }

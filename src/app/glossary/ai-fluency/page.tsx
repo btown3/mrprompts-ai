@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is AI Fluency? — MrPrompts Glossary",
@@ -100,6 +101,8 @@ export default function AIFluencyPage() {
           <li><Link href="/guides/ai-adoption-roadmap" className="text-emerald-600 hover:text-emerald-700">AI Adoption Roadmap &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

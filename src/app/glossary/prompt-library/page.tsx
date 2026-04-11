@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "What is a Prompt Library? — MrPrompts Glossary",
@@ -99,6 +100,8 @@ export default function PromptLibraryPage() {
           <li><Link href="/learn/ai-prompts-for-hr" className="text-emerald-600 hover:text-emerald-700">AI Prompts for HR &rarr;</Link></li>
         </ul>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }

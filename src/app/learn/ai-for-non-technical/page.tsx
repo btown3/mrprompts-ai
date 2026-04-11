@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/app/components/FAQ";
 import { BuildProcess } from "@/app/components/diagrams/BuildProcess";
+import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 
 export const metadata: Metadata = {
   title: "AI for Non-Technical Professionals — The Complete Guide",
@@ -89,6 +90,15 @@ export default function AIForNonTechnicalPage() {
         </section>
       </div>
 
+      <section className="mt-16 rounded-xl border border-zinc-200 bg-zinc-50 p-8 dark:border-zinc-800 dark:bg-zinc-900">
+        <h2 className="text-lg font-bold">Why this matters: what the research says</h2>
+        <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p>The World Economic Forum&apos;s 2025 Future of Jobs Report identified AI literacy as the fastest-growing skill demand across all industries — not AI development, but AI usage. The distinction matters: organizations need people who can work effectively with AI, not people who can build AI models.</p>
+          <p>McKinsey&apos;s research on AI adoption found that the organizations seeing the highest ROI from AI are not the ones with the most advanced technology. They are the ones where non-technical professionals — marketing directors, operations managers, sales leaders — have been trained to use AI tools effectively in their existing workflows. The bottleneck is not the technology. It is the human on-ramp.</p>
+          <p>This is the gap MrPrompts exists to fill. Every framework, tool, and guide on this site is designed for professionals who think clearly and communicate well but do not write code. The research is clear: AI fluency for non-technical professionals is not a nice-to-have. It is the highest-leverage skill investment most organizations can make right now.</p>
+        </div>
+      </section>
+
       <div className="mt-16">
         <h2 className="text-xl font-bold">Frequently asked questions</h2>
         <div className="mt-8">
@@ -132,6 +142,8 @@ export default function AIForNonTechnicalPage() {
           Explore the Build Tracks
         </Link>
       </div>
+
+      <PageFooterCTA />
     </article>
   );
 }
