@@ -13,10 +13,13 @@ export type DbProduct = {
   items: string | null;
   visible: boolean;
   sort_order: number;
+  meta_title: string | null;
+  meta_description: string | null;
 };
 
 export type DbBlogPost = {
   id: string;
+  slug: string;
   title: string;
   description: string;
   category: string;
@@ -25,6 +28,8 @@ export type DbBlogPost = {
   published_at: string | null;
   featured: boolean;
   visible: boolean;
+  meta_title: string | null;
+  meta_description: string | null;
 };
 
 export type DbTestimonial = {

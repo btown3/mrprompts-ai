@@ -16,6 +16,8 @@ interface ProductForm {
   items: string;
   visible: boolean;
   sort_order: number;
+  meta_title: string;
+  meta_description: string;
 }
 
 const emptyForm: ProductForm = {
@@ -30,6 +32,8 @@ const emptyForm: ProductForm = {
   items: "",
   visible: true,
   sort_order: 0,
+  meta_title: "",
+  meta_description: "",
 };
 
 const categories = [
@@ -75,6 +79,8 @@ export default function ProductEdit() {
             : data.items ?? "",
           visible: data.visible ?? true,
           sort_order: data.sort_order ?? 0,
+          meta_title: data.meta_title ?? "",
+          meta_description: data.meta_description ?? "",
         });
       }
       setLoading(false);
@@ -96,6 +102,8 @@ export default function ProductEdit() {
       items: form.items ? (() => { try { return JSON.parse(form.items); } catch { return form.items; } })() : null,
       visible: form.visible,
       sort_order: form.sort_order,
+      meta_title: form.meta_title || null,
+      meta_description: form.meta_description || null,
     };
 
     if (isNew) {
@@ -274,6 +282,43 @@ export default function ProductEdit() {
                 Visible
               </span>
             </label>
+          </div>
+        </div>
+
+        {/* SEO */}
+        <div className="pt-6 border-t border-zinc-200">
+          <h2 className="text-sm font-semibold text-zinc-900 mb-4 uppercase tracking-wide">
+            SEO
+          </h2>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">
+                Meta Title
+              </label>
+              <input
+                type="text"
+                value={form.meta_title}
+                onChange={(e) =>
+                  setForm({ ...form, meta_title: e.target.value })
+                }
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+                placeholder="Custom page title for search engines"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">
+                Meta Description
+              </label>
+              <input
+                type="text"
+                value={form.meta_description}
+                onChange={(e) =>
+                  setForm({ ...form, meta_description: e.target.value })
+                }
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+                placeholder="Short description for search engine results"
+              />
+            </div>
           </div>
         </div>
 

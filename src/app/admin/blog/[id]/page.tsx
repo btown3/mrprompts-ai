@@ -6,22 +6,39 @@ import { useEffect, useState } from "react";
 
 interface BlogForm {
   title: string;
+  slug: string;
   description: string;
   category: string;
   substack_url: string;
+  content: string;
   published_at: string;
   featured: boolean;
   visible: boolean;
+  meta_title: string;
+  meta_description: string;
+}
+
+function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 const emptyForm: BlogForm = {
   title: "",
+  slug: "",
   description: "",
   category: "",
   substack_url: "",
+  content: "",
   published_at: "",
   featured: false,
   visible: true,
+  meta_title: "",
+  meta_description: "",
 };
 
 export default function BlogPostEdit() {
@@ -45,14 +62,18 @@ export default function BlogPostEdit() {
       if (data) {
         setForm({
           title: data.title ?? "",
+          slug: data.slug ?? "",
           description: data.description ?? "",
           category: data.category ?? "",
           substack_url: data.substack_url ?? "",
+          content: data.content ?? "",
           published_at: data.published_at
             ? data.published_at.split("T")[0]
             : "",
           featured: data.featured ?? false,
           visible: data.visible ?? true,
+          meta_title: data.meta_title ?? "",
+          meta_description: data.meta_description ?? "",
         });
       }
       setLoading(false);
@@ -64,12 +85,16 @@ export default function BlogPostEdit() {
     setSaving(true);
     const record = {
       title: form.title,
+      slug: form.slug || generateSlug(form.title),
       description: form.description,
       category: form.category,
       substack_url: form.substack_url || null,
+      content: form.content || null,
       published_at: form.published_at || null,
       featured: form.featured,
       visible: form.visible,
+      meta_title: form.meta_title || null,
+      meta_description: form.meta_description || null,
     };
 
     if (isNew) {
@@ -105,7 +130,15 @@ export default function BlogPostEdit() {
           <input
             type="text"
             value={form.title}
-            onChange={(e) => setForm({ ...form, title: e.target.value })}
+            onChange={(e) => {
+              const title = e.target.value;
+              const updates: Partial<BlogForm> = { title };
+              // Auto-generate slug from title if slug is empty or matches prior auto-slug
+              if (!form.slug || form.slug === generateSlug(form.title)) {
+                updates.slug = generateSlug(title);
+              }
+              setForm({ ...form, ...updates });
+            }}
             className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
           />
         </div>
@@ -165,6 +198,19 @@ export default function BlogPostEdit() {
           />
         </div>
 
+        <div>
+          <label className="block text-sm font-medium text-zinc-700 mb-1">
+            Content
+          </label>
+          <textarea
+            rows={10}
+            value={form.content}
+            onChange={(e) => setForm({ ...form, content: e.target.value })}
+            className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+            placeholder="Write on-site blog content here. Separate paragraphs with blank lines."
+          />
+        </div>
+
         <div className="flex gap-6">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -187,6 +233,55 @@ export default function BlogPostEdit() {
             />
             <span className="text-sm font-medium text-zinc-700">Visible</span>
           </label>
+        </div>
+
+        {/* SEO */}
+        <div className="pt-6 border-t border-zinc-200">
+          <h2 className="text-sm font-semibold text-zinc-900 mb-4 uppercase tracking-wide">
+            SEO
+          </h2>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">
+                Slug
+              </label>
+              <input
+                type="text"
+                value={form.slug}
+                onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 font-mono text-sm focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+                placeholder="auto-generated-from-title"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">
+                Meta Title
+              </label>
+              <input
+                type="text"
+                value={form.meta_title}
+                onChange={(e) =>
+                  setForm({ ...form, meta_title: e.target.value })
+                }
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+                placeholder="Custom page title for search engines"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-1">
+                Meta Description
+              </label>
+              <input
+                type="text"
+                value={form.meta_description}
+                onChange={(e) =>
+                  setForm({ ...form, meta_description: e.target.value })
+                }
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-900 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none"
+                placeholder="Short description for search engine results"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center gap-3 pt-4 border-t border-zinc-200">
