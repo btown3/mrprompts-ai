@@ -80,7 +80,7 @@ export function PersonSchema() {
     },
     description:
       "AI educator helping non-technical leaders and professionals build with AI through frameworks, tools, and step-by-step guides.",
-    sameAs: ["https://x.com/MrPrompts", "https://mrprompts.substack.com"],
+    sameAs: ["https://x.com/MrPrompts", "https://mrprompts.substack.com", "https://www.linkedin.com/in/waynecederholm/"],
     knowsAbout: [
       "Prompt Engineering",
       "AI Agents",

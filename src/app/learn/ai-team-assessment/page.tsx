@@ -21,7 +21,7 @@ export default function AITeamAssessmentPage() {
         <section>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Why assessment comes before training</h2>
           <p className="mt-3">The number one mistake in AI rollouts is assuming everyone starts at the same place. They do not. In any team of 20 people, you will have 2-3 who are already using AI daily, 10-12 who have tried it once or twice, and 5-8 who have never used it at all.</p>
-          <p className="mt-3">If you put all 20 in the same training session, you bore the advanced users, overwhelm the beginners, and frustrate everyone in between. Assessment lets you segment your team and provide the right training at the right level. It also gives you a baseline so you can measure improvement.</p>
+          <p className="mt-3">If you put all 20 in the same training session, you bore the advanced users, overwhelm the beginners, and frustrate everyone in between. Assessment lets you segment your team and provide the right training at the right level. It also gives you a baseline so you can measure improvement. Our guide on <Link href="/learn/ai-change-management" className="text-emerald-600 hover:text-emerald-700">AI change management</Link> covers the full rollout playbook once you have your assessment results.</p>
         </section>
 
         <section>
@@ -64,7 +64,7 @@ export default function AITeamAssessmentPage() {
 
       <div className="mt-12 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
         <h2 className="text-xl font-bold text-white">Get the complete assessment</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Full rubric, 10-question survey, and scoring guide. Free download.</p>
+        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Full rubric, 10-question survey, and scoring guide. Free download. For organizations that need hands-on support, see our <Link href="/enterprise" className="text-emerald-400 hover:text-emerald-300">enterprise training programs</Link>.</p>
         <Link href="/guides/team-fluency-assessment" className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-emerald-600 px-8 text-sm font-semibold text-white transition hover:bg-emerald-700">Download the Assessment</Link>
       </div>
     </article>

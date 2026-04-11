@@ -52,7 +52,7 @@ export default function AIMarketingPromptsPage() {
           15 detailed prompts that produce marketing work you would actually use.
           Campaign briefs, content calendars, email sequences, landing page copy,
           ad variations, PR pitches, and more. Each prompt includes specific
-          instructions so the AI understands marketing context, not just keywords.
+          instructions so the AI understands marketing context, not just keywords. Browse the full <Link href="/build/prompts" className="text-emerald-600 hover:text-emerald-700">prompt library</Link> for templates across every department.
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {["Strategy & Planning (3)", "Content Creation (3)", "Email Campaigns (1)", "Social Media (2)", "Conversion & Ads (3)", "Outreach & PR (1)", "Analytics & Audits (2)"].map((item) => (
@@ -78,6 +78,10 @@ export default function AIMarketingPromptsPage() {
         </div>
       </section>
 
+      <section className="mt-12 rounded-xl border border-zinc-200 p-6 dark:border-zinc-800">
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">Once you have your prompts dialed in, automate the repetitive parts. Our <Link href="/learn/ai-workflow-examples" className="text-emerald-600 hover:text-emerald-700">AI workflow examples</Link> show you how to turn a single blog post into a week of content distribution without touching it.</p>
+      </section>
+
       <section className="mt-12 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
         <h2 className="text-xl font-bold text-white">Get all 15 marketing prompts</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
@@ -98,7 +102,7 @@ export default function AIMarketingPromptsPage() {
           <FAQ items={[
             { question: "Can AI write marketing copy that sounds human?", answer: "Yes, but you need to give it your brand voice. The Brand Voice Guide prompt generates a style guide the AI can follow. Without voice guidance, AI defaults to generic corporate language. With it, the output matches your tone. Always edit the final output." },
             { question: "Which AI tool is best for marketing?", answer: "Claude is strongest for long-form content, strategy docs, and nuanced writing. ChatGPT has more integrations for workflow automation. Perplexity is best for competitive research because it cites sources. For most marketing teams, Claude or ChatGPT plus Perplexity covers everything." },
-            { question: "How do I use AI without making my content sound generic?", answer: "Three things: give the AI your brand voice guide, provide specific examples of content you like, and always edit the output with your knowledge of your audience. Generic AI output comes from generic prompts. The more specific context you provide, the more distinctive the output." },
+            { question: "How do I use AI without making my content sound generic?", answer: "Three things: give the AI your brand voice guide, provide specific examples of content you like, and always edit the output with your knowledge of your audience. Generic AI output comes from generic prompts. The more specific context you provide, the more distinctive the output. Combining prompts with AI workflows can automate your entire content repurposing pipeline." },
           ]} />
         </div>
       </div>

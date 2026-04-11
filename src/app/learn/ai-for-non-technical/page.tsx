@@ -36,7 +36,7 @@ export default function AIForNonTechnicalPage() {
             This matters because once you understand that AI is pattern matching, you understand why the quality of your input determines the quality of your output. A vague question produces a vague answer because the AI matches the pattern of "vague questions get generic responses." A specific, well-structured prompt produces a specific, useful response because the AI matches the pattern of "detailed briefs get detailed deliverables."
           </p>
           <p className="mt-3">
-            This is the entire foundation of prompt engineering: giving the AI better patterns to match against. And you do not need to code to do it. You need to think clearly and communicate precisely. Skills you already have.
+            This is the entire foundation of <Link href="/glossary/prompt-engineering" className="text-emerald-600 hover:text-emerald-700">prompt engineering</Link>: giving the AI better patterns to match against. And you do not need to code to do it. You need to think clearly and communicate precisely. Skills you already have.
           </p>
         </section>
 
@@ -63,7 +63,7 @@ export default function AIForNonTechnicalPage() {
           <p className="mt-3"><strong>For general work (writing, analysis, brainstorming):</strong> Claude by Anthropic or ChatGPT by OpenAI. Both are excellent. Claude tends to produce more thoughtful, nuanced output for longer documents. ChatGPT has more integrations and plugins. Pick one and learn it well before adding others.</p>
           <p className="mt-3"><strong>For research:</strong> Perplexity. It searches the web and cites sources, which neither Claude nor ChatGPT do natively. Use it when you need current information or want to verify claims.</p>
           <p className="mt-3"><strong>For images:</strong> Midjourney for quality, DALL-E (inside ChatGPT) for convenience. You probably do not need image generation on day one. Add it when you have a specific use case.</p>
-          <p className="mt-3">Do not sign up for 10 tools. Master one AI assistant and one research tool. That covers 90% of professional use cases.</p>
+          <p className="mt-3">Do not sign up for 10 tools. Master one AI assistant and one research tool. That covers 90% of professional use cases. Our <Link href="/learn/best-ai-tools-for-business" className="text-emerald-600 hover:text-emerald-700">opinionated guide to the best AI tools for business</Link> breaks down every category with honest recommendations.</p>
         </section>
 
         <section>
@@ -83,7 +83,7 @@ export default function AIForNonTechnicalPage() {
           <p className="mt-3">Once you are comfortable with basic AI conversations, you are ready to build systems that compound your AI capability over time:</p>
           <ul className="mt-3 space-y-2">
             <li><strong>A prompt library</strong> — reusable templates for your most common tasks. Our <Link href="/guides/prompt-library-starter" className="text-emerald-600 hover:text-emerald-700">Prompt Library Starter Kit</Link> has 20+ ready to use.</li>
-            <li><strong>A knowledge base</strong> — a structured reference your AI can read every time, so it has persistent memory about your work. Our <Link href="/guides/your-first-wiki" className="text-emerald-600 hover:text-emerald-700">First Wiki guide</Link> walks you through it in 20 minutes.</li>
+            <li><strong>A knowledge base</strong> — a structured reference your AI can read every time, so it has persistent memory about your work. Our <Link href="/learn/ai-knowledge-base-guide" className="text-emerald-600 hover:text-emerald-700">complete knowledge base guide</Link> explains the system, and our <Link href="/guides/your-first-wiki" className="text-emerald-600 hover:text-emerald-700">First Wiki guide</Link> walks you through it in 20 minutes.</li>
             <li><strong>An AI workflow</strong> — an automation that handles repetitive work without you touching it. Our <Link href="/guides/workflow-blueprints" className="text-emerald-600 hover:text-emerald-700">Workflow Blueprints</Link> have 5 ready to set up.</li>
           </ul>
         </section>

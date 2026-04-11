@@ -160,7 +160,7 @@ export default function AIHRPromptsPage() {
       <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">HR Prompts</p>
       <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">AI Prompts for HR: 12 Ready-to-Use Templates</h1>
       <p className="mt-2 text-sm text-zinc-400">Updated April 2026 · By Wayne Cederholm</p>
-      <p className="mt-4 text-lg text-zinc-500">Copy-paste prompts for recruiting, performance management, onboarding, policy writing, and employee communications. Built for HR professionals who want AI to handle the drafting so they can focus on the people.</p>
+      <p className="mt-4 text-lg text-zinc-500">Copy-paste prompts for recruiting, performance management, onboarding, policy writing, and employee communications. Built for HR professionals who want AI to handle the drafting so they can focus on the people. Pair these with an <Link href="/learn/onboarding-knowledge-base" className="text-emerald-600 hover:text-emerald-700">onboarding knowledge base</Link> and new hires get answers from the system instead of interrupting colleagues.</p>
 
       <div className="mt-12 space-y-10">
         {PROMPTS.map((p, i) => (
@@ -187,7 +187,7 @@ export default function AIHRPromptsPage() {
 
       <div className="mt-12 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
         <h2 className="text-lg font-bold">Want prompts for other roles?</h2>
-        <p className="mt-2 text-sm text-zinc-500">The full Prompt Library has 20+ templates across sales, marketing, operations, finance, and consulting.</p>
+        <p className="mt-2 text-sm text-zinc-500">The full Prompt Library has 20+ templates across sales, marketing, operations, finance, and consulting. Browse the complete collection in the <Link href="/build/prompts" className="text-emerald-600 hover:text-emerald-700">prompt build track</Link>.</p>
         <Link href="/guides/prompt-library-starter" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Get the full Prompt Library &rarr;</Link>
       </div>
     </article>

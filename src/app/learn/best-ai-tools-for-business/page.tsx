@@ -39,7 +39,7 @@ export default function BestAIToolsPage() {
       <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">Tool Guide</p>
       <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">Best AI Tools for Business in 2026</h1>
       <p className="mt-2 text-sm text-zinc-400">Updated April 2026 · By Wayne Cederholm</p>
-      <p className="mt-4 text-lg text-zinc-500">An opinionated guide from someone who uses these tools every day. Not a listicle. Not sponsored. Just honest recommendations for business professionals who want to build with AI.</p>
+      <p className="mt-4 text-lg text-zinc-500">An opinionated guide from someone who uses these tools every day. Not a listicle. Not sponsored. Just honest recommendations for business professionals who want to build with AI. New to AI entirely? Start with our <Link href="/learn/ai-for-non-technical" className="text-emerald-600 hover:text-emerald-700">complete guide for non-technical professionals</Link> first.</p>
 
       <div className="mt-12 space-y-14">
         {TOOLS.map((cat) => (
@@ -69,7 +69,7 @@ export default function BestAIToolsPage() {
           <li><strong>Day 1:</strong> Claude (free tier) for writing and analysis</li>
           <li><strong>Week 1:</strong> Add Perplexity (free) for research</li>
           <li><strong>Month 1:</strong> Add Zapier (free tier) for your first automation</li>
-          <li><strong>When ready:</strong> Claude Pro ($20/mo) + Notion or any note-taking app for knowledge bases</li>
+          <li><strong>When ready:</strong> Claude Pro ($20/mo) + Notion or any note-taking app for knowledge bases. Then explore the <Link href="/build" className="text-emerald-600 hover:text-emerald-700">build tracks</Link> to start creating systems that compound over time.</li>
         </ul>
         <p className="mt-3 text-xs text-zinc-400">Some links on this page may be affiliate links. We only recommend tools we use. <Link href="/terms" className="text-emerald-600 hover:text-emerald-700">Full disclosure</Link>.</p>
       </div>

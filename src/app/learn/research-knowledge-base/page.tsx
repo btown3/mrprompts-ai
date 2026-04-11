@@ -37,6 +37,7 @@ export default function ResearchKnowledgeBasePage() {
           <p className="mt-3"><strong>Synthesis pieces.</strong> Articles that compare and contrast multiple sources on a theme. "Three Approaches to AI Safety" draws from 8 different source articles and presents a unified analysis.</p>
           <p className="mt-3"><strong>Open questions.</strong> What you don't know yet. What contradictions exist between sources. What needs more research. This is the most valuable section because it directs your future reading.</p>
           <p className="mt-3"><strong>Literature maps.</strong> Visual or textual maps showing how sources relate to each other. Who cites whom. Which findings agree or conflict. Where consensus exists and where the field is divided.</p>
+          <p className="mt-3">To understand the schema file that governs how your AI builds and queries the wiki, read our explainer on <Link href="/learn/what-is-claude-md" className="text-emerald-600 hover:text-emerald-700">what CLAUDE.md is and how to write one</Link>. You can also automate parts of your research pipeline using <Link href="/learn/ai-workflow-examples" className="text-emerald-600 hover:text-emerald-700">AI workflow automations</Link> like the competitive intelligence monitor.</p>
         </section>
 
         <section>

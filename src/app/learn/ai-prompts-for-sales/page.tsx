@@ -56,7 +56,7 @@ export default function AISalesPromptsPage() {
           cycle. Each prompt includes full context, specific instructions for
           the AI, and formatting rules so the output is immediately usable.
           Not generic "write me an email" prompts. These are structured
-          frameworks that produce work you would actually send.
+          frameworks that produce work you would actually send. Pair them with a <Link href="/learn/sales-knowledge-base" className="text-emerald-600 hover:text-emerald-700">sales knowledge base</Link> and your AI has persistent context about your deals, competitors, and objections every time you run a prompt.
         </p>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -89,7 +89,7 @@ export default function AISalesPromptsPage() {
         <h2 className="text-xl font-bold text-white">Get all 15 sales prompts</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
           Free download. Enter your email and get the complete Sales Prompt
-          Pack with all 15 copy-paste templates.
+          Pack with all 15 copy-paste templates. Or explore the full <Link href="/build/prompts" className="text-emerald-400 hover:text-emerald-300">prompt library</Link> for templates across every role.
         </p>
         <Link
           href="/products/sales-prompt-pack"

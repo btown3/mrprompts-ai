@@ -62,7 +62,7 @@ export default function AIKnowledgeBaseGuidePage() {
         <section>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">What to build your knowledge base about</h2>
           <p className="mt-3">The best knowledge base topics share three qualities: you care about them, you encounter new information about them regularly, and synthesized knowledge is more valuable than raw notes.</p>
-          <p className="mt-3">Strong topics for professionals: your industry's competitive landscape, your product's technical documentation, a domain you are learning (AI, data science, leadership), client research, regulatory compliance, sales methodology, marketing strategy.</p>
+          <p className="mt-3">Strong topics for professionals: your industry's competitive landscape, your product's technical documentation, a domain you are learning (AI, data science, leadership), client research, regulatory compliance, sales methodology, marketing strategy. See our use-case guides for building a <Link href="/learn/sales-knowledge-base" className="text-emerald-600 hover:text-emerald-700">sales knowledge base</Link>, a <Link href="/learn/research-knowledge-base" className="text-emerald-600 hover:text-emerald-700">research knowledge base</Link>, or an <Link href="/learn/executive-knowledge-base" className="text-emerald-600 hover:text-emerald-700">executive knowledge base</Link>.</p>
           <p className="mt-3">Weak topics: things that change daily (news), things with no depth (simple facts), things you do not reference regularly (vacation planning).</p>
         </section>
       </div>

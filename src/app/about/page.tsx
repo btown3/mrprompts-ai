@@ -25,30 +25,63 @@ export default function AboutPage() {
           I started MrPrompts because I kept watching smart, ambitious people get
           locked out of AI. Not because they lacked intelligence. Because
           everything assumed you could code. Every tutorial started with "open
-          your terminal." Every framework was written for developers.
+          your terminal." Every framework was written for developers. Meanwhile,
+          the VP of marketing, the head of sales, the operations director — the
+          people who could get the most leverage from AI — were stuck reading
+          articles that described what AI could do without ever showing them how
+          to do it.
         </p>
         <p>
           That felt wrong. The most interesting things happening with AI right
           now don't require a computer science degree. They require clear
           thinking, good frameworks, and someone willing to show you the
-          on-ramp.
+          on-ramp. So I decided to be that person.
+        </p>
+
+        <h2 className="text-xl font-bold text-zinc-900 dark:text-white">What I've built</h2>
+        <p>
+          MrPrompts started as a newsletter and turned into a full system for
+          professional AI adoption. I built the wiki system — a structured
+          knowledge base architecture that lets any professional create a
+          compounding AI reference using nothing but a note-taking app and an AI
+          assistant. I developed prompt frameworks for sales, marketing, HR, and
+          executive teams — not generic templates, but structured systems that
+          produce work you'd actually use. I designed enterprise training programs
+          that take organizations from "we should probably do something with AI"
+          to measurable adoption in 90 days.
         </p>
         <p>
-          That's what MrPrompts is. I build AI knowledge bases, prompt systems,
-          and workflows. Then I write down exactly how I built them so you can
-          build your own. No jargon. No gatekeeping. Just frameworks that work,
-          tested by someone who uses them every day.
+          Everything on this site was built using the same tools and methods I
+          teach. The knowledge bases, the workflows, the prompt libraries — I use
+          them daily. I'm a builder, not a theorist. If I haven't built it
+          myself, I don't teach it.
+        </p>
+
+        <h2 className="text-xl font-bold text-zinc-900 dark:text-white">The community</h2>
+        <p>
+          Over 4,000 professionals subscribe to the weekly MrPrompts newsletter.
+          Every week, they get one practical AI framework they can use
+          immediately: a prompt template, a workflow blueprint, a knowledge base
+          schema, or a step-by-step guide. No hype. No "AI will change
+          everything" hand-waving. Just specific techniques, tested by someone
+          who uses them in real work, explained clearly enough that a non-technical
+          professional can implement them the same day.
+        </p>
+
+        <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Who MrPrompts is for</h2>
+        <p>
+          If you're a non-technical professional who wants to build with AI but
+          doesn't know where to start — you're exactly who I built this for.
+          Team leaders who need to roll out AI without losing their people.
+          Executives who want strategic AI capability without depending on
+          engineering. Sales and marketing professionals who want to do more in
+          less time. Consultants and analysts who synthesize information for a
+          living and know there's a better way.
         </p>
         <p>
-          I write a weekly newsletter that 4,000+ professionals read. I've
-          published guides on prompt engineering, AI agents, knowledge base
-          architecture, and change management with AI. I focus on the
-          intersection of AI capability and human judgment, because that's where
-          the real leverage is.
-        </p>
-        <p>
-          If you're a professional who wants to build with AI but doesn't come
-          from a technical background, you're exactly who I built this for.
+          I write like I talk: straight, specific, and respectful of your time.
+          If something doesn't work, I'll tell you. If something does, I'll show
+          you exactly how to set it up. That's the deal.
         </p>
       </div>
 

@@ -25,7 +25,7 @@ export default function AIWorkflowExamplesPage() {
       <p className="text-sm font-semibold uppercase tracking-wider text-emerald-600">Workflow Guide</p>
       <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">AI Workflow Examples: 7 Automations You Can Build Today</h1>
       <p className="mt-2 text-sm text-zinc-400">Updated April 2026 · By Wayne Cederholm</p>
-      <p className="mt-4 text-lg text-zinc-500">Real workflows with real tools. Each one saves hours per week and requires no coding to set up. Copy the structure, plug in your tools, and let it run.</p>
+      <p className="mt-4 text-lg text-zinc-500">Real workflows with real tools. Each one saves hours per week and requires no coding to set up. Copy the structure, plug in your tools, and let it run. For even more power, pair workflows with an <Link href="/learn/ai-knowledge-base-guide" className="text-emerald-600 hover:text-emerald-700">AI knowledge base</Link> so your automations have persistent context about your work.</p>
 
       <div className="mt-12 space-y-10">
         {WORKFLOWS.map((wf, i) => (
@@ -61,7 +61,7 @@ export default function AIWorkflowExamplesPage() {
 
       <div className="mt-12 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
         <h2 className="text-lg font-bold">Want the complete blueprint bundle?</h2>
-        <p className="mt-2 text-sm text-zinc-500">5 fully documented workflow blueprints with prompts, tool configs, and setup instructions.</p>
+        <p className="mt-2 text-sm text-zinc-500">5 fully documented workflow blueprints with prompts, tool configs, and setup instructions. Or jump straight to the <Link href="/build/workflows" className="text-emerald-600 hover:text-emerald-700">workflow build track</Link> and start building.</p>
         <Link href="/guides/workflow-blueprints" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Get the Workflow Blueprints (free) &rarr;</Link>
       </div>
     </article>

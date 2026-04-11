@@ -39,6 +39,7 @@ export default function SalesKnowledgeBasePage() {
           <p className="mt-3"><strong>Customer profiles.</strong> For key accounts: company overview, decision-making process, past interactions, what they value, what they don't care about. Updated after every touchpoint.</p>
           <p className="mt-3"><strong>Win/loss analysis.</strong> After every closed deal: what worked, what didn't, at what stage you gained or lost momentum, and what to repeat or avoid next time.</p>
           <p className="mt-3"><strong>Product knowledge.</strong> Features, use cases, pricing, and positioning. Written for sales conversations, not for the website. Includes "how to demo this" for each key feature.</p>
+          <p className="mt-3">Pair your knowledge base with our <Link href="/learn/ai-prompts-for-sales" className="text-emerald-600 hover:text-emerald-700">15 ready-to-use sales prompts</Link> to get structured output for discovery calls, proposals, and objection handling. Or grab the complete <Link href="/products/sales-prompt-pack" className="text-emerald-600 hover:text-emerald-700">Sales Prompt Pack</Link> with all templates included.</p>
         </section>
 
         <section>

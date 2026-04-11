@@ -40,6 +40,7 @@ export default function ExecutiveKnowledgeBasePage() {
           <p className="mt-3"><strong>Decision history.</strong> Major decisions you've made: what the options were, what data informed the choice, what you expected to happen, and what actually happened. This is your institutional memory for decision-making patterns.</p>
           <p className="mt-3"><strong>Board prep.</strong> Key metrics, talking points, strategic questions, and risk factors that come up in board discussions. Having this in the wiki means your board prep starts from accumulated intelligence, not from scratch each quarter.</p>
           <p className="mt-3"><strong>People and relationships.</strong> Key external contacts: investors, advisors, potential hires, partners. What you discussed, what they care about, and what you promised to follow up on.</p>
+          <p className="mt-3">An executive knowledge base works best as part of a broader AI adoption strategy. Our <Link href="/learn/ai-change-management" className="text-emerald-600 hover:text-emerald-700">AI change management guide</Link> covers the full rollout playbook, and our <Link href="/enterprise" className="text-emerald-600 hover:text-emerald-700">enterprise training programs</Link> provide hands-on support for leadership teams.</p>
         </section>
 
         <section>

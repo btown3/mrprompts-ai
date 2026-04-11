@@ -38,6 +38,7 @@ export default function OnboardingKnowledgeBasePage() {
           <p className="mt-3"><strong>Processes.</strong> How things actually get done. Not the official process doc from 2 years ago — the real way things work today. How to submit an expense report. How to request time off. How to deploy code. How to get a decision made.</p>
           <p className="mt-3"><strong>Role-specific playbooks.</strong> Different sections for different roles. What a new engineer needs to know is different from what a new marketer needs. Each role gets its own playbook with first-week priorities, key contacts, and "things I wish I knew on day 1" from people in that role.</p>
           <p className="mt-3"><strong>Culture and norms.</strong> The unwritten rules. How decisions get made. How conflict is handled. What "good work" looks like here. This is the hardest section to write and the most valuable one for new hires.</p>
+          <p className="mt-3">Before building an onboarding wiki, run the <Link href="/learn/ai-team-assessment" className="text-emerald-600 hover:text-emerald-700">AI team assessment</Link> to understand where your team stands. Then use our <Link href="/learn/ai-change-management" className="text-emerald-600 hover:text-emerald-700">change management playbook</Link> to roll out AI tools alongside the knowledge base.</p>
         </section>
 
         <section>

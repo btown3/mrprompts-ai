@@ -29,7 +29,7 @@ export default function WhatIsClaudeMdPage() {
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Why CLAUDE.md matters</h2>
           <p className="mt-3">Without a schema file, every AI interaction starts from zero. You explain your topic, your preferences, your format requirements, your rules — every single time. The AI has no memory of what you told it yesterday.</p>
           <p className="mt-3">CLAUDE.md solves this by giving the AI a persistent reference document. When it reads your knowledge base, CLAUDE.md is the first file it processes. It learns your topic, your folder structure, your article format, your taxonomy, and your behavioral rules before doing anything else. The result is consistent, high-quality output every time without you repeating yourself.</p>
-          <p className="mt-3">A well-written CLAUDE.md is the difference between an AI that produces random, inconsistent wiki articles and one that builds a structured, interlinked knowledge base that gets better with every use.</p>
+          <p className="mt-3">A well-written CLAUDE.md is the difference between an AI that produces random, inconsistent wiki articles and one that builds a structured, interlinked knowledge base that gets better with every use. Our <Link href="/learn/ai-knowledge-base-guide" className="text-emerald-600 hover:text-emerald-700">complete knowledge base guide</Link> explains the full system that CLAUDE.md powers.</p>
         </section>
 
         <section>
@@ -105,7 +105,7 @@ Tags: beginner, advanced, chain-of-thought, system-prompt, multi-turn
 
       <div className="mt-12 rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
         <h2 className="text-lg font-bold">Get the full CLAUDE.md Masterclass</h2>
-        <p className="mt-2 text-sm text-zinc-500">Deep dive into writing production-ready schemas, with templates you can copy.</p>
+        <p className="mt-2 text-sm text-zinc-500">Deep dive into writing production-ready schemas, with templates you can copy. Or jump straight to the <Link href="/build/knowledge-bases" className="text-emerald-600 hover:text-emerald-700">knowledge base build track</Link> and start building.</p>
         <Link href="/guides/claude-md-masterclass" className="mt-4 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700">Read the Masterclass (free) &rarr;</Link>
       </div>
     </article>

@@ -46,6 +46,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/learn/onboarding-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/learn/executive-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
+    // Glossary
+    { url: `${baseUrl}/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/prompt-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/ai-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/claude-md`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/chain-of-thought`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/ai-agents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/rag`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/system-prompt`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/fine-tuning`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/hallucination`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/context-window`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/token`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/prompt-library`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/ai-workflow`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/ai-fluency`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/glossary/change-management-ai`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+
     // Legal
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
