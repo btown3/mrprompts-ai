@@ -432,8 +432,6 @@ export default function KnowledgeBasesTrackPage() {
         </div>
       )}
 
-      </>
-      )}
       </AuthGate>
       </div>
     </div>

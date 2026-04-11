@@ -128,8 +128,6 @@ export default function WorkflowsTrackPage() {
           </div>
         </div>
       )}
-      </>
-      )}
       </AuthGate>
       </div>
     </div>

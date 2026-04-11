@@ -271,8 +271,6 @@ export default function PromptsTrackPage() {
           </div>
         </div>
       )}
-      </>
-      )}
       </AuthGate>
       </div>
     </div>

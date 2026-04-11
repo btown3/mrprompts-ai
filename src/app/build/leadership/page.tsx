@@ -231,8 +231,6 @@ export default function LeadershipTrackPage() {
           </div>
         </div>
       )}
-      </>
-      )}
       </AuthGate>
       </div>
     </div>
