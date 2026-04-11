@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { RequireEmail } from "@/app/components/RequireEmail";
+import { AuthGate } from "@/app/components/AuthGate";
 
 type Tool = "roadmap" | "assessment" | "playbook" | "briefing";
 
@@ -153,9 +153,7 @@ export default function LeadershipTrackPage() {
       </div>
 
       <div className="mt-10">
-      <RequireEmail slug="build-leadership">
-      {() => (
-      <>
+      <AuthGate>
       {!downloaded ? (
         <>
           {/* Org details */}
@@ -235,7 +233,7 @@ export default function LeadershipTrackPage() {
       )}
       </>
       )}
-      </RequireEmail>
+      </AuthGate>
       </div>
     </div>
   );

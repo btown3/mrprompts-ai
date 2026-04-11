@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { RequireEmail } from "@/app/components/RequireEmail";
+import { AuthGate } from "@/app/components/AuthGate";
 
 type KitFile = { path: string; content: string };
 
@@ -134,9 +134,7 @@ export default function KnowledgeBasesTrackPage() {
       </div>
 
       <div className="mt-10">
-      <RequireEmail slug="build-knowledge-bases">
-      {() => (
-      <>
+      <AuthGate>
 
       {/* Mode chooser */}
       {mode === "choose" && (
@@ -436,7 +434,7 @@ export default function KnowledgeBasesTrackPage() {
 
       </>
       )}
-      </RequireEmail>
+      </AuthGate>
       </div>
     </div>
   );

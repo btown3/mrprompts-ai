@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { RequireEmail } from "@/app/components/RequireEmail";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const WORKFLOWS = [
   { id: "morning-brief", name: "Morning News Brief", time: "Saves 30 min/day", tools: "RSS + Claude + Email", description: "Automatically summarize industry news every morning before your inbox.", selected: false },
@@ -72,9 +72,7 @@ export default function WorkflowsTrackPage() {
       </div>
 
       <div className="mt-10">
-      <RequireEmail slug="build-workflows">
-      {() => (
-      <>
+      <AuthGate>
       {!downloaded ? (
         <>
           <div>
@@ -132,7 +130,7 @@ export default function WorkflowsTrackPage() {
       )}
       </>
       )}
-      </RequireEmail>
+      </AuthGate>
       </div>
     </div>
   );

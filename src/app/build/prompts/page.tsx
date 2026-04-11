@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { RequireEmail } from "@/app/components/RequireEmail";
+import { AuthGate } from "@/app/components/AuthGate";
 
 const ROLES = [
   {
@@ -146,9 +146,7 @@ export default function PromptsTrackPage() {
       </div>
 
       <div className="mt-10">
-      <RequireEmail slug="build-prompts">
-      {() => (
-      <>
+      <AuthGate>
       {!downloaded ? (
         <>
           {/* Role selector */}
@@ -275,7 +273,7 @@ export default function PromptsTrackPage() {
       )}
       </>
       )}
-      </RequireEmail>
+      </AuthGate>
       </div>
     </div>
   );
