@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FAQ } from "./components/FAQ";
 import { BuildProcess } from "./components/diagrams/BuildProcess";
 import { FolderStructure } from "./components/diagrams/FolderStructure";
+import { FeaturedPosts } from "./components/FeaturedPosts";
+import { Testimonials } from "./components/Testimonials";
 
 const HOME_FAQ = [
   {
@@ -31,32 +33,6 @@ const HOME_FAQ = [
   },
 ];
 
-const BLOG_POSTS = [
-  {
-    title: "Claude Skills Explained: How to Build and Use Them",
-    description:
-      "What Claude Skills are, how they work, and how to build your first one.",
-    date: "Apr 5, 2026",
-    category: "Tools",
-    href: "https://mrprompts.substack.com/p/claude-skills-explained-how-to-build",
-  },
-  {
-    title: "The 4-Layer Prompt Framework Nobody Talks About",
-    description:
-      "Four rhetorical concepts from a 2,000-year-old discipline that transform every prompt you write.",
-    date: "Mar 12, 2026",
-    category: "Prompting",
-    href: "https://mrprompts.substack.com/p/the-4-layer-prompt-framework-nobody",
-  },
-  {
-    title: "Diving into Karpathy's Autoresearch",
-    description:
-      "How AI agents can run hundreds of optimization experiments overnight while you sleep.",
-    date: "Mar 16, 2026",
-    category: "Research",
-    href: "https://mrprompts.substack.com/p/diving-into-karpathys-autoresearch",
-  },
-];
 
 export default function Home() {
   return (
@@ -259,50 +235,11 @@ export default function Home() {
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
-      {/* From the blog */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Latest
-            </h2>
-            <p className="mt-3 text-zinc-500">
-              Battle-tested AI workflows from the field, not the feed.
-            </p>
-          </div>
-          <Link
-            href="/blog"
-            className="hidden text-sm font-semibold text-emerald-600 hover:text-emerald-700 md:block"
-          >
-            All posts &rarr;
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
-            <a
-              key={post.title}
-              href={post.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-xs font-medium text-zinc-400">
-                  {post.category}
-                </span>
-                <span className="text-xs text-zinc-300">·</span>
-                <span className="text-xs text-zinc-400">{post.date}</span>
-              </div>
-              <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-                {post.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-                {post.description}
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
+      {/* From the blog — pulled from Supabase */}
+      <FeaturedPosts />
+
+      {/* Testimonials — from Supabase */}
+      <Testimonials />
 
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
