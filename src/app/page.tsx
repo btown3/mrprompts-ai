@@ -180,7 +180,7 @@ export default function Home() {
 
         <div className="mt-8 text-center">
           <Link
-            href="/guides"
+            href="/frameworks"
             className="text-sm font-semibold text-emerald-600 hover:text-emerald-700"
           >
             See all frameworks &rarr;
@@ -234,19 +234,18 @@ export default function Home() {
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Link
-            href="/build"
+            href="/products"
             className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
               Free
             </span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-              Starter Kits
+              Products
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              Knowledge base builder, prompt library generator, workflow
-              blueprints, and leadership toolkit. Interactive. Download and
-              use.
+              Interactive builders, prompt packs, starter kits, and
+              downloadable templates. Browse and use.
             </p>
           </Link>
 

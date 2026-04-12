@@ -18,9 +18,8 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <Link href="/build" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Build</Link>
+          <Link href="/frameworks" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Frameworks</Link>
           <Link href="/products" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Products</Link>
-          <Link href="/guides" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Learn</Link>
           <Link href="/workshops" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Workshops</Link>
           <Link href="/enterprise" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Enterprise</Link>
           <Link href="/pricing" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Pricing</Link>
@@ -64,9 +63,8 @@ export function Header() {
       {open && (
         <nav className="border-t border-zinc-200 bg-white px-6 pb-6 pt-4 dark:border-zinc-800 dark:bg-zinc-950 md:hidden">
           <div className="flex flex-col gap-4 text-sm font-medium">
-            <Link href="/build" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Build</Link>
+            <Link href="/frameworks" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Frameworks</Link>
             <Link href="/products" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Products</Link>
-            <Link href="/guides" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Guides</Link>
             <Link href="/blog" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Blog</Link>
             <Link href="/workshops" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Workshops</Link>
             <Link href="/enterprise" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Enterprise</Link>
