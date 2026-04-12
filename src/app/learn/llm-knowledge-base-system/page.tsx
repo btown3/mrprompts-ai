@@ -23,23 +23,22 @@ export default function LLMKnowledgeBaseSystemPage() {
       </h1>
       <p className="mt-2 text-sm text-zinc-400">By MrPrompts</p>
       <p className="mt-4 text-lg text-zinc-500">
-        How to turn raw articles, notes, and research into a structured
-        knowledge base that an AI can read, query, and build upon. Every
-        question you ask makes it smarter. Every source you add deepens it.
-        This is the complete guide. Nothing is left out.
+        Turn raw articles, notes, and research into a structured wiki that an
+        AI can read, query, and build on. This guide covers every step, from
+        an empty folder to a system that gets smarter each time you use it.
       </p>
 
       {/* The concept */}
       <div className="mt-12 rounded-xl border-l-4 border-emerald-500 bg-emerald-50 p-6 dark:bg-emerald-900/10">
         <p className="font-medium text-emerald-800 dark:text-emerald-400">
-          The core idea
+          How it works in one paragraph
         </p>
         <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-500">
           You collect raw sources. An AI compiles them into a structured wiki.
           You query the wiki. Good answers get filed back in. The knowledge
           compounds. Andrej Karpathy described this as one of the most
-          underrated uses of LLMs. This guide shows you exactly how to do it
-          without writing a single line of code.
+          underrated uses of LLMs. He does it with custom scripts. This guide
+          shows you how to do it without writing any code.
         </p>
       </div>
 
@@ -47,30 +46,24 @@ export default function LLMKnowledgeBaseSystemPage() {
         <BuildProcess />
       </div>
 
-      {/* Why this matters */}
       <div className="mt-16 space-y-10 text-zinc-600 leading-relaxed dark:text-zinc-400">
         <section>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Why every professional needs this</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">The problem this solves</h2>
           <p className="mt-3">
-            Every time you start a new AI conversation, you start from zero.
-            The AI has no memory of what you discussed yesterday. The research
-            you did last week is gone. The insights from that article you read
-            last month are trapped in a browser tab you closed.
+            Every AI conversation starts from scratch. The AI does not remember
+            what you discussed yesterday. The research you did last week? Gone.
+            That article you read last month? It is in a browser tab you closed.
           </p>
           <p className="mt-3">
-            A knowledge base fixes this permanently. It gives your AI a
-            structured reference it can read at the start of every session.
-            Instead of explaining your topic, your preferences, and your
-            context every time, you point the AI at your knowledge base and it
-            already knows.
+            A knowledge base gives your AI persistent memory. You point it at
+            a folder of structured articles, it reads them, and now every
+            conversation builds on everything you have already collected. You
+            stop repeating yourself. The AI stops giving you generic answers.
           </p>
           <p className="mt-3">
-            The compound effect is what makes this transformative. After a
-            month of use, your AI knows your topic better than any single
-            conversation could capture. After three months, you have a
-            reference that no one else in your field has because it was built
-            specifically for your questions, from your sources, organized for
-            your work.
+            After a month, the wiki knows your topic better than any single
+            conversation could. After three months, you have a reference nobody
+            else has because it was built from your sources, for your questions.
           </p>
         </section>
 
@@ -78,45 +71,44 @@ export default function LLMKnowledgeBaseSystemPage() {
         <section>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 1: Set up your workspace</h2>
           <p className="mt-3">
-            You need two things: a place to store files and an AI tool.
-            That is it.
+            Two things. A place to store files and an AI that can read them.
           </p>
           <p className="mt-3">
-            <strong>For storing files, pick whatever you already use:</strong>
-          </p>
-          <ul className="mt-2 space-y-2 text-sm">
-            <li><strong>Notion</strong> works great for most people. Create a new workspace or database. The collaboration features make it ideal if you work with a team.</li>
-            <li><strong>Google Docs</strong> is the simplest option. Create a folder in Drive. One document per source, one document per wiki article.</li>
-            <li><strong>A folder on your computer</strong> with text files works perfectly. No app needed. Just a folder with .txt or .md files inside it.</li>
-            <li><strong>Obsidian</strong> is powerful if you want bidirectional linking and a plugin ecosystem. It has a learning curve.</li>
-          </ul>
-          <p className="mt-3">
-            <strong>For the AI, use any tool that can read files:</strong>
+            For file storage, use whatever you already have open:
           </p>
           <ul className="mt-2 space-y-2 text-sm">
-            <li><strong>Claude</strong> (recommended). Handles long documents well and produces the most thoughtful wiki articles. Upload files directly or paste content.</li>
-            <li><strong>ChatGPT</strong> works well. Upload files or paste content. Good for shorter interactions.</li>
-            <li><strong>Any LLM with file access.</strong> Gemini, Perplexity, local models. The system works with all of them.</li>
+            <li><strong>Notion</strong> if you want collaboration. Create a new workspace.</li>
+            <li><strong>Google Docs</strong> if you want the simplest option. A folder in Drive works fine.</li>
+            <li><strong>A folder on your computer</strong> with text files. Nothing fancy needed.</li>
+            <li><strong>Obsidian</strong> if you want bidirectional linking. Steeper learning curve.</li>
           </ul>
           <p className="mt-3">
-            Now create three folders inside your workspace:
+            For the AI, anything that can read files:
+          </p>
+          <ul className="mt-2 space-y-2 text-sm">
+            <li><strong>Claude</strong> handles long documents well. I use it for most wiki work.</li>
+            <li><strong>ChatGPT</strong> works. Upload files or paste content.</li>
+            <li><strong>Gemini, Perplexity, local models.</strong> All fine. The system is the same regardless of which AI you pick.</li>
+          </ul>
+          <p className="mt-3">
+            Create three folders:
           </p>
         </section>
 
         <FolderStructure />
 
         <section>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 2: Create your CLAUDE.md schema</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 2: Write your CLAUDE.md</h2>
           <p className="mt-3">
-            This is the most important file in your system. CLAUDE.md is an
-            instruction file that tells the AI how your knowledge base works.
-            It defines your topic, folder structure, article format, and rules.
-            The AI reads this first, every time, so it knows exactly how to
-            behave.
+            CLAUDE.md is the instruction file for the whole system. It tells
+            the AI your topic, your folder structure, how articles should be
+            formatted, and what rules to follow. The AI reads it first, every
+            time. Without it, you get inconsistent output and have to repeat
+            yourself constantly.
           </p>
           <p className="mt-3">
-            Create a file called CLAUDE.md in the root of your workspace.
-            Copy this template and replace the bracketed parts with your topic:
+            Create a file called CLAUDE.md in the root of your workspace and
+            paste this template. Replace the brackets with your topic:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-6 text-sm leading-relaxed text-zinc-300">{`# [Your Topic] Knowledge Base
 # Version: 1.0
@@ -157,15 +149,15 @@ Naming: Title-Case-With-Hyphens.md
 7. New articles must link to at least 2 existing articles
 8. Keep summaries self-contained`}</pre>
           <p className="mt-4 text-sm text-zinc-500">
-            This template works for any topic. Our{" "}
+            The{" "}
             <Link href="/learn/what-is-claude-md" className="text-emerald-600 hover:text-emerald-700">
               CLAUDE.md deep dive
             </Link>{" "}
-            explains every section in detail. The{" "}
+            explains every section if you want the details. The{" "}
             <Link href="/guides/claude-md-masterclass" className="text-emerald-600 hover:text-emerald-700">
               Masterclass
             </Link>{" "}
-            includes advanced schemas for specific use cases.
+            has schemas for specific use cases.
           </p>
         </section>
 
@@ -173,30 +165,18 @@ Naming: Title-Case-With-Hyphens.md
         <section>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 3: Add your first sources</h2>
           <p className="mt-3">
-            Drop 3 to 5 source documents into the Sources folder. These are
-            the raw ingredients your AI will work with.
+            Drop 3 to 5 source documents into the Sources folder. One file per
+            source. Paste the full text, not just a link. Name each file with
+            a date and short title: <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-xs dark:bg-zinc-800">2026-04-12-Karpathy-Knowledge-Bases.md</code>
           </p>
           <p className="mt-3">
-            <strong>What counts as a source:</strong>
-          </p>
-          <ul className="mt-2 space-y-1 text-sm">
-            <li>Articles or blog posts you have read</li>
-            <li>Research papers or reports</li>
-            <li>Your own notes from meetings, conferences, or conversations</li>
-            <li>Documentation or specifications</li>
-            <li>Interview transcripts</li>
-            <li>Competitor analysis or market research</li>
-          </ul>
-          <p className="mt-3">
-            <strong>How to add them:</strong> Create one file per source.
-            Paste the full text (not just a link). Name the file with the
-            date and a short title: <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-xs dark:bg-zinc-800">2026-04-12-Karpathy-Knowledge-Bases.md</code>
+            Sources can be articles you read, papers, your own meeting notes,
+            documentation, interview transcripts, market research. Anything
+            relevant.
           </p>
           <p className="mt-3">
-            <strong>Quality matters more than quantity.</strong> Five excellent
-            sources produce a better wiki than fifty mediocre ones. Start with
-            the best things you have read on your topic. You can always add
-            more later.
+            Five good sources beat fifty mediocre ones. Start with the best
+            things you have read on your topic. You will add more over time.
           </p>
         </section>
 
@@ -204,9 +184,8 @@ Naming: Title-Case-With-Hyphens.md
         <section>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 4: Compile your first wiki articles</h2>
           <p className="mt-3">
-            This is where the AI does its work. Open your AI tool (Claude,
-            ChatGPT, etc.). Give it the CLAUDE.md file first. Then give it
-            your source files. Then use this prompt:
+            Open your AI. Give it the CLAUDE.md file first. Then give it your
+            source files. Then use this prompt:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-4 text-sm leading-relaxed text-zinc-300">{`Read the CLAUDE.md schema. Then read all the source files.
 
@@ -220,30 +199,23 @@ Naming: Title-Case-With-Hyphens.md
 Output each article as a separate section so I can
 save them individually.`}</pre>
           <p className="mt-3">
-            The AI will produce structured wiki articles. Each one will have a
-            summary, body sections, key takeaways, source citations, and links
-            to related articles. Review them. Fix anything that looks wrong.
-            Save each article into the Wiki folder.
+            You will get structured wiki articles with summaries, body sections,
+            takeaways, citations, and cross-links. Review them for anything
+            that looks off. Save each one into the Wiki folder.
           </p>
           <p className="mt-3">
-            <strong>You now have a working knowledge base.</strong> It took
-            about 20 minutes. Everything from here makes it better.
+            That is a working knowledge base. About 20 minutes from start to
+            here. Everything after this point makes it better.
           </p>
         </section>
 
         {/* Step 5 */}
         <section>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 5: Query your knowledge base</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 5: Start querying it</h2>
           <p className="mt-3">
-            This is where the compound value starts. Instead of asking the AI
-            generic questions, you ask it questions against your wiki. The AI
-            reads your compiled articles (not the raw sources) and gives you
-            synthesized, structured answers based on everything you have
-            collected.
-          </p>
-          <p className="mt-3">
-            <strong>How to query:</strong> Give the AI your CLAUDE.md and your
-            wiki articles. Then ask your question.
+            Now instead of asking your AI vague questions, you ask it questions
+            against the wiki. Give it the CLAUDE.md and your wiki articles,
+            then ask what you actually want to know:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-4 text-sm leading-relaxed text-zinc-300">{`Read the CLAUDE.md schema and all wiki articles.
 
@@ -253,35 +225,25 @@ What are the trade-offs between them?
 
 Cite which wiki articles support each point.`}</pre>
           <p className="mt-3">
-            The answers you get will be dramatically better than asking the
-            same question without a knowledge base. The AI is drawing from
-            your curated sources, organized by your schema, structured by your
-            rules. It is not guessing from its training data. It is
-            synthesizing from your data.
+            The difference between this and a normal AI conversation is
+            striking. The AI draws from your curated sources, organized by
+            your schema, following your rules. It is synthesizing from your
+            data, not guessing from its training data.
           </p>
           <p className="mt-3">
-            <strong>File good answers back into the wiki.</strong> When you get
-            an answer that teaches you something new, save it to the Queries
-            folder. If it is good enough, promote it to a wiki article. Every
-            good query enriches the knowledge base for next time.
+            When you get an answer that teaches you something new, save it to
+            the Queries folder. If it is good enough, promote it to a wiki
+            article. The queries feed back into the system.
           </p>
         </section>
 
         {/* Step 6 */}
         <section>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 6: Grow it over time</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 6: Keep feeding it</h2>
           <p className="mt-3">
-            The system compounds. Here is what to do each week:
-          </p>
-          <p className="mt-3">
-            <strong>Add new sources.</strong> When you read something relevant,
-            drop it into the Sources folder. One article, one file. Takes 30
-            seconds.
-          </p>
-          <p className="mt-3">
-            <strong>Compile new articles.</strong> Once a week (or whenever you
-            have added 3 to 5 new sources), ask the AI to read the new sources
-            and either update existing wiki articles or create new ones.
+            When you read something relevant, drop it into Sources. One file,
+            30 seconds. Once a week, or whenever you have added a few new
+            sources, run this:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-4 text-sm leading-relaxed text-zinc-300">{`Read the CLAUDE.md schema, all wiki articles, and
 the following new source files: [list them]
@@ -293,8 +255,7 @@ the following new source files: [list them]
 3. Update the index file.
 4. Add links between new and existing articles.`}</pre>
           <p className="mt-3">
-            <strong>Run a health check monthly.</strong> Ask the AI to review
-            the entire wiki for problems:
+            Once a month, run a health check:
           </p>
           <pre className="mt-4 overflow-x-auto rounded-lg bg-zinc-900 p-4 text-sm leading-relaxed text-zinc-300">{`Read all wiki articles. Audit for:
 1. Articles with no incoming links (orphans)
@@ -306,68 +267,63 @@ the following new source files: [list them]
 
 Report issues and suggest fixes.`}</pre>
           <p className="mt-3">
-            After a month of weekly additions, you will have 15 to 25
-            interlinked articles. After three months, 40 to 60. The wiki
-            becomes the most comprehensive reference on your topic that exists
-            anywhere because it was built specifically for your questions,
-            from your sources, organized for your work.
+            A month in, you will have 15 to 25 interlinked articles. Three
+            months, 40 to 60. At that point the wiki is the most complete
+            reference on your topic that exists, because nobody else built one
+            from your exact sources for your exact questions.
           </p>
         </section>
 
         {/* Step 7 */}
         <section>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 7: Advanced operations</h2>
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-white">Step 7: Do things you could not do before</h2>
           <p className="mt-3">
-            Once your wiki has 20+ articles, you can do things that are
-            impossible with a normal AI conversation:
+            Once you have 20+ articles, some new things become possible.
           </p>
           <p className="mt-3">
-            <strong>Cross-source synthesis.</strong> "Compare what Source A and
-            Source B say about [topic]. Where do they agree? Where do they
-            disagree? Which has stronger evidence?"
+            You can ask the AI to compare what two different sources say about
+            the same topic and tell you where they agree and disagree.
           </p>
           <p className="mt-3">
-            <strong>Gap analysis.</strong> "What questions can I not answer
-            with the current wiki? What topics are mentioned but not covered?
-            What should I read next?"
+            You can ask it to find gaps. "What questions can I not answer with
+            the current wiki? What should I read next?"
           </p>
           <p className="mt-3">
-            <strong>Output generation.</strong> "Based on the wiki, write a
-            one-page executive summary of [topic] for my boss." Or "Create a
-            slide outline for a 15-minute presentation on [topic]." Or "Draft
-            a blog post about [topic] using only information from the wiki."
+            You can ask for outputs. "Write a one-page summary of [topic] for
+            my boss." Or "Create a slide outline for a 15-minute presentation."
+            Or "Draft a blog post using only information from the wiki." The
+            wiki becomes the source of truth for everything you produce on that
+            topic.
           </p>
           <p className="mt-3">
-            <strong>Quality validation.</strong> If accuracy matters (finance,
-            legal, health, compliance), use a second AI model to verify. Give
-            Model B the wiki article and its cited sources, and ask: "Does
-            this article accurately represent the source material? Flag any
-            claims not supported by the provided sources." Two models
-            disagreeing is a signal worth investigating. Two models agreeing
-            is a strong signal of accuracy.
+            If accuracy is critical (finance, legal, health), use a second AI
+            model to check. Give it the wiki article and the cited sources.
+            Ask: "Does this article accurately represent the source material?"
+            When two different models agree, that is a strong signal. When they
+            disagree, it is worth investigating.
           </p>
         </section>
       </div>
 
       {/* Use cases */}
       <section className="mt-16">
-        <h2 className="text-xl font-bold">Who uses this and for what</h2>
+        <h2 className="text-xl font-bold">People use this for all kinds of things</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <Link href="/learn/sales-knowledge-base" className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800">
-            <p className="text-sm font-semibold">Sales Teams</p>
+            <p className="text-sm font-semibold">Sales teams</p>
             <p className="mt-1 text-xs text-zinc-500">Competitive intel, deal playbooks, objection libraries</p>
           </Link>
           <Link href="/learn/research-knowledge-base" className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800">
-            <p className="text-sm font-semibold">Researchers and Analysts</p>
+            <p className="text-sm font-semibold">Researchers and analysts</p>
             <p className="mt-1 text-xs text-zinc-500">Source synthesis, literature maps, open questions</p>
           </Link>
           <Link href="/learn/onboarding-knowledge-base" className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800">
-            <p className="text-sm font-semibold">HR and Operations</p>
-            <p className="mt-1 text-xs text-zinc-500">New hire onboarding, process docs, tribal knowledge</p>
+            <p className="text-sm font-semibold">HR and operations</p>
+            <p className="mt-1 text-xs text-zinc-500">New hire onboarding, process documentation</p>
           </Link>
           <Link href="/learn/executive-knowledge-base" className="rounded-lg border border-zinc-200 p-4 transition hover:border-emerald-300 dark:border-zinc-700 dark:hover:border-emerald-800">
             <p className="text-sm font-semibold">Executives</p>
-            <p className="mt-1 text-xs text-zinc-500">Industry intelligence, board prep, decision history</p>
+            <p className="mt-1 text-xs text-zinc-500">Industry intelligence, board prep, decision logs</p>
           </Link>
         </div>
       </section>
@@ -377,43 +333,39 @@ Report issues and suggest fixes.`}</pre>
         <h2 className="text-lg font-bold">Where this comes from</h2>
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           <p>
-            Andrej Karpathy, formerly of Tesla and OpenAI, described this
-            approach in early 2026. He reported that a large fraction of his
-            AI token usage had shifted from manipulating code to manipulating
-            knowledge, stored as markdown files. He collects source documents,
-            uses an LLM to compile a wiki, queries it for complex research
-            questions, and files answers back in. He called it "an incredible
-            new product waiting to be built."
+            Andrej Karpathy posted about this approach in early 2026. He said
+            most of his AI token usage had shifted from writing code to managing
+            knowledge stored as markdown files. He collects source documents,
+            uses an LLM to compile a wiki, queries it for research, and files
+            answers back in. His words: "an incredible new product waiting to
+            be built."
           </p>
           <p>
-            Karpathy's version uses Obsidian, custom scripts, and CLI tools.
-            The MrPrompts version implements the same architecture for
-            professionals who do not write scripts. You use any note-taking
-            app, any AI tool, and the numbered prompts in our{" "}
+            Karpathy does this with Obsidian, custom scripts, and CLI tools.
+            The MrPrompts version uses the same architecture but does not
+            require any of that. You use whatever note-taking app you already
+            have, any AI tool, and the prompts in our{" "}
             <Link href="/build/knowledge-bases" className="text-emerald-600 hover:text-emerald-700">
               Knowledge Base Starter Kit
-            </Link>
-            . Same system. Same compound effect. No coding required.
+            </Link>.
           </p>
           <p>
-            Research from Google DeepMind on retrieval-augmented generation
-            confirms that AI models produce fewer hallucinations and more
-            accurate responses when they reference a curated knowledge base
-            rather than relying on training data alone. Your wiki functions as
-            a personal RAG system: sources are the retrieval corpus, wiki
-            articles are the compiled knowledge, and queries generate
-            synthesized answers grounded in specific evidence.
+            Google DeepMind research on retrieval-augmented generation confirms
+            that AI produces fewer hallucinations and more accurate answers when
+            it references a curated knowledge base instead of relying on
+            training data alone. Your wiki works the same way: sources are the
+            retrieval corpus, wiki articles are the compiled knowledge, and
+            queries pull synthesized answers grounded in specific evidence.
           </p>
         </div>
       </section>
 
       {/* Download CTA */}
       <section className="mt-12 rounded-xl bg-zinc-900 p-8 text-center dark:bg-zinc-800">
-        <h2 className="text-xl font-bold text-white">Start building now</h2>
+        <h2 className="text-xl font-bold text-white">Get the starter kit</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-          The Knowledge Base Starter Kit gives you the complete folder
-          structure, CLAUDE.md schema, and 7 numbered prompts. Customized to
-          your topic. Download and use with any AI tool.
+          The complete folder structure, CLAUDE.md schema, and 7 numbered
+          prompts. Customized to your topic. Works with any AI tool.
         </p>
         <Link
           href="/build/knowledge-bases"
@@ -431,27 +383,27 @@ Report issues and suggest fixes.`}</pre>
             items={[
               {
                 question: "How long does it take to set up?",
-                answer: "About 20 minutes for the initial setup: create the folders, write the CLAUDE.md, add 3-5 sources, and generate your first wiki articles. After that, maintenance is 15-20 minutes per week to add sources and compile new articles.",
+                answer: "About 20 minutes to go from nothing to a working wiki with articles. Create the folders, write the CLAUDE.md, paste in a few sources, run the compile prompt. After that, plan on 15 to 20 minutes a week to add new sources and update the wiki.",
               },
               {
                 question: "Do I need Obsidian?",
-                answer: "No. Karpathy uses Obsidian because he is a developer who prefers markdown files. You can use Notion, Google Docs, Apple Notes, or a simple folder of text files. The system is tool-agnostic. The knowledge architecture works the same regardless of where the files live.",
+                answer: "No. Karpathy uses it because he is a developer. Notion, Google Docs, Apple Notes, or a plain folder of text files all work. The knowledge architecture is what matters, not the tool it lives in.",
               },
               {
-                question: "How many sources before it becomes useful?",
-                answer: "5 to 10 sources on a focused topic is enough to start seeing compound value. The wiki becomes genuinely powerful at 20 to 30 sources because the concept articles start synthesizing across many inputs. Start small. Add as you go.",
+                question: "How many sources before it gets useful?",
+                answer: "Five to ten on a focused topic. You start seeing compound value when concept articles draw from multiple sources. At 20 to 30 sources the wiki starts answering questions you did not think to ask.",
               },
               {
                 question: "Does this replace RAG?",
-                answer: "For individual and small-team use, yes. Karpathy himself noted that he thought he needed fancy RAG, but the LLM was good enough at auto-maintaining index files and reading related documents at small scale. For enterprise-scale applications with millions of documents, you would still want a formal RAG pipeline.",
+                answer: "At small scale, it works like a personal RAG system without the infrastructure. Karpathy said he thought he needed fancy RAG but the LLM handled index files and document retrieval fine at the scale of a few hundred articles. For millions of documents, you would still want a proper pipeline.",
               },
               {
-                question: "What if the AI hallucinates in the wiki?",
-                answer: "The CLAUDE.md rules require every claim to trace back to a cited source. If the AI writes something not supported by sources, the citation rule catches it. For high-stakes topics, use the two-model validation approach: have a second AI model verify articles against the original sources.",
+                question: "What about hallucinations?",
+                answer: "The CLAUDE.md rules require every claim to cite a source. If the AI writes something that is not in the sources, the citation rule catches it. For high-stakes work, use a second AI model to verify: give it the article and the cited sources and ask if they match.",
               },
               {
-                question: "Can a team use this together?",
-                answer: "Yes. Use Notion or a shared folder so multiple people can add sources. The CLAUDE.md schema keeps everything consistent regardless of who adds content. Sales teams, research teams, and leadership teams all use this for shared knowledge bases.",
+                question: "Can a team share one wiki?",
+                answer: "Yes. Use Notion or a shared drive so multiple people can add sources. The CLAUDE.md keeps output consistent regardless of who adds what. Sales teams, research groups, and leadership teams all do this.",
               },
             ]}
           />
