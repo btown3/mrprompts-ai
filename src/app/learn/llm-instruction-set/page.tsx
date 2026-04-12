@@ -109,20 +109,61 @@ export default function LLMInstructionSetPage() {
           simple, repeatable instructions that force the model to think clearly,
           respond precisely, and produce usable output.
         </p>
-        <p>
-          Think of these like commands, not prompts. Each one does one job.
-          Nothing more. Stack them, and the quality of output compounds fast.
-        </p>
       </div>
+
+      {/* What this is + how to use it */}
+      <section className="mt-12 rounded-xl border-2 border-emerald-200 bg-emerald-50 p-8 dark:border-emerald-800 dark:bg-emerald-900/10">
+        <h2 className="text-xl font-bold text-emerald-800 dark:text-emerald-400">What this is and how to use it</h2>
+        <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p>
+            Below are 15 instructions you can type directly into any AI tool.
+            Claude, ChatGPT, Gemini, Perplexity. Any of them. You do not need
+            special software or technical knowledge. You just type the
+            instruction before your request.
+          </p>
+          <p>
+            Each instruction tells the AI how to think about your request. Instead
+            of hoping it gives you something useful, you are telling it exactly
+            what kind of output you need, how to structure it, and what to focus on.
+          </p>
+          <p>
+            <strong>Here is a simple example.</strong> Say you need help with a
+            marketing plan. Instead of typing "give me a marketing plan," you type:
+          </p>
+          <div className="rounded-lg bg-zinc-900 p-4">
+            <p className="font-mono text-xs leading-relaxed text-zinc-300">
+              DefineOutcome: A 30-day marketing plan that generates 50 qualified leads{"\n"}
+              AddContext: We are a 20-person consulting firm targeting CFOs{"\n"}
+              ForceAction: Give me the exact steps to execute this week{"\n"}
+              CheckGaps: What am I missing that could make this fail?
+            </p>
+          </div>
+          <p>
+            That is it. You typed four short instructions before your request.
+            The AI now knows what success looks like, who you are, that you want
+            action steps not ideas, and that you want it to find the holes in its
+            own thinking. The output you get back will be dramatically more useful
+            than "give me a marketing plan."
+          </p>
+          <p>
+            <strong>You can use one instruction or stack several.</strong> Start
+            with just one. Add more as you get comfortable. The instructions work
+            individually, but they compound when you combine them. Three
+            instructions together will change how you work with AI. You will
+            wonder why you ever used it without them.
+          </p>
+        </div>
+      </section>
 
       {/* The Instruction Set */}
       <section className="mt-16">
         <h2 className="text-2xl font-bold tracking-tight">
-          The LLM Instruction Set
+          The 15 Instructions
         </h2>
         <p className="mt-3 text-sm text-zinc-500">
-          15 atomic instructions. Each one does one job. Stack them for
-          compound results.
+          Each one does one job. Copy any instruction and type it into your
+          AI tool before your request. The examples show you exactly what to
+          write.
         </p>
 
         <div className="mt-10 space-y-6">
