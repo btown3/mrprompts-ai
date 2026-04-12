@@ -33,13 +33,13 @@ export default function Home() {
       <section className="relative">
         <div className="mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            AI frameworks for{" "}
-            <span className="text-emerald-600">people who work</span>
+            AI frameworks that{" "}
+            <span className="text-emerald-600">actually work</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
-            Named systems. Clear steps. Copy them into any AI tool and get
-            better output today. No coding. No courses. Just frameworks that
-            work.
+            Named systems with clear steps. Copy them into Claude, ChatGPT,
+            or any AI tool and get better output today. No coding. No courses.
+            Just results.
           </p>
         </div>
       </section>

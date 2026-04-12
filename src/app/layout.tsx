@@ -19,15 +19,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mrprompts.ai"),
   title: {
-    default: "MrPrompts — Build with AI. No Dev Background Required.",
+    default: "MrPrompts — AI Frameworks That Actually Work",
     template: "%s | MrPrompts",
   },
   description:
-    "Frameworks, tools, and step-by-step guides for smart professionals who want to build with AI, not just read about it.",
+    "Named AI frameworks with clear steps. Copy them into Claude, ChatGPT, or any AI tool and get better output today. No coding. No courses. Just results.",
   openGraph: {
-    title: "MrPrompts — Build with AI. No Dev Background Required.",
+    title: "MrPrompts — AI Frameworks That Actually Work",
     description:
-      "Frameworks, tools, and step-by-step guides for smart professionals who want to build with AI.",
+      "Named AI frameworks with clear steps. Copy them into any AI tool and get better output today.",
     url: "https://www.mrprompts.ai",
     siteName: "MrPrompts",
     type: "website",
