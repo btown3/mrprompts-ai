@@ -46,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/learn/onboarding-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/learn/executive-knowledge-base`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/learn/llm-instruction-set`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/learn/llm-knowledge-base-system`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
 
     // Glossary
     { url: `${baseUrl}/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
