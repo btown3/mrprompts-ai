@@ -1,162 +1,189 @@
 import Link from "next/link";
 import { FAQ } from "./components/FAQ";
-import { BuildProcess } from "./components/diagrams/BuildProcess";
-import { FolderStructure } from "./components/diagrams/FolderStructure";
 import { FeaturedPosts } from "./components/FeaturedPosts";
 import { Testimonials } from "./components/Testimonials";
 
 const HOME_FAQ = [
   {
-    question: "What is an AI knowledge base?",
+    question: "What is MrPrompts?",
     answer:
-      "An AI knowledge base is a structured collection of interlinked articles that an AI model can read and query. Unlike a chat conversation that disappears, a knowledge base persists. Every new source you add and every answer you generate enriches it. The AI gets smarter about your topic over time because it has a growing, organized reference to draw from.",
+      "MrPrompts is a collection of AI frameworks, prompt systems, and practical guides for professionals who want to get better results from AI without writing code. Every framework is something you can use today with Claude, ChatGPT, or any AI tool.",
   },
   {
-    question: "Do I need to know how to code to use MrPrompts?",
+    question: "Do I need to know how to code?",
     answer:
-      "No. Everything on MrPrompts is designed for smart professionals who do not come from a technical background. Our guides use plain language, our tools run in the browser, and our workshops are hands-on with no terminal or command line required. If you can use a word processor, you can build with AI.",
+      "No. Everything on MrPrompts is designed for smart professionals who do not come from a technical background. You type instructions into AI tools you already use. No terminal. No programming. No setup.",
   },
   {
-    question: "What is a prompt framework?",
+    question: "What do I get if I sign up?",
     answer:
-      "A prompt framework is a reusable structure for writing effective AI prompts. Instead of guessing at how to ask an AI for help, a framework gives you a template that consistently produces better output. The MrPrompts 4-Layer Framework, for example, uses language awareness, empathy, point of view, and organizational power to transform any prompt from generic to precise.",
+      "A free account gives you access to all frameworks, prompt packs, downloadable starter kits, and the Wiki Builder tool. You also get the weekly newsletter with one new framework every week.",
   },
   {
-    question: "What is CLAUDE.md?",
+    question: "How is this different from other AI courses?",
     answer:
-      "CLAUDE.md is a schema file that controls how an AI interacts with your knowledge base. It defines your topic, folder structure, article format, taxonomy, and behavioral rules. When an AI reads your vault, CLAUDE.md is the first file it processes. A well-written CLAUDE.md means consistent, high-quality output every time. MrPrompts teaches you how to write one and provides production-ready templates.",
-  },
-  {
-    question: "How is MrPrompts different from other AI courses?",
-    answer:
-      "Most AI courses teach you about AI. MrPrompts teaches you to build with AI. Every guide ends with something you made: a knowledge base, a prompt library, a workflow, or a leadership playbook. We focus on non-technical professionals and use no jargon, no coding, and no assumptions about your background. You also get free tools like the Wiki Builder that let you build right on the site.",
+      "Most AI courses teach you about AI. MrPrompts gives you frameworks you use immediately. The LLM Instruction Set, the 4-Layer Prompt Framework, the Knowledge Base Architecture. Named systems with clear steps, not lectures.",
   },
 ];
-
 
 export default function Home() {
   return (
     <>
-      {/* Hero — centered, clean, NeatPrompts-inspired */}
+      {/* Hero — tight, one clear message */}
       <section className="relative">
-        <div className="mx-auto max-w-3xl px-6 pb-16 pt-24 text-center md:pt-32">
+        <div className="mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            Smart professionals{" "}
-            <span className="text-emerald-600">build with AI</span>
+            AI frameworks for{" "}
+            <span className="text-emerald-600">people who work</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
-            MrPrompts is not just AI news. We give you the frameworks, tools,
-            and step-by-step guides to actually build with AI. No dev
-            background required.
-          </p>
-
-          {/* Subscribe — prominent, right in the hero */}
-          <p className="mx-auto mt-10 max-w-md text-sm font-medium text-zinc-600 dark:text-zinc-400">
-            Subscribe to the MrPrompts newsletter. One practical AI framework
-            every week, delivered free.
-          </p>
-          <div className="mx-auto mt-4 max-w-md">
-            <iframe
-              src="https://mrprompts.substack.com/embed"
-              width="100%"
-              height="150"
-              className="rounded-lg"
-              style={{ border: "none", background: "transparent" }}
-            />
-          </div>
-
-          <p className="mt-6 text-sm font-medium text-zinc-900 dark:text-zinc-100">
-            Trusted by{" "}
-            <span className="text-emerald-600">5,000+</span> builders and
-            leaders
+            Named systems. Clear steps. Copy them into any AI tool and get
+            better output today. No coding. No courses. Just frameworks that
+            work.
           </p>
         </div>
       </section>
 
-      {/* How it works diagram */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <BuildProcess />
+      {/* Featured framework — the hook */}
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <Link
+          href="/learn/llm-instruction-set"
+          className="group block rounded-2xl border-2 border-zinc-200 p-8 transition hover:border-emerald-400 hover:shadow-lg md:p-12 dark:border-zinc-800 dark:hover:border-emerald-600"
+        >
+          <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+            Featured Framework
+          </span>
+          <h2 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl group-hover:text-emerald-600">
+            The LLM Instruction Set: Stop Prompting, Start Operating
+          </h2>
+          <p className="mt-3 max-w-2xl text-zinc-500">
+            15 atomic instructions you type directly into any AI tool.
+            DefineOutcome. ForceAction. CheckGaps. Stack three of them and
+            your output changes completely. Used by 5,000+ professionals.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {["DefineOutcome", "AddContext", "AssignRole", "ForceAction", "CheckGaps", "Simplify"].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-zinc-100 px-3 py-1 font-mono text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+              >
+                {tag}
+              </span>
+            ))}
+            <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-400 dark:bg-zinc-800">
+              +9 more
+            </span>
+          </div>
+          <span className="mt-6 inline-flex text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
+            Read the full framework &rarr;
+          </span>
+        </Link>
       </section>
 
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
-      {/* Build Tracks — the product */}
+      {/* More frameworks */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-          What will you build?
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          Frameworks
         </h2>
-        <p className="mt-3 max-w-xl text-zinc-500">
-          Four interactive tracks. Pick one, make your selections, download
-          something you can use today.
+        <p className="mt-3 text-zinc-500">
+          Each one is a named system you can use today.
         </p>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Link
-            href="/build/knowledge-bases"
-            className="group rounded-xl border border-zinc-200 p-8 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            href="/learn/ai-knowledge-base-guide"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-              Most Popular
-            </span>
-            <h3 className="mt-3 text-xl font-bold group-hover:text-emerald-600">
-              Build a Knowledge Base
+            <span className="text-xs font-medium text-emerald-600">System</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              The Knowledge Base Architecture
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Download a complete starter kit with folder structure, CLAUDE.md
-              schema, and 7 numbered prompts. Or let AI generate articles from
-              your sources.
+            <p className="mt-2 text-sm text-zinc-500">
+              Collect, Compile, Query, Compound. The 4-step system that turns
+              raw sources into a structured wiki that gets smarter every time
+              you use it.
             </p>
           </Link>
 
           <Link
-            href="/build/prompts"
-            className="group rounded-xl border border-zinc-200 p-8 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            href="/learn/ai-change-management"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-              Start Here
-            </span>
-            <h3 className="mt-3 text-xl font-bold group-hover:text-emerald-600">
-              Build a Prompt Library
+            <span className="text-xs font-medium text-emerald-600">Playbook</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              The 90-Day AI Adoption Playbook
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Pick your roles. Preview every prompt. Download a customized
-              library with 30+ templates for marketing, sales, ops, finance,
-              HR, and consulting.
+            <p className="mt-2 text-sm text-zinc-500">
+              Assess, Foundation, Pilot, Scale. How to roll out AI to your
+              organization without losing your team. Built for leaders.
             </p>
           </Link>
 
           <Link
-            href="/build/workflows"
-            className="group rounded-xl border border-zinc-200 p-8 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            href="/learn/ai-for-non-technical"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
-            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Intermediate
-            </span>
-            <h3 className="mt-3 text-xl font-bold group-hover:text-emerald-600">
-              Build AI Workflows
+            <span className="text-xs font-medium text-emerald-600">Guide</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              AI for Non-Technical Professionals
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Select the workflows you need. Download step-by-step blueprints
-              for automations that save hours every week. No coding required.
+            <p className="mt-2 text-sm text-zinc-500">
+              What AI actually is, the three things it does well, where it
+              fails, and your first week plan. The complete on-ramp.
             </p>
           </Link>
 
           <Link
-            href="/build/leadership"
-            className="group rounded-xl border border-zinc-200 p-8 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            href="/learn/ai-prompts-for-sales"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
-            <span className="text-xs font-semibold uppercase tracking-wider text-purple-600">
-              For Leaders
-            </span>
-            <h3 className="mt-3 text-xl font-bold group-hover:text-emerald-600">
-              Build AI-Ready Teams
+            <span className="text-xs font-medium text-emerald-600">Prompts</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              Sales Prompt Framework
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Enter your org details. Download a customized adoption roadmap,
-              fluency assessment, change management playbook, and executive
-              briefing outline.
+            <p className="mt-2 text-sm text-zinc-500">
+              15 prompts for every stage: discovery, proposals, follow-ups,
+              objections, pipeline. Copy, paste, customize.
             </p>
+          </Link>
+
+          <Link
+            href="/learn/ai-prompts-for-marketing"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+          >
+            <span className="text-xs font-medium text-emerald-600">Prompts</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              Marketing Prompt Framework
+            </h3>
+            <p className="mt-2 text-sm text-zinc-500">
+              15 prompts for campaigns, content, email, social, ads, and
+              analytics. Each one produces work you would actually use.
+            </p>
+          </Link>
+
+          <Link
+            href="/learn/ai-team-assessment"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+          >
+            <span className="text-xs font-medium text-emerald-600">Assessment</span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              AI Fluency Assessment
+            </h3>
+            <p className="mt-2 text-sm text-zinc-500">
+              5-dimension scoring rubric and 10-question survey. Measure where
+              your team stands before you train them.
+            </p>
+          </Link>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            href="/guides"
+            className="text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+          >
+            See all frameworks &rarr;
           </Link>
         </div>
       </section>
@@ -164,127 +191,96 @@ export default function Home() {
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
-      {/* Free products highlight */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Free downloads
-            </h2>
-            <p className="mt-3 text-zinc-500">
-              Prompt packs, templates, and playbooks. No account needed.
-            </p>
-          </div>
-          <Link
-            href="/products"
-            className="hidden text-sm font-semibold text-emerald-600 hover:text-emerald-700 md:block"
-          >
-            All products &rarr;
-          </Link>
+      {/* Subscribe — now they know what they're subscribing to */}
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          Subscribe to the MrPrompts Newsletter
+        </h2>
+        <p className="mx-auto mt-4 max-w-md text-zinc-500">
+          One new AI framework every week. 5,000+ professionals use these to
+          get better results from Claude, ChatGPT, and every other AI tool. Free.
+        </p>
+        <div className="mx-auto mt-8 max-w-md">
+          <iframe
+            src="https://mrprompts.substack.com/embed"
+            width="100%"
+            height="150"
+            className="rounded-lg"
+            style={{ border: "none", background: "transparent" }}
+          />
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <Link
-            href="/products/sales-prompt-pack"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-          >
-            <span className="text-xs font-medium text-emerald-600">
-              15 prompts · Free
-            </span>
-            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-              Sales Prompt Pack
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Discovery calls, proposals, follow-ups, objection handling,
-              pipeline analysis.
-            </p>
-          </Link>
-          <Link
-            href="/products/marketing-prompt-pack"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-          >
-            <span className="text-xs font-medium text-emerald-600">
-              15 prompts · Free
-            </span>
-            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-              Marketing Prompt Pack
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Campaign briefs, email sequences, social calendars, landing
-              pages, ad copy.
-            </p>
-          </Link>
-          <Link
-            href="/build/knowledge-bases"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
-          >
-            <span className="text-xs font-medium text-emerald-600">
-              15 files · Free
-            </span>
-            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
-              Knowledge Base Starter Kit
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Folder structure, CLAUDE.md schema, and 7 numbered prompts.
-              Customized to your topic.
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Folder structure diagram */}
-      <section className="mx-auto max-w-3xl px-6 py-16">
-        <FolderStructure />
       </section>
 
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
-      {/* From the blog — pulled from Supabase */}
+      {/* From the blog */}
       <FeaturedPosts />
 
-      {/* Testimonials — from Supabase */}
+      {/* Testimonials */}
       <Testimonials />
 
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
-      {/* Workshops + Enterprise */}
+      {/* Products + Workshops — for people ready to go deeper */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          Go deeper
+        </h2>
+        <p className="mt-3 text-zinc-500">
+          Download starter kits, join a live workshop, or bring MrPrompts to
+          your team.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <Link
+            href="/build"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+          >
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
+              Free
+            </span>
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              Starter Kits
+            </h3>
+            <p className="mt-2 text-sm text-zinc-500">
+              Knowledge base builder, prompt library generator, workflow
+              blueprints, and leadership toolkit. Interactive. Download and
+              use.
+            </p>
+          </Link>
+
+          <Link
+            href="/workshops"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+          >
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
               Live
             </span>
-            <h3 className="mt-3 text-xl font-bold">Workshops</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Small-group, hands-on sessions where you build a knowledge base
-              or prompt library in 2 hours. Not a webinar. You leave with
-              something you made.
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              Workshops
+            </h3>
+            <p className="mt-2 text-sm text-zinc-500">
+              Small-group sessions where you build something real in 2 hours.
+              Not a webinar. Hands-on with a live instructor.
             </p>
-            <Link
-              href="/workshops"
-              className="mt-6 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700"
-            >
-              View workshops &rarr;
-            </Link>
-          </div>
-          <div className="rounded-xl border border-zinc-200 p-8 dark:border-zinc-800">
+          </Link>
+
+          <Link
+            href="/enterprise"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+          >
             <span className="text-xs font-semibold uppercase tracking-wider text-purple-600">
               Teams
             </span>
-            <h3 className="mt-3 text-xl font-bold">Enterprise Training</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
-              Custom AI training for your organization. Workshops, 90-day
-              adoption roadmaps, executive briefings. Built for teams who are
-              smart but not technical.
+            <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
+              Enterprise Training
+            </h3>
+            <p className="mt-2 text-sm text-zinc-500">
+              Custom AI training for your organization. Workshops, adoption
+              roadmaps, executive briefings.
             </p>
-            <Link
-              href="/enterprise"
-              className="mt-6 inline-flex text-sm font-semibold text-emerald-600 hover:text-emerald-700"
-            >
-              Learn more &rarr;
-            </Link>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -293,33 +289,11 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-6 py-20">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
           Frequently asked questions
         </h2>
         <div className="mt-10">
           <FAQ items={HOME_FAQ} />
-        </div>
-      </section>
-
-      {/* Bottom CTA — subscribe again */}
-      <section className="border-t border-zinc-200 dark:border-zinc-800">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Join 5,000+ builders.
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-zinc-500">
-            Free weekly newsletter. Build guides, prompt frameworks, and tools
-            you can actually use. No fluff.
-          </p>
-          <div className="mx-auto mt-8 max-w-md">
-            <iframe
-              src="https://mrprompts.substack.com/embed"
-              width="100%"
-              height="150"
-              className="rounded-lg"
-              style={{ border: "none", background: "transparent" }}
-            />
-          </div>
         </div>
       </section>
     </>
