@@ -82,6 +82,51 @@ export async function getTestimonials(): Promise<DbTestimonial[]> {
   return data || [];
 }
 
+export type DbFramework = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string | null;
+  description: string;
+  type: string;
+  content: string;
+  meta_title: string | null;
+  meta_description: string | null;
+  featured: boolean;
+  visible: boolean;
+  sort_order: number;
+};
+
+export async function getFrameworks(): Promise<DbFramework[]> {
+  const { data } = await supabase
+    .from("frameworks")
+    .select("*")
+    .eq("visible", true)
+    .order("sort_order");
+  return data || [];
+}
+
+export async function getFrameworkBySlug(slug: string): Promise<DbFramework | null> {
+  const { data } = await supabase
+    .from("frameworks")
+    .select("*")
+    .eq("slug", slug)
+    .eq("visible", true)
+    .single();
+  return data || null;
+}
+
+export async function getFeaturedFrameworks(): Promise<DbFramework[]> {
+  const { data } = await supabase
+    .from("frameworks")
+    .select("*")
+    .eq("visible", true)
+    .eq("featured", true)
+    .order("sort_order")
+    .limit(1);
+  return data || [];
+}
+
 export function formatPrice(cents: number): string {
   if (cents === 0) return "Free";
   return `$${(cents / 100).toFixed(cents % 100 === 0 ? 0 : 2)}`;
