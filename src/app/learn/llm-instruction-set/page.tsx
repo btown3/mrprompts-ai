@@ -6,84 +6,84 @@ import { PageFooterCTA } from "@/app/components/PageFooterCTA";
 export const metadata: Metadata = {
   title: "The LLM Instruction Set: Stop Prompting, Start Operating",
   description:
-    "15 atomic instructions that turn AI from a search bar into an operating system. DefineOutcome, ForceAction, CheckGaps, and 12 more. Copy, stack, and use today.",
+    "15 instructions you can type directly into any AI tool. DefineOutcome, ForceAction, CheckGaps, and 12 more. Each one does a specific job, and they stack together.",
   alternates: { canonical: "https://www.mrprompts.ai/learn/llm-instruction-set" },
 };
 
 const INSTRUCTIONS = [
   {
     name: "DefineOutcome",
-    does: "Clarifies exactly what success looks like so the model stops guessing.",
+    does: "Tell the AI what a good answer actually looks like. Without this, it guesses.",
     example: "DefineOutcome: A 90-day onboarding plan that gets new hires to full productivity, with weekly milestones and clear ownership for each task.",
   },
   {
     name: "AddContext",
-    does: "Provides only the necessary background so the answer is relevant, not generic.",
+    does: "Give it the background it needs so you get a relevant answer instead of a generic one.",
     example: "AddContext: We are a 200-person B2B SaaS company. Our sales cycle is 45 days. Average deal size is $35K. We sell to VP-level buyers in financial services.",
   },
   {
     name: "AssignRole",
-    does: "Shapes how the model thinks by putting it in a specific perspective or expertise.",
+    does: "Put the AI in a specific mindset. A CFO thinks differently than a marketing lead, and the output reflects that.",
     example: "AssignRole: You are a CFO preparing a board presentation on Q1 results. Your audience is non-operational board members who care about trends, not details.",
   },
   {
     name: "SetConstraints",
-    does: "Forces focus by limiting scope, length, or style so the answer is tighter.",
+    does: "Limit scope, length, or style. Tighter constraints produce tighter answers.",
     example: "SetConstraints: Under 200 words. No bullet points. Written for a CEO who has 90 seconds to read this before a meeting.",
   },
   {
     name: "SpecifyFormat",
-    does: "Controls how the answer is structured so it is immediately usable.",
+    does: "Tell it exactly how to structure the output so you can use it right away.",
     example: "SpecifyFormat: Table with columns: Initiative, Owner, Deadline, Status, Risk Level. Sort by deadline.",
   },
   {
     name: "ForceAction",
-    does: "Turns ideas into execution by requiring clear next steps.",
+    does: "This is the one I use most. It stops the AI from giving you ideas and makes it give you steps.",
     example: "ForceAction: End with exactly 3 actions I can take this week. Each action must include who does it, what they do, and by when.",
   },
   {
     name: "AskUserQuestion",
-    does: "Prevents bad assumptions by having the model clarify before answering.",
+    does: "Have the AI ask you questions before it answers. This catches bad assumptions early.",
     example: "AskUserQuestion: Before answering, ask me 3 questions that would make your response significantly more useful.",
   },
   {
     name: "ChallengeThinking",
-    does: "Pushes beyond obvious answers to get deeper, more strategic output.",
+    does: "Push past the obvious. The AI defaults to safe, conventional answers unless you tell it not to.",
     example: "ChallengeThinking: What is the contrarian view here? What would a skeptic say? Where is the conventional wisdom wrong?",
   },
   {
     name: "CheckGaps",
-    does: "Identifies what is missing, weak, or overlooked in the response.",
+    does: "Ask the AI to audit its own answer. It is surprisingly good at finding what it missed.",
     example: "CheckGaps: Review your answer. What did you leave out? What assumptions did you make? What risks did you not address?",
   },
   {
     name: "ImproveOutput",
-    does: "Refines and sharpens an existing answer instead of starting over.",
+    does: "Refine what you already have instead of starting from scratch.",
     example: "ImproveOutput: Make this sharper. Remove anything that does not directly support the main argument. Tighten the language.",
   },
   {
     name: "Simplify",
-    does: "Removes complexity and makes the output easier to understand and use.",
+    does: "Strip out complexity. I use this whenever output comes back full of jargon.",
     example: "Simplify: Rewrite this so a smart 14-year-old could understand it. No jargon. No acronyms unless you define them.",
   },
   {
     name: "MakeExecutive",
-    does: "Elevates the response to be clear, concise, and decision-ready.",
+    does: "Reformat for decision-makers. Lead with the recommendation, support with data, end with the ask.",
     example: "MakeExecutive: Rewrite this as an executive summary. Lead with the recommendation. Support with 3 data points. End with the decision needed.",
   },
   {
     name: "CompareOptions",
-    does: "Breaks down multiple approaches so you can quickly choose the best one.",
+    does: "When you have multiple paths, this lays them out side by side so you can actually choose.",
     example: "CompareOptions: Give me 3 approaches to this problem. For each one: what it costs, how long it takes, what could go wrong, and who it is best for.",
   },
   {
     name: "StressTest",
-    does: "Finds where an idea could fail and exposes risks before execution.",
+    does: "Assume the plan fails. Figure out why before you commit to it.",
     example: "StressTest: Assume this plan fails. What are the 3 most likely reasons? For each one, what early warning sign would I see?",
   },
   {
     name: "Summarize",
-    does: "Condenses information into only what matters.",
+    does: "Cut everything down to what actually matters.",
     example: "Summarize: Give me the 3 most important takeaways from this. Nothing else.",
   },
 ];
@@ -101,13 +101,13 @@ export default function LLMInstructionSetPage() {
 
       <div className="mt-10 space-y-6 text-zinc-600 leading-relaxed dark:text-zinc-400">
         <p className="text-lg">
-          Most people use AI like a search bar. That is why they get average
-          results.
+          Most people type a question into AI and hope for something useful.
+          Sometimes it works. Usually the output is generic.
         </p>
         <p>
-          High performers do not "prompt better." They operate better. They use
-          simple, repeatable instructions that force the model to think clearly,
-          respond precisely, and produce usable output.
+          The people I see getting consistently good results are not writing
+          better questions. They are giving the AI short, specific instructions
+          that tell it how to think about the task. That is what this page is about.
         </p>
       </div>
 
@@ -116,18 +116,17 @@ export default function LLMInstructionSetPage() {
         <h2 className="text-xl font-bold text-emerald-800 dark:text-emerald-400">What this is and how to use it</h2>
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
           <p>
-            Below are 15 instructions you can type directly into any AI tool.
-            Claude, ChatGPT, Gemini, Perplexity. Any of them. You do not need
-            special software or technical knowledge. You just type the
-            instruction before your request.
+            Below are 15 instructions you can type directly into any AI tool,
+            whether that is Claude, ChatGPT, Gemini, or Perplexity. No special
+            software. You just type the instruction before your request.
           </p>
           <p>
-            Each instruction tells the AI how to think about your request. Instead
-            of hoping it gives you something useful, you are telling it exactly
-            what kind of output you need, how to structure it, and what to focus on.
+            Each instruction tells the AI how to approach your task. You are
+            not hoping for a good answer. You are specifying what kind of output
+            you need, how it should be structured, and where to focus.
           </p>
           <p>
-            <strong>Here is a simple example.</strong> Say you need help with a
+            <strong>A quick example.</strong> Say you need help with a
             marketing plan. Instead of typing "give me a marketing plan," you type:
           </p>
           <div className="rounded-lg bg-zinc-900 p-4">
@@ -139,18 +138,16 @@ export default function LLMInstructionSetPage() {
             </p>
           </div>
           <p>
-            That is it. You typed four short instructions before your request.
-            The AI now knows what success looks like, who you are, that you want
-            action steps not ideas, and that you want it to find the holes in its
-            own thinking. The output you get back will be dramatically more useful
-            than "give me a marketing plan."
+            Four short instructions. Now the AI knows what success looks like,
+            who you are, that you want steps (not ideas), and that it should
+            find the holes in its own thinking. The difference in output quality
+            is significant.
           </p>
           <p>
             <strong>You can use one instruction or stack several.</strong> Start
-            with just one. Add more as you get comfortable. The instructions work
-            individually, but they compound when you combine them. Three
-            instructions together will change how you work with AI. You will
-            wonder why you ever used it without them.
+            with one. Add more as you get comfortable. They work on their own,
+            but they compound when combined. I typically use two or three together
+            and that covers most of what I need.
           </p>
         </div>
       </section>
@@ -161,9 +158,8 @@ export default function LLMInstructionSetPage() {
           The 15 Instructions
         </h2>
         <p className="mt-3 text-sm text-zinc-500">
-          Each one does one job. Copy any instruction and type it into your
-          AI tool before your request. The examples show you exactly what to
-          write.
+          Copy any of these and type it into your AI tool before your request.
+          The examples show you exactly what to write.
         </p>
 
         <div className="mt-10 space-y-6">
@@ -215,7 +211,7 @@ export default function LLMInstructionSetPage() {
               <li className="font-semibold text-emerald-600">CheckGaps</li>
             </ul>
             <p className="mt-3 text-sm text-zinc-500">
-              That alone puts you ahead of 90% of AI users.
+              These three cover most situations. Start here.
             </p>
           </div>
 
@@ -241,7 +237,7 @@ export default function LLMInstructionSetPage() {
               </p>
             </div>
             <p className="mt-3 text-sm text-zinc-500">
-              Now you are not prompting. You are directing.
+              Same question, completely different output.
             </p>
           </div>
 
@@ -263,8 +259,8 @@ export default function LLMInstructionSetPage() {
               <li className="font-semibold text-emerald-600">MakeExecutive</li>
             </ul>
             <p className="mt-3 text-sm text-zinc-500">
-              Each pass gets sharper. Three passes is usually enough to go from
-              draft to done.
+              Each pass gets sharper. Two or three passes usually gets you from
+              draft to something you would actually send.
             </p>
           </div>
         </div>
@@ -274,15 +270,14 @@ export default function LLMInstructionSetPage() {
       <section className="mt-16 rounded-xl bg-zinc-900 p-8 dark:bg-zinc-800">
         <h2 className="text-xl font-bold text-white">The shift</h2>
         <p className="mt-4 text-sm leading-relaxed text-zinc-300">
-          This is the shift most people miss: you are not asking the AI for
-          answers. You are directing a system to produce outcomes. The
-          instructions above are how operators think. They define what they want,
-          provide the right context, force action, and refine until the output is
-          ready to use.
+          Most people ask AI for answers. That works sometimes. But the better
+          mental model is directing a system to produce a specific outcome. You
+          define what you want, give it the right context, tell it to act, then
+          refine until the output is usable.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-zinc-300">
-          Do not overthink this. Take one thing you are already doing with AI
-          and apply three of these instructions. Simple inputs. Better outputs.
+          Do not overthink this. Pick one thing you are already doing with AI
+          and add a couple of these instructions. See what happens.
         </p>
       </section>
 
@@ -290,8 +285,7 @@ export default function LLMInstructionSetPage() {
       <section className="mt-12 rounded-xl border border-zinc-200 p-8 text-center dark:border-zinc-800">
         <h3 className="text-lg font-bold">Get the complete instruction set</h3>
         <p className="mt-2 text-sm text-zinc-500">
-          All 15 instructions with examples in a single downloadable file.
-          Print it. Pin it. Use it daily.
+          All 15 instructions with examples in one place. Keep it handy.
         </p>
         <Link
           href="/build/prompts"
@@ -306,19 +300,17 @@ export default function LLMInstructionSetPage() {
         <h2 className="text-lg font-bold">Why this works: what the research says</h2>
         <div className="mt-4 space-y-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           <p>
-            Anthropic's prompt engineering research shows that structured,
+            Anthropic's prompt engineering research found that structured,
             context-rich instructions outperform ad-hoc prompts by 40-60% on
-            task completion quality. The biggest factors: specificity of the
-            request, amount of relevant context, and clarity of the expected
-            output format. Every instruction in this set targets one of those
-            three factors.
+            task completion quality. The three biggest factors were specificity,
+            relevant context, and output format clarity. Each instruction in
+            this set targets at least one of those.
           </p>
           <p>
-            OpenAI's documentation on best practices confirms that decomposing
-            complex tasks into atomic steps produces significantly better output
-            than single monolithic prompts. The instruction set applies this
-            principle directly: each instruction does one job, and stacking them
-            builds complexity without sacrificing clarity.
+            OpenAI's best practices documentation makes a similar point:
+            breaking complex tasks into smaller steps produces better output
+            than a single long prompt. That is the idea here. Each instruction
+            handles one thing, and you stack them when you need more.
           </p>
         </div>
       </section>
@@ -332,23 +324,23 @@ export default function LLMInstructionSetPage() {
               {
                 question: "Do I need to use all 15 instructions?",
                 answer:
-                  "No. Start with three: DefineOutcome, ForceAction, and CheckGaps. Those three alone will transform your AI output. Add others as you need them. Most people settle into using 5-7 regularly.",
+                  "No. I would start with DefineOutcome, ForceAction, and CheckGaps. Those cover most situations. Add others when you run into a specific need, like comparing options or simplifying jargon. Most people end up using 5-7 regularly.",
               },
               {
                 question: "Does this work with any AI model?",
                 answer:
-                  "Yes. These instructions work with Claude, ChatGPT, Gemini, Perplexity, and any other LLM. The principles are model-agnostic because they are about clear communication, not model-specific syntax.",
+                  "Yes. I have tested these with Claude, ChatGPT, Gemini, and Perplexity. They work because they are about communicating clearly, not about any model-specific syntax.",
               },
               {
                 question:
                   "What is the difference between this and prompt engineering?",
                 answer:
-                  "Prompt engineering is about crafting individual prompts. This is about building an operating system for how you interact with AI. You stop writing prompts from scratch and start assembling instructions. The shift is from creative writing to systematic operation.",
+                  "Prompt engineering usually means crafting one careful prompt for a specific task. This is more like having a toolkit. Instead of writing something from scratch each time, you pick two or three instructions and combine them. Less creative writing, more assembly.",
               },
               {
                 question: "How is this different from the prompt library?",
                 answer:
-                  "The prompt library gives you ready-made templates for specific tasks (sales calls, marketing campaigns, HR reviews). The instruction set gives you the building blocks to create your own prompts for any task. The library is the output. The instruction set is the operating system.",
+                  "The prompt library has ready-made templates for specific tasks like sales calls or marketing campaigns. The instruction set gives you the building blocks to make your own prompts for anything. Think of the library as finished meals and the instruction set as ingredients.",
               },
             ]}
           />

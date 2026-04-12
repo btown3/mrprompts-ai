@@ -7,22 +7,22 @@ const HOME_FAQ = [
   {
     question: "What is MrPrompts?",
     answer:
-      "MrPrompts is a collection of AI frameworks, prompt systems, and practical guides for professionals who want to get better results from AI without writing code. Every framework is something you can use today with Claude, ChatGPT, or any AI tool.",
+      "A collection of AI frameworks and practical guides for professionals who want better results from AI without writing code. Everything here works with Claude, ChatGPT, or whatever tool you use.",
   },
   {
     question: "Do I need to know how to code?",
     answer:
-      "No. Everything on MrPrompts is designed for smart professionals who do not come from a technical background. You type instructions into AI tools you already use. No terminal. No programming. No setup.",
+      "No. You type instructions into AI tools you already use. There is no terminal, no programming, no setup involved.",
   },
   {
     question: "What do I get if I sign up?",
     answer:
-      "A free account gives you access to all frameworks, prompt packs, downloadable starter kits, and the Wiki Builder tool. You also get the weekly newsletter with one new framework every week.",
+      "A free account gives you access to all frameworks, prompt packs, downloadable starter kits, and the Wiki Builder tool. You also get a weekly newsletter with a new framework each week.",
   },
   {
     question: "How is this different from other AI courses?",
     answer:
-      "Most AI courses teach you about AI. MrPrompts gives you frameworks you use immediately. The LLM Instruction Set, the 4-Layer Prompt Framework, the Knowledge Base Architecture. Named systems with clear steps, not lectures.",
+      "Most AI courses teach you about AI. MrPrompts gives you named systems you use immediately, like the LLM Instruction Set or the Knowledge Base Architecture. Less theory, more doing.",
   },
 ];
 
@@ -37,9 +37,9 @@ export default function Home() {
             <span className="text-emerald-600">for professionals</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
-            Named systems with clear steps. Copy them into Claude, ChatGPT,
-            or any AI tool and get better output today. No coding. No courses.
-            Just results.
+            Practical systems you can copy into Claude, ChatGPT, or any AI
+            tool and use right away. Built for people who work with AI but
+            do not write code.
           </p>
         </div>
       </section>
@@ -57,9 +57,9 @@ export default function Home() {
             The LLM Instruction Set: Stop Prompting, Start Operating
           </h2>
           <p className="mt-3 max-w-2xl text-zinc-500">
-            15 atomic instructions you type directly into any AI tool.
-            DefineOutcome. ForceAction. CheckGaps. Stack three of them and
-            your output changes completely. Used by 5,000+ professionals.
+            15 instructions you type directly into any AI tool.
+            DefineOutcome. ForceAction. CheckGaps. Use one or combine a few,
+            and the output gets noticeably better.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {["DefineOutcome", "AddContext", "AssignRole", "ForceAction", "CheckGaps", "Simplify"].map((tag) => (
@@ -83,13 +83,41 @@ export default function Home() {
       {/* Divider */}
       <div className="border-t border-zinc-200 dark:border-zinc-800" />
 
+      {/* From Substack — right after the hook */}
+      <FeaturedPosts />
+
+      {/* Subscribe — full width dark block */}
+      <section className="bg-zinc-900 dark:bg-zinc-800">
+        <div className="mx-auto max-w-3xl px-6 py-16 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+            The MrPrompts Newsletter
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-sm text-zinc-400">
+            One new AI framework every week. Practical stuff you can copy into
+            Claude, ChatGPT, or whatever you use. 5,000+ subscribers. Free.
+          </p>
+          <div className="mx-auto mt-8 max-w-md">
+            <iframe
+              src="https://mrprompts.substack.com/embed"
+              width="100%"
+              height="150"
+              className="rounded-lg"
+              style={{ border: "none", background: "transparent" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="border-t border-zinc-200 dark:border-zinc-800" />
+
       {/* More frameworks */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
           Frameworks
         </h2>
         <p className="mt-3 text-zinc-500">
-          Each one is a named system you can use today.
+          Each one is a named system with clear steps you can use right away.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Link
@@ -101,9 +129,8 @@ export default function Home() {
               The Knowledge Base Architecture
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              Collect, Compile, Query, Compound. The 4-step system that turns
-              raw sources into a structured wiki that gets smarter every time
-              you use it.
+              Collect, Compile, Query, Compound. A 4-step system for turning
+              raw sources into a structured wiki that improves as you add to it.
             </p>
           </Link>
 
@@ -116,8 +143,8 @@ export default function Home() {
               The 90-Day AI Adoption Playbook
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              Assess, Foundation, Pilot, Scale. How to roll out AI to your
-              organization without losing your team. Built for leaders.
+              Assess, Foundation, Pilot, Scale. A phased approach to rolling
+              out AI across your organization, written for the person leading it.
             </p>
           </Link>
 
@@ -130,8 +157,8 @@ export default function Home() {
               AI for Non-Technical Professionals
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              What AI actually is, the three things it does well, where it
-              fails, and your first week plan. The complete on-ramp.
+              What AI actually is, what it does well, where it falls short,
+              and a first-week plan to start using it.
             </p>
           </Link>
 
@@ -144,8 +171,8 @@ export default function Home() {
               Sales Prompt Framework
             </h3>
             <p className="mt-2 text-sm text-zinc-500">
-              15 prompts for every stage: discovery, proposals, follow-ups,
-              objections, pipeline. Copy, paste, customize.
+              15 prompts covering discovery, proposals, follow-ups,
+              objections, and pipeline management. Ready to copy and customize.
             </p>
           </Link>
 
@@ -187,35 +214,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="border-t border-zinc-200 dark:border-zinc-800" />
-
-      {/* Subscribe — now they know what they're subscribing to */}
-      <section className="mx-auto max-w-3xl px-6 py-20 text-center">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-          Subscribe to the MrPrompts Newsletter
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-zinc-500">
-          One new AI framework every week. 5,000+ professionals use these to
-          get better results from Claude, ChatGPT, and every other AI tool. Free.
-        </p>
-        <div className="mx-auto mt-8 max-w-md">
-          <iframe
-            src="https://mrprompts.substack.com/embed"
-            width="100%"
-            height="150"
-            className="rounded-lg"
-            style={{ border: "none", background: "transparent" }}
-          />
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="border-t border-zinc-200 dark:border-zinc-800" />
-
-      {/* From the blog */}
-      <FeaturedPosts />
 
       {/* Testimonials */}
       <Testimonials />
