@@ -33,8 +33,8 @@ export default function Home() {
       <section className="relative">
         <div className="mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            AI frameworks that{" "}
-            <span className="text-emerald-600">actually work</span>
+            AI frameworks{" "}
+            <span className="text-emerald-600">for professionals</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
             Named systems with clear steps. Copy them into Claude, ChatGPT,
