@@ -4,6 +4,21 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getBlogPosts, type DbBlogPost } from "@/lib/db";
 
+const POST_IMAGES: Record<string, string> = {
+  "claude-skills-explained-how-to-build-and-use-them": "/images/blog-claude-skills.png",
+  "the-4layer-prompt-framework-nobody-talks-about": "/images/blog-4layer-framework.png",
+  "diving-into-karpathys-autoresearch": "/images/blog-karpathy-research.png",
+  "how-to-set-up-openclaw-your-247-ai-agent-step-by-step": "/images/blog-openclaw.png",
+  "the-ai-agency-shift": "/images/blog-ai-agency-shift.png",
+  "foundations-of-strategic-prompting": "/images/blog-strategic-prompting.png",
+  "building-creative-story-outlines": "/images/blog-story-outlines.png",
+  "the-power-of-the-persona-pattern-in-prompt-engineering": "/images/blog-persona-pattern.png",
+  "sora-an-overview": "/images/blog-sora.png",
+  "agentic-ai-adaptive-planning-is-the-secret-sauce": "/images/blog-adaptive-planning.png",
+  "agentic-ai-bridging-human-insight-and-machine-execution": "/images/blog-human-machine.png",
+  "agentic-ai-flipped-model-in-generative-ai": "/images/blog-flipped-model.png",
+};
+
 const CATEGORY_COLORS: Record<string, string> = {
   Prompting: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
   Agents: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400",
@@ -37,11 +52,18 @@ export default function BlogPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {posts.map((post) => {
             const hasContent = !!post.content && post.content.trim().length > 0;
+            const imgSrc = POST_IMAGES[post.slug || ""];
             const cardClasses =
-              "group flex flex-col rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
+              "group flex flex-col overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
 
             const cardInner = (
               <>
+                {imgSrc && (
+                  <div className="overflow-hidden">
+                    <img src={imgSrc} alt={post.title} className="h-40 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-center gap-3">
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
@@ -69,6 +91,7 @@ export default function BlogPage() {
                 <span className="mt-4 text-xs font-medium text-emerald-600">
                   {hasContent ? "Read more" : "Read on Substack"} &rarr;
                 </span>
+                </div>
               </>
             );
 

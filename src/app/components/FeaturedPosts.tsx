@@ -9,6 +9,14 @@ const POST_IMAGES: Record<string, string> = {
   "the-4layer-prompt-framework-nobody-talks-about": "/images/blog-4layer-framework.png",
   "diving-into-karpathys-autoresearch": "/images/blog-karpathy-research.png",
   "how-to-set-up-openclaw-your-247-ai-agent-step-by-step": "/images/blog-openclaw.png",
+  "the-ai-agency-shift": "/images/blog-ai-agency-shift.png",
+  "foundations-of-strategic-prompting": "/images/blog-strategic-prompting.png",
+  "building-creative-story-outlines": "/images/blog-story-outlines.png",
+  "the-power-of-the-persona-pattern-in-prompt-engineering": "/images/blog-persona-pattern.png",
+  "sora-an-overview": "/images/blog-sora.png",
+  "agentic-ai-adaptive-planning-is-the-secret-sauce": "/images/blog-adaptive-planning.png",
+  "agentic-ai-bridging-human-insight-and-machine-execution": "/images/blog-human-machine.png",
+  "agentic-ai-flipped-model-in-generative-ai": "/images/blog-flipped-model.png",
 };
 
 export function FeaturedPosts() {
