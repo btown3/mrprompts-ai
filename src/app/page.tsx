@@ -48,8 +48,14 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <Link
           href="/learn/llm-instruction-set"
-          className="group block rounded-2xl border-2 border-zinc-200 p-8 transition hover:border-emerald-400 hover:shadow-lg md:p-12 dark:border-zinc-800 dark:hover:border-emerald-600"
+          className="group block overflow-hidden rounded-2xl border-2 border-zinc-200 transition hover:border-emerald-400 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-600"
         >
+          <img
+            src="/images/llm-instruction-set.png"
+            alt="The LLM Instruction Set framework visualization"
+            className="h-48 w-full object-cover md:h-64"
+          />
+          <div className="p-8 md:p-12">
           <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
             Featured Framework
           </span>
@@ -77,6 +83,7 @@ export default function Home() {
           <span className="mt-6 inline-flex text-sm font-semibold text-emerald-600 group-hover:text-emerald-700">
             Read the full framework &rarr;
           </span>
+          </div>
         </Link>
       </section>
 
@@ -122,8 +129,10 @@ export default function Home() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/learn/ai-knowledge-base-guide"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/knowledge-base-system.png" alt="Knowledge Base Architecture" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">System</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               The Knowledge Base Architecture
@@ -132,12 +141,15 @@ export default function Home() {
               Collect, Compile, Query, Compound. A 4-step system for turning
               raw sources into a structured wiki that improves as you add to it.
             </p>
+            </div>
           </Link>
 
           <Link
             href="/learn/ai-change-management"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/ai-change-management.png" alt="90-Day AI Adoption Playbook" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Playbook</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               The 90-Day AI Adoption Playbook
@@ -146,12 +158,15 @@ export default function Home() {
               Assess, Foundation, Pilot, Scale. A phased approach to rolling
               out AI across your organization, written for the person leading it.
             </p>
+            </div>
           </Link>
 
           <Link
             href="/learn/ai-for-non-technical"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/ai-for-professionals.png" alt="AI for Non-Technical Professionals" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Guide</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               AI for Non-Technical Professionals
@@ -160,12 +175,15 @@ export default function Home() {
               What AI actually is, what it does well, where it falls short,
               and a first-week plan to start using it.
             </p>
+            </div>
           </Link>
 
           <Link
             href="/learn/ai-prompts-for-sales"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/sales-prompts.png" alt="Sales Prompt Framework" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Prompts</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               Sales Prompt Framework
@@ -174,12 +192,15 @@ export default function Home() {
               15 prompts covering discovery, proposals, follow-ups,
               objections, and pipeline management. Ready to copy and customize.
             </p>
+            </div>
           </Link>
 
           <Link
             href="/learn/ai-prompts-for-marketing"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/marketing-prompts.png" alt="Marketing Prompt Framework" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Prompts</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               Marketing Prompt Framework
@@ -188,12 +209,15 @@ export default function Home() {
               15 prompts for campaigns, content, email, social, ads, and
               analytics. Each one produces work you would actually use.
             </p>
+            </div>
           </Link>
 
           <Link
             href="/learn/ai-team-assessment"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
           >
+            <img src="/images/ai-change-management.png" alt="AI Fluency Assessment" className="h-36 w-full object-cover" />
+            <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Assessment</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
               AI Fluency Assessment
@@ -202,6 +226,7 @@ export default function Home() {
               5-dimension scoring rubric and 10-question survey. Measure where
               your team stands before you train them.
             </p>
+            </div>
           </Link>
         </div>
 
