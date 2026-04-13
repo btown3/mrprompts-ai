@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getFeaturedBlogPosts, type DbBlogPost } from "@/lib/db";
 
+const POST_IMAGES: Record<string, string> = {
+  "claude-skills-explained-how-to-build-and-use-them": "/images/blog-claude-skills.png",
+  "the-4layer-prompt-framework-nobody-talks-about": "/images/blog-4layer-framework.png",
+  "diving-into-karpathys-autoresearch": "/images/blog-karpathy-research.png",
+};
+
 export function FeaturedPosts() {
   const [posts, setPosts] = useState<DbBlogPost[]>([]);
 
@@ -34,10 +40,17 @@ export function FeaturedPosts() {
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {posts.map((post) => {
           const hasContent = !!post.content && post.content.trim().length > 0;
-          const cardClasses = "group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
+          const cardClasses = "group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800";
+          const imgSrc = POST_IMAGES[post.slug || ""];
 
           const inner = (
             <>
+              {imgSrc && (
+                <div className="overflow-hidden">
+                  <img src={imgSrc} alt={post.title} className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
+                </div>
+              )}
+              <div className="p-6">
               <div className="flex items-center gap-3">
                 <span className="text-xs font-medium text-zinc-400">{post.category}</span>
                 {post.published_at && (
@@ -51,6 +64,7 @@ export function FeaturedPosts() {
               </div>
               <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">{post.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-zinc-500">{post.description}</p>
+              </div>
             </>
           );
 

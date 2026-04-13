@@ -30,8 +30,11 @@ export default function Home() {
   return (
     <>
       {/* Hero — tight, one clear message */}
-      <section className="relative">
-        <div className="mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
+      <section className="relative overflow-hidden">
+        {/* Subtle background gradient */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,150,105,0.08)_0%,transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(5,150,105,0.05)_0%,transparent_50%)]" />
+        <div className="relative mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
             AI frameworks{" "}
             <span className="text-emerald-600">for professionals</span>
@@ -48,13 +51,15 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <Link
           href="/learn/llm-instruction-set"
-          className="group block overflow-hidden rounded-2xl border-2 border-zinc-200 transition hover:border-emerald-400 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-600"
+          className="group block overflow-hidden rounded-2xl border-2 border-zinc-200 transition hover:border-emerald-400 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-600 dark:hover:shadow-emerald-900/20"
         >
-          <img
-            src="/images/llm-instruction-set.png"
-            alt="The LLM Instruction Set framework visualization"
-            className="h-48 w-full object-cover md:h-64"
-          />
+          <div className="overflow-hidden">
+            <img
+              src="/images/llm-instruction-set.png"
+              alt="The LLM Instruction Set framework visualization"
+              className="h-48 w-full object-cover transition duration-500 group-hover:scale-105 md:h-64"
+            />
+          </div>
           <div className="p-8 md:p-12">
           <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
             Featured Framework
@@ -129,9 +134,9 @@ export default function Home() {
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/learn/ai-knowledge-base-guide"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/knowledge-base-system.png" alt="Knowledge Base Architecture" className="h-36 w-full object-cover" />
+            <img src="/images/knowledge-base-system.png" alt="Knowledge Base Architecture" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">System</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -146,9 +151,9 @@ export default function Home() {
 
           <Link
             href="/learn/ai-change-management"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/ai-change-management.png" alt="90-Day AI Adoption Playbook" className="h-36 w-full object-cover" />
+            <img src="/images/ai-change-management.png" alt="90-Day AI Adoption Playbook" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Playbook</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -163,9 +168,9 @@ export default function Home() {
 
           <Link
             href="/learn/ai-for-non-technical"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/ai-for-professionals.png" alt="AI for Non-Technical Professionals" className="h-36 w-full object-cover" />
+            <img src="/images/ai-for-professionals.png" alt="AI for Non-Technical Professionals" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Guide</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -180,9 +185,9 @@ export default function Home() {
 
           <Link
             href="/learn/ai-prompts-for-sales"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/sales-prompts.png" alt="Sales Prompt Framework" className="h-36 w-full object-cover" />
+            <img src="/images/sales-prompts.png" alt="Sales Prompt Framework" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Prompts</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -197,9 +202,9 @@ export default function Home() {
 
           <Link
             href="/learn/ai-prompts-for-marketing"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/marketing-prompts.png" alt="Marketing Prompt Framework" className="h-36 w-full object-cover" />
+            <img src="/images/marketing-prompts.png" alt="Marketing Prompt Framework" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Prompts</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -214,9 +219,9 @@ export default function Home() {
 
           <Link
             href="/learn/ai-team-assessment"
-            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group overflow-hidden rounded-xl border border-zinc-200 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
-            <img src="/images/ai-change-management.png" alt="AI Fluency Assessment" className="h-36 w-full object-cover" />
+            <img src="/images/ai-change-management.png" alt="AI Fluency Assessment" className="h-36 w-full object-cover transition duration-300 group-hover:scale-105" />
             <div className="p-6">
             <span className="text-xs font-medium text-emerald-600">Assessment</span>
             <h3 className="mt-3 text-lg font-bold group-hover:text-emerald-600">
@@ -258,7 +263,7 @@ export default function Home() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Link
             href="/products"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
               Free
@@ -274,7 +279,7 @@ export default function Home() {
 
           <Link
             href="/workshops"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
               Live
@@ -290,7 +295,7 @@ export default function Home() {
 
           <Link
             href="/enterprise"
-            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800"
+            className="group rounded-xl border border-zinc-200 p-6 transition hover:border-emerald-300 hover:shadow-sm dark:border-zinc-800 dark:hover:border-emerald-800 dark:hover:shadow-emerald-900/20"
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-purple-600">
               Teams
