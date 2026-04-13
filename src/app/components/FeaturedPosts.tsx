@@ -8,6 +8,7 @@ const POST_IMAGES: Record<string, string> = {
   "claude-skills-explained-how-to-build-and-use-them": "/images/blog-claude-skills.png",
   "the-4layer-prompt-framework-nobody-talks-about": "/images/blog-4layer-framework.png",
   "diving-into-karpathys-autoresearch": "/images/blog-karpathy-research.png",
+  "how-to-set-up-openclaw-your-247-ai-agent-step-by-step": "/images/blog-openclaw.png",
 };
 
 export function FeaturedPosts() {
