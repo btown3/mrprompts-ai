@@ -49,9 +49,8 @@ export default function Home() {
             <span className="text-emerald-600">that work</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-500">
-            Practical systems you can copy into Claude, ChatGPT, or any AI
-            tool and use right away. Built for people who work with AI but
-            do not write code.
+            Proven frameworks that simplify how you work with AI. Copy them
+            into any tool. Get better results immediately.
           </p>
         </div>
       </section>
