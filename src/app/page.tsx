@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Featured framework — the hook */}
-      <section className="mx-auto max-w-6xl px-6 pb-20">
+      <section className="mx-auto max-w-6xl px-6 pb-20 pt-16">
         <Link
           href="/learn/llm-instruction-set"
           className="group block overflow-hidden rounded-2xl border-2 border-zinc-200 transition hover:border-emerald-400 hover:shadow-lg dark:border-zinc-800 dark:hover:border-emerald-600 dark:hover:shadow-emerald-900/20"
