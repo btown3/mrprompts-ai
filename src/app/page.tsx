@@ -31,9 +31,18 @@ export default function Home() {
     <>
       {/* Hero — tight, one clear message */}
       <section className="relative overflow-hidden">
-        {/* Subtle background gradient */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(5,150,105,0.08)_0%,transparent_70%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(5,150,105,0.05)_0%,transparent_50%)]" />
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/llm-instruction-set.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay so text is readable */}
+        <div className="pointer-events-none absolute inset-0 bg-white/85 dark:bg-zinc-950/85" />
         <div className="relative mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
             AI frameworks{" "}
