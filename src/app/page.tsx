@@ -137,7 +137,7 @@ export default function Home() {
           Frameworks
         </h2>
         <p className="mt-3 text-zinc-500">
-          Each one is a named system with clear steps you can use right away.
+          Clear steps you can use right away.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Link
