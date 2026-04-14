@@ -42,7 +42,7 @@ export default function Home() {
           <source src="/videos/llm-instruction-set.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay so text is readable */}
-        <div className="pointer-events-none absolute inset-0 bg-white/85 dark:bg-zinc-950/85" />
+        <div className="pointer-events-none absolute inset-0 bg-white/90 dark:bg-zinc-950/90" />
         <div className="relative mx-auto max-w-3xl px-6 pb-12 pt-24 text-center md:pt-32">
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
             AI frameworks{" "}
