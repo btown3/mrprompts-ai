@@ -36,7 +36,7 @@ export function FeaturedPosts() {
             From the Newsletter
           </h2>
           <p className="mt-3 text-zinc-500">
-            What 5,000 professionals read every week.
+            What over 5,000 professionals read every week.
           </p>
         </div>
         <Link
