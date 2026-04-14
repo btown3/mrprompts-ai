@@ -33,10 +33,10 @@ export function FeaturedPosts() {
       <div className="flex items-end justify-between">
         <div>
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Latest
+            From the Newsletter
           </h2>
           <p className="mt-3 text-zinc-500">
-            Battle-tested AI workflows from the field, not the feed.
+            What 5,000 professionals read every week.
           </p>
         </div>
         <Link
