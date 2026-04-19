@@ -20,6 +20,7 @@ export function Header() {
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
           <Link href="/frameworks" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Frameworks</Link>
           <Link href="/products" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Products</Link>
+          <Link href="/tools" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Tools</Link>
           <Link href="/workshops" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Workshops</Link>
           <Link href="/enterprise" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Enterprise</Link>
           <Link href="/pricing" className="text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Pricing</Link>
@@ -65,6 +66,7 @@ export function Header() {
           <div className="flex flex-col gap-4 text-sm font-medium">
             <Link href="/frameworks" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Frameworks</Link>
             <Link href="/products" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Products</Link>
+            <Link href="/tools" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Tools</Link>
             <Link href="/blog" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Blog</Link>
             <Link href="/workshops" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Workshops</Link>
             <Link href="/enterprise" onClick={() => setOpen(false)} className="text-zinc-600 dark:text-zinc-400">Enterprise</Link>

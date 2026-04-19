@@ -23,6 +23,15 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const BUILD_TOOLS = [
   {
+    name: "Project Foundry",
+    description:
+      "A guided builder that helps anyone create a stronger AI project structure with contracts, handoffs, corrections, and evaluator rules.",
+    category: "tools",
+    tag: "Interactive",
+    href: "/tools/project-foundry",
+    items: "Guided setup + exports",
+  },
+  {
     name: "Knowledge Base Builder",
     description: "Pick your topic, download a complete starter kit with CLAUDE.md schema, folder structure, and 7 numbered prompts. Or let AI generate articles from your sources.",
     category: "tools",
